@@ -1,5 +1,8 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS project2_db;
+CREATE DATABASE project2_db;
+USE project2_db;
+
+SELECT * FROM table;
 
 DROP DATABASE IF EXISTS testdb;
 CREATE DATABASE testdb;

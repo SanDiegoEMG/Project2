@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "knowit2018",
+    "password": "",
     "database": "project2_db",
     "host": "localhost",
     "dialect": "mysql"

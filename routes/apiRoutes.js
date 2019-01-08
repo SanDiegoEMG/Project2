@@ -3,14 +3,14 @@ var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", isAuthenticated, function(req, res) {
-    db.Example.findAll({
+  // Get all user data
+  app.get("/api/users/:id", isAuthenticated, function(req, res) {
+    db.User.findAll({
       where: {
-        UserId: req.user.id
+        UserId: req.params.id
       }
-    }).then(function(dbExamples) {
-      res.json(dbExamples);
+    }).then(function(dbUser) {
+      res.json(dbUser);
     });
   });
 

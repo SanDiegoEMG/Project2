@@ -3,3 +3,13 @@ body {
   background-size: cover;
   height: 608px;
 }
+
+.selected {
+  background-color: #4CAF50; /* Green */
+}
+
+.hide-btn {
+  width: 300px;
+  height: 300px;
+  display: none;
+}

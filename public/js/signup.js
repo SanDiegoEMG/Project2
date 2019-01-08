@@ -1,9 +1,12 @@
-$("#user-sign-up").on("submit", function(e) {
+ $("#user-sign-up").on("click", function(e) {
     e.preventDefault();
     $.ajax({
       method: "POST",
       url: "/api/signup",
       data: {
+        fullName: $("#full-name")
+          .val()
+          .trim(),
         email: $("#email")
           .val()
           .trim(),
@@ -14,7 +17,7 @@ $("#user-sign-up").on("submit", function(e) {
     })
       .then(function(data) {
         console.log(data);
-        window.location.replace(data);
+        window.location.replace("/api/questions");
       })
       .catch(function(err) {
         console.log(err);

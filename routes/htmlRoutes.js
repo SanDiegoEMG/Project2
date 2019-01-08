@@ -5,7 +5,11 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     return res.render("index");
   });
-
+  
+  app.get("/questions", function(req, res) {
+    return res.render("questions");
+  });
+   
   // Load login page
   // app.get("/", function(req, res) {
   //   res.render("index");

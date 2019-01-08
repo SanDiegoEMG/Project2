@@ -12,5 +12,8 @@ module.exports = function(sequelize, DataTypes) {
     linkedin: DataTypes.STRING,
     profile: DataTypes.TEXT
   });
+  User.associate = function(models) {
+    models.User.hasMany(models.Skill);
+}
   return User;
 };

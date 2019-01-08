@@ -11,5 +11,13 @@ module.exports = function(sequelize, DataTypes) {
       mysql: DataTypes.BOOLEAN,
       handlebars: DataTypes.BOOLEAN,
     });
+    Skill.associate = function(models) {
+        models.Skill.belongsTo(models.User, {
+            onDelete: "CASCADE",
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Skill;
   };

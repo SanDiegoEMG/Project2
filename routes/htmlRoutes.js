@@ -21,7 +21,7 @@ module.exports = function(app) {
       where: {
         id: req.user.id
       },
-      include: [db.Example]
+      // include: [db.User]
     }).then(function(dbUser) {
       res.render("profile", { user: dbUser });
     });

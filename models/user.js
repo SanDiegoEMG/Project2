@@ -1,3 +1,44 @@
+<<<<<<< HEAD
+// Requiring bcrypt for password hashing. Using the bcrypt-nodejs version as the regular bcrypt module
+// sometimes causes errors on Windows machines
+var bcrypt = require("bcrypt-nodejs");
+// Creating our User model
+module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define("User", {
+    // The email cannot be null, and must be a proper email before creation
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true
+      }
+    },
+    // The password cannot be null
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  });
+
+  User.associate = function(models) {
+    models.User.hasMany(models.Example);
+  };
+
+  // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
+  User.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+  // Hooks are automatic methods that run during various phases of the User Model lifecycle
+  // In this case, before a User is created, we will automatically hash their password
+  User.hook("beforeCreate", function(user) {
+    user.password = bcrypt.hashSync(
+      user.password,
+      bcrypt.genSaltSync(10),
+      null
+    );
+  });
+=======
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     first_name: {
@@ -44,5 +85,27 @@ module.exports = function (sequelize, DataTypes) {
   User.associate = function (models) {
     models.User.hasMany(models.Skill);
   }
+>>>>>>> a3c4c64e6620bbf95029f34659f087d56cce6dca
   return User;
 };
+
+
+// module.exports = function(sequelize, DataTypes) {
+//   var User = sequelize.define("User", {
+//     first_name: DataTypes.STRING,
+//     last_name: DataTypes.STRING,
+//     email: DataTypes.STRING,
+//     user_name: DataTypes.STRING,
+//     password: DataTypes.STRING,
+//     app_type: DataTypes.STRING,
+//     coding_time: DataTypes.INTEGER,
+//     concept: DataTypes.STRING,
+//     github: DataTypes.STRING,
+//     linkedin: DataTypes.STRING,
+//     profile: DataTypes.TEXT
+//   });
+//   User.associate = function(models) {
+//     models.User.hasMany(models.Skill);
+// }
+//   return User;
+// };

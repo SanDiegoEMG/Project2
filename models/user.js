@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Requiring bcrypt for password hashing. Using the bcrypt-nodejs version as the regular bcrypt module
 // sometimes causes errors on Windows machines
 var bcrypt = require("bcrypt-nodejs");
@@ -38,54 +37,6 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
-=======
-module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    first_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    last_name: {
-      type: DataTypes.STRING,
-      validate: {
-        len: [1]
-      }
-    },
-    email: {
-      type: DataTypes.STRING,
-      validate: {
-        len: [1]
-      }
-    },
-    email: DataTypes.STRING,
-    user_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [5]
-      }
-    },
-    app_type: DataTypes.STRING,
-    coding_time: DataTypes.INTEGER,
-    concept: DataTypes.STRING,
-    github: DataTypes.STRING,
-    linkedin: DataTypes.STRING,
-    profile: DataTypes.TEXT
-  });
-  User.associate = function (models) {
-    models.User.hasMany(models.Skill);
-  }
->>>>>>> a3c4c64e6620bbf95029f34659f087d56cce6dca
   return User;
 };
 

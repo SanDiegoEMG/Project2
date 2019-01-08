@@ -18,16 +18,16 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    full_name: {
+    fullName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    user_name: DataTypes.STRING,
-    app_type: DataTypes.STRING,
-    coding_time: DataTypes.INTEGER,
+    userName: DataTypes.STRING,
+    appType: DataTypes.STRING,
+    codingtime: DataTypes.INTEGER,
     concept: DataTypes.STRING,
     github: DataTypes.STRING,
     linkedin: DataTypes.STRING,

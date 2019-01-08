@@ -4,7 +4,5 @@ USE project2_db;
 
 SELECT * FROM users;
 SELECT * FROM matches;
+SELECT * FROM skills;
 
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;

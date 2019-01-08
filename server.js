@@ -1,5 +1,6 @@
 require("dotenv").config();
 var express = require("express");
+var session = require("express-session");
 var exphbs = require("express-handlebars");
 
 var db = require("./models");
@@ -7,10 +8,24 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+
+// We need to use sessions to keep track of our user's login status
+app.use(
+  session({
+    secret: "our secret key to our server",
+    resave: true,
+    saveUninitialized: true
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Handlebars
 app.engine(
@@ -25,7 +40,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

@@ -1,18 +1,30 @@
 var db = require("../models");
-
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
-  // Load index page
+  // Load signup page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    return res.render("index");
+  });
+
+  // Load login page
+  // app.get("/", function(req, res) {
+  //   res.render("index");
+  // });
+
+  // Load profile page
+  app.get("/profile", isAuthenticated, function(req, res) {
+    db.User.findOne({
+      where: {
+        id: req.user.id
+      },
+      include: [db.Example]
+    }).then(function(dbUser) {
+      res.render("profile", { user: dbUser });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  app.get("/example/:id", isAuthenticated, function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(
       dbExample
     ) {

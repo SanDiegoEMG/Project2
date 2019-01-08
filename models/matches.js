@@ -1,19 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
     var Matches = sequelize.define("Match", {
-      username: {
+      userName: {
         type: DataTypes.STRING,
         validate: {
             len: [1]
         }
     },
       score: DataTypes.INTEGER,
-      match_name: {
+      matchName: {
         type: DataTypes.STRING,
         validate: {
             len: [1]
         }
     },
-      match_score: DataTypes.INTEGER,
+      matchScore: DataTypes.INTEGER,
     });
     return Matches;
   };

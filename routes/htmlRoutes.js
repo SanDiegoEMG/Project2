@@ -6,9 +6,10 @@ module.exports = function(app) {
     return res.render("index");
   });
   
-  app.get("/questions", function(req,res) {
-    res.render("questions")
+  app.get("/questions", function(req, res) {
+    return res.render("questions");
   });
+   
   // Load login page
   // app.get("/", function(req, res) {
   //   res.render("index");

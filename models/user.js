@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Requiring bcrypt for password hashing. Using the bcrypt-nodejs version as the regular bcrypt module
 // sometimes causes errors on Windows machines
 var bcrypt = require("bcrypt-nodejs");
@@ -18,11 +17,25 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    full_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    user_name: DataTypes.STRING,
+    app_type: DataTypes.STRING,
+    coding_time: DataTypes.INTEGER,
+    concept: DataTypes.STRING,
+    github: DataTypes.STRING,
+    linkedin: DataTypes.STRING,
+    profile: DataTypes.TEXT
   });
 
-  User.associate = function(models) {
-    models.User.hasMany(models.Example);
+  User.associate = function (models) {
+    models.User.hasMany(models.Skill);
   };
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
@@ -38,74 +51,5 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
-=======
-module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    first_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    last_name: {
-      type: DataTypes.STRING,
-      validate: {
-        len: [1]
-      }
-    },
-    email: {
-      type: DataTypes.STRING,
-      validate: {
-        len: [1]
-      }
-    },
-    email: DataTypes.STRING,
-    user_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [5]
-      }
-    },
-    app_type: DataTypes.STRING,
-    coding_time: DataTypes.INTEGER,
-    concept: DataTypes.STRING,
-    github: DataTypes.STRING,
-    linkedin: DataTypes.STRING,
-    profile: DataTypes.TEXT
-  });
-  User.associate = function (models) {
-    models.User.hasMany(models.Skill);
-  }
->>>>>>> a3c4c64e6620bbf95029f34659f087d56cce6dca
   return User;
 };
-
-
-// module.exports = function(sequelize, DataTypes) {
-//   var User = sequelize.define("User", {
-//     first_name: DataTypes.STRING,
-//     last_name: DataTypes.STRING,
-//     email: DataTypes.STRING,
-//     user_name: DataTypes.STRING,
-//     password: DataTypes.STRING,
-//     app_type: DataTypes.STRING,
-//     coding_time: DataTypes.INTEGER,
-//     concept: DataTypes.STRING,
-//     github: DataTypes.STRING,
-//     linkedin: DataTypes.STRING,
-//     profile: DataTypes.TEXT
-//   });
-//   User.associate = function(models) {
-//     models.User.hasMany(models.Skill);
-// }
-//   return User;
-// };

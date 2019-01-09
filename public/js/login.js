@@ -1,4 +1,4 @@
-$("#user-login").on("submit", function(e) {
+$("#user-login").on("click", function(e) {
     e.preventDefault();
     $.ajax({
       method: "POST",
@@ -14,7 +14,7 @@ $("#user-login").on("submit", function(e) {
     })
       .then(function(data) {
         console.log(data);
-        window.location.replace(data);
+        window.location.replace("/profile");
       })
       .catch(function(err) {
         console.log(err);

@@ -5,16 +5,28 @@
     <div class="question-container">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <a>
-            <div>
-                <div id="app" data-state="notSelected" class="uk-card uk-card-default uk-card-body">Mobile App</div>
-            </div>
+                <div>
+                    <label for="app-mobile">
+                        <div id="app" data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="appType" value="mobile" id="app-mobile">
+                            Mobile App
+                        </div>
+                    </label>
+                </div>
             </a>
             <a>
-            <div>
-                <div id="web" data-state="notSelected" class="uk-card uk-card-default uk-card-body">Web App</div>
-            </div>
+                <div>
+                    <label for="app-web">
+                        <div id="web" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="appType" value="web" id="app-web">
+                            Web App
+                        </div>
+                    </label>
+                </div>
             </a>
         </div>
+
+
     </div>
     <div class="question-actions">
         <button class="uk-button uk-button-primary">Next</button>

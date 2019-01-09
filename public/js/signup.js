@@ -17,7 +17,7 @@
     })
       .then(function(data) {
         console.log(data);
-        window.location.replace("/api/questions");
+        window.location.replace("questions");
       })
       .catch(function(err) {
         console.log(err);

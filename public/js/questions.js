@@ -64,7 +64,7 @@ $("#add-current-skills").on ("click", function () {
         userSkills.push(skillName);
     });
     console.log(userSkills);
-    var skillsTrue = "";
+    var skillsTrue = [];
     for (var i=0; i < userSkills.length; i++) {
         switch (userSkills[i]) {
             case "html":

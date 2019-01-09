@@ -12,6 +12,9 @@
           .trim(),
         password: $("#password-sign-up")
           .val()
+          .trim(),
+        userName: $("#user-name-sign-up")
+          .val()
           .trim()
       }
     })

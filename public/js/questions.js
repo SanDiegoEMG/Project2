@@ -22,6 +22,7 @@
 //     }
 // });
 
+
 $('input:radio[name="appType"]').on("change", function (e) {
     $('input:radio[name="appType"]').each(function () {
         if (this.checked) {
@@ -37,13 +38,66 @@ $('input:radio[name="appType"]').on("change", function (e) {
     console.log(choices);
 });
 
-$(`#add-build`).on("click", function () {
-    var currentQuestion = document.getElementById("questionnaire-item-build");
-    var nextQuestion = document.getElementById("questionnaire-item-time");
-    currentQuestion.style.display = "none";
-    nextQuestion.style.display = "block";
-    console.log("you clicked next on " + currentQuestion.id);
+$('input:radio[name="timeType"]').on("change", function (e) {
+    $('input:radio[name="timeType"]').each(function () {
+        if (this.checked) {
+            $(this).parent().addClass("selected");
+        } else {
+            $(this).parent().removeClass("selected");
+        }
+    });
+
+    var choices = {
+        timeType: $('input:radio[name="timeType"]:checked').val()
+    }
+    console.log(choices);
 });
+
+$('input:checkbox[name="skillType"]').on("change", function (e) {
+    $('input:checkbox[name="skillType"]').each(function () {
+        if (this.checked) {
+            $(this).parent().addClass("selected");
+        } else {
+            $(this).parent().removeClass("selected");
+        }
+    });
+
+    var choices = {
+        timeType: $('input:checkbox[name="skillType"]:checked').val()
+    }
+    console.log(choices);
+});
+
+$('input:radio[name="ideaType"]').on("change", function (e) {
+    $('input:radio[name="ideaType"]').each(function () {
+        if (this.checked) {
+            $(this).parent().addClass("selected");
+        } else {
+            $(this).parent().removeClass("selected");
+        }
+    });
+
+    var choices = {
+        ideaType: $('input:radio[name="ideaType"]:checked').val()
+    }
+    console.log(choices);
+});
+
+$("#add-online-profiles").on("click", function(e) {
+    e.preventDefault();
+    var gitHub = $("#form-horizontal-text").val().trim()
+    var linkedIn = $("#form-horizontal-text2").val().trim()
+
+    console.log(gitHub);
+    console.log(linkedIn)
+  });
+
+  $("#create-profile").on("click", function(e) {
+    e.preventDefault();
+    var aboutYou = $("#about-you").val().trim()
+
+    console.log(aboutYou)
+  });
 
   // on submit of the form
 
@@ -66,6 +120,14 @@ $(`#add-build`).on("click", function () {
 //     showNextQuestion("time", "current-skills")
 //     console.log("you clicked next on " + currentQuestion.id);
 // });
+
+$(`#add-build`).on("click", function () {
+    var currentQuestion = document.getElementById("questionnaire-item-build");
+    var nextQuestion = document.getElementById("questionnaire-item-time");
+    currentQuestion.style.display = "none";
+    nextQuestion.style.display = "block";
+    console.log("you clicked next on " + currentQuestion.id);
+});
 
 $(`#add-time`).on("click", function() {
     var currentQuestion = document.getElementById("questionnaire-item-time");

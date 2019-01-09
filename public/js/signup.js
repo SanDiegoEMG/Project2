@@ -4,13 +4,13 @@
       method: "POST",
       url: "/api/signup",
       data: {
-        fullName: $("#full-name")
+        fullName: $("#full-name-sign-up")
           .val()
           .trim(),
-        email: $("#email")
+        email: $("#email-sign-up")
           .val()
           .trim(),
-        password: $("#password")
+        password: $("#password-sign-up")
           .val()
           .trim()
       }

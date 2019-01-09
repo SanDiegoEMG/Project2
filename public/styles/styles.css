@@ -34,7 +34,7 @@
   display: none;
 }
 
-.selected {
+.app-selected, .time-selected, .skill-selected, .idea-selected {
   background-color: #4CAF50; /* Green */
 }
 .hide-btn {

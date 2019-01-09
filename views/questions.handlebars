@@ -82,89 +82,29 @@
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-current-skills">
         <div class="question-title">
-            <h2>Select all of your current skills?</h2>
+            <h2>Select all of your current skills.</h2>
         </div>
         <div class="question-container">
             <div class="uk-child-width-expand@s uk-text-center" uk-grid>
                 <div>
-                    <label for="html-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="html-skill">
-                            HTML
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">HTML</div> --}}
-                    <label for="css-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="css-skill">
-                            CSS
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">CSS</div> --}}
+                    <div class="uk-card uk-card-default uk-card-body skill" id="html">HTML</div>
+                    <div class="uk-card uk-card-default uk-card-body skill" id="css">CSS</div>
                 </div>
                 <div>
-                    <label for="javascript-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="javascript-skill">
-                            JAVASCRIPT
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">JAVASCRIPT</div> --}}
-                    <label for="jquery-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="jquery-skill">
-                            JQUERY
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">JQUERY</div> --}}
+                    <div class="uk-card uk-card-default uk-card-body skill" id="javascript">JAVASCRIPT</div>
+                    <div class="uk-card uk-card-default uk-card-body skill" id="jquery">JQUERY</div>
                 </div>
                 <div>
-                    <label for="node-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="node-skill">
-                            NODE
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">NODE</div> --}}
-                    <label for="express-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="express-skill">
-                            EXPRESS
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">EXPRESS</div> --}}
+                    <div class="uk-card uk-card-default uk-card-body skill" id="node">NODE</div>
+                    <div class="uk-card uk-card-default uk-card-body skill" id="express">EXPRESS</div>
                 </div>
                 <div>
-                    <label for="react-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="react-skill">
-                            REACT
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">REACT</div> --}}
-                    <label for="handlebars-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="handlebars-skill">
-                            HANDLEBARS
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">HANDLEBARS</div> --}}
+                    <div class="uk-card uk-card-default uk-card-body skill" id="react">REACT</div>
+                    <div class="uk-card uk-card-default uk-card-body skill" id="handlebars">HANDLEBARS</div>
                 </div>
                 <div>
-                    <label for="mysql-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="mysql-skill">
-                            MYSQL
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">MYSQL</div> --}}
-                    <label for="mongodb-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="mongodb-skill">
-                            MONGODB
-                        </div>
-                    </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">MONGODB</div> --}}
+                    <div class="uk-card uk-card-default uk-card-body skill" id="mysql">MYSQL</div>
+                    <div class="uk-card uk-card-default uk-card-body skill" id="mongodb">MONGODB</div>
                 </div>
             </div>
         </div>
@@ -173,38 +113,38 @@
         </div>
     </div>
 
-    <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-learn-skills">
+    {{!-- <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-learn-skills">
         <div class="question-title">
             <h2>Select the skills you would like to learn?</h2>
         </div>
         <div class="question-container">
             <div class="uk-child-width-expand@s uk-text-center" uk-grid>
                 <div>
-                    <div class="uk-card uk-card-default uk-card-body">HTML</div>
-                    <div class="uk-card uk-card-default uk-card-body">CSS</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="html">HTML</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="css">CSS</div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-default uk-card-body">JAVASCRIPT</div>
-                    <div class="uk-card uk-card-default uk-card-body">JQUERY</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="javascript">JAVASCRIPT</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="jquery">JQUERY</div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-default uk-card-body">NODE</div>
-                    <div class="uk-card uk-card-default uk-card-body">EXPRESS</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="node">NODE</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="express">EXPRESS</div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-default uk-card-body">REACT</div>
-                    <div class="uk-card uk-card-default uk-card-body">HANDLEBARS</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="react">REACT</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="handlebars">HANDLEBARS</div>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-default uk-card-body">MYSQL</div>
-                    <div class="uk-card uk-card-default uk-card-body">MONGODB</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="mysql">MYSQL</div>
+                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="mongodb">MONGODB</div>
                 </div>
             </div>
         </div>
         <div class="question-actions">
             <button class="uk-button uk-button-primary next-question" id="add-learn-skills">Next</button>
         </div>
-    </div>
+    </div> --}}
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-idea">
         <div class="question-title">

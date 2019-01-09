@@ -22,81 +22,147 @@
 //     }
 // });
 
-
+var newUser = [];
 $('input:radio[name="appType"]').on("change", function (e) {
     $('input:radio[name="appType"]').each(function () {
         if (this.checked) {
-            $(this).parent().addClass("selected");
+            $(this).parent().addClass("app-selected");
         } else {
-            $(this).parent().removeClass("selected");
+            $(this).parent().removeClass("app-selected");
         }
     });
 
-    var choices = {
+    var appChoice = {
         appType: $('input:radio[name="appType"]:checked').val()
     }
-    console.log(choices);
+    console.log(appChoice);
+    newUser.push(appChoice);
 });
 
 $('input:radio[name="timeType"]').on("change", function (e) {
     $('input:radio[name="timeType"]').each(function () {
         if (this.checked) {
-            $(this).parent().addClass("selected");
+            $(this).parent().addClass("time-selected");
         } else {
-            $(this).parent().removeClass("selected");
+            $(this).parent().removeClass("time-selected");
         }
     });
 
-    var choices = {
-        timeType: $('input:radio[name="timeType"]:checked').val()
+    var timeChoice = {
+        codingTime: $('input:radio[name="timeType"]:checked').val()
     }
-    console.log(choices);
+    console.log(timeChoice);
+    newUser.push(timeChoice);
 });
 
-$('input:checkbox[name="skillType"]').on("change", function (e) {
-    $('input:checkbox[name="skillType"]').each(function () {
-        if (this.checked) {
-            $(this).parent().addClass("selected");
-        } else {
-            $(this).parent().removeClass("selected");
-        }
+// $('input:checkbox[name="skillType"]').on("change", function (e) {
+//     $('input:checkbox[name="skillType"]').each(function () {
+//         if (this.checked) {
+//             $(this).parent().addClass("skill-selected");
+//         } else {
+//             $(this).parent().removeClass("skill-selected");
+//         }
+//     });
+
+//     var choices = {
+//         skillName: $('input:checkbox[name="skillType"]:checked').val()
+//     }
+//     console.log(choices);
+// });
+
+$(".skill").on("click", function () {
+    if ($(this).hasClass("skill-selected")) {
+        $(this).removeClass("skill-selected");
+    }
+    else { 
+        $(this).addClass("skill-selected");
+    }
+});
+
+$("#add-current-skills").on ("click", function () {
+    var userSkills = [];
+    $.each($(".skill-selected"), function (i) {
+        var skillName = $(this).attr("id");
+        userSkills.push(skillName);
     });
-
-    var choices = {
-        timeType: $('input:checkbox[name="skillType"]:checked').val()
+    console.log(userSkills);
+    var skillsTrue = "";
+    for (var i=0; i < userSkills.length; i++) {
+        switch (userSkills[i]) {
+            case "html":
+            skillsTrue += "{html: true}, ";
+            break;
+            case "css":
+            skillsTrue += "{css: true}, ";
+            break;
+            case "javascript":
+            skillsTrue += "{javascript: true}, ";
+            break;
+            case "jquery":
+            skillsTrue += "{jquery: true}, ";
+            break;
+            case "node":
+            skillsTrue += "{node: true}, ";
+            break;
+            case "express":
+            skillsTrue += "{express: true}, ";
+            break;
+            case "react":
+            skillsTrue += "{react: true}, ";
+            break;
+            case "handlebars":
+            skillsTrue += "{handlebars: true}, ";
+            break;
+            case "mysql":
+            skillsTrue += "{mysql: true}, ";
+            break;
+            case "mongodb":
+            skillsTrue += "{mongodb: true}, ";
+        }
     }
-    console.log(choices);
+    console.log(skillsTrue);
+    newUser.push(skillsTrue);
 });
+
 
 $('input:radio[name="ideaType"]').on("change", function (e) {
     $('input:radio[name="ideaType"]').each(function () {
         if (this.checked) {
-            $(this).parent().addClass("selected");
+            $(this).parent().addClass("idea-selected");
         } else {
-            $(this).parent().removeClass("selected");
+            $(this).parent().removeClass("idea-selected");
         }
     });
 
-    var choices = {
-        ideaType: $('input:radio[name="ideaType"]:checked').val()
+    var ideaChoice = {
+        concept: $('input:radio[name="ideaType"]:checked').val()
     }
-    console.log(choices);
+    console.log(ideaChoice);
+    newUser.push(ideaChoice);
 });
 
 $("#add-online-profiles").on("click", function(e) {
     e.preventDefault();
     var gitHub = $("#form-horizontal-text").val().trim()
     var linkedIn = $("#form-horizontal-text2").val().trim()
-
+    var onlineProfiles = {
+        github: gitHub,
+        linkedin: linkedIn
+    }
     console.log(gitHub);
     console.log(linkedIn)
+    newUser.push(onlineProfiles);
   });
 
   $("#create-profile").on("click", function(e) {
     e.preventDefault();
-    var aboutYou = $("#about-you").val().trim()
-
-    console.log(aboutYou)
+    var userProfile = $("#about-you").val().trim()
+    var aboutYou = {
+        profile: aboutYou
+    }
+    console.log(userProfile);
+    newUser.push(userProfile);
+    console.log(newUser);
   });
 
   // on submit of the form
@@ -139,14 +205,6 @@ $(`#add-time`).on("click", function() {
 
 $(`#add-current-skills`).on("click", function() {
     var currentQuestion = document.getElementById("questionnaire-item-current-skills");
-    var nextQuestion = document.getElementById("questionnaire-item-learn-skills");
-    currentQuestion.style.display = "none";
-    nextQuestion.style.display = "block";
-    console.log("you clicked next on " + currentQuestion.id);
-});
-
-$(`#add-learn-skills`).on("click", function() {
-    var currentQuestion = document.getElementById("questionnaire-item-learn-skills");
     var nextQuestion = document.getElementById("questionnaire-item-idea");
     currentQuestion.style.display = "none";
     nextQuestion.style.display = "block";

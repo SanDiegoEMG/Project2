@@ -3,35 +3,40 @@
   background-size: cover;
   height: 608px;
 }
+.container {
+  text-align: center;
+}
 .question-title {
   text-align: center;
 }
-#questionnnaire-item-build {
+.questionnaire-item {
+  text-align: center;
+}
+#questionnaire-item-build {
   padding: 60px;
 }
-#questionnnaire-item-time {
+#questionnaire-item-time {
   display: none;
 }
-#questionnnaire-item-current-skills {
+#questionnaire-item-current-skills {
   display: none;
 }
-#questionnnaire-item-learn-skills {
+#questionnaire-item-learn-skills {
   display: none;
 }
-#questionnnaire-item-idea {
+#questionnaire-item-idea {
   display: none;
 }
-#questionnnaire-item-online-profiles {
+#questionnaire-item-online-profiles {
   display: none;
 }
-#questionnnaire-item-about {
+#questionnaire-item-about {
   display: none;
 }
 
 .selected {
   background-color: #4CAF50; /* Green */
 }
-
 .hide-btn {
   width: 300px;
   height: 300px;

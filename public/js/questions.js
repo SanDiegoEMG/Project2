@@ -37,6 +37,13 @@ $('input:radio[name="appType"]').on("change", function (e) {
     console.log(choices);
 });
 
+$(`#add-build`).on("click", function () {
+    var currentQuestion = document.getElementById("questionnaire-item-build");
+    var nextQuestion = document.getElementById("questionnaire-item-time");
+    currentQuestion.style.display = "none";
+    nextQuestion.style.display = "block";
+    console.log("you clicked next on " + currentQuestion.id);
+});
 
 
   // on submit of the form

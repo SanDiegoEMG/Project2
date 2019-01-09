@@ -165,11 +165,7 @@ $("#add-online-profiles").on("click", function(e) {
     console.log(newUser);
   });
 
-  // on submit of the form
-
-  // everything with the class selected 
-
-  // get the text from that item
+  
 
 // The following function doesn't work and I can't figure out why - returns error saying the variables are null
 // also jquery selectors are not working to select the element so using vanilla js - don't know issue

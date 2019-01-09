@@ -1,11 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
-    var Question = sequelize.define("Question", {
+    var Skill = sequelize.define("Skill", {
+        userName: DataTypes.STRING,
         appType: DataTypes.STRING,
         codingTime: DataTypes.INTEGER,
-        concept: DataTypes.STRING,
-        github: DataTypes.STRING,
-        linkedin: DataTypes.STRING,
-        profile: DataTypes.TEXT,
         html: DataTypes.BOOLEAN,
         css: DataTypes.BOOLEAN,
         javascript: DataTypes.BOOLEAN,
@@ -17,13 +14,13 @@ module.exports = function (sequelize, DataTypes) {
         mysql: DataTypes.BOOLEAN,
         handlebars: DataTypes.BOOLEAN,
     });
-    Question.associate = function (models) {
-        models.Question.belongsTo(models.User, {
+    Skill.associate = function (models) {
+        models.Skill.belongsTo(models.User, {
             onDelete: "CASCADE",
             foreignKey: {
                 allowNull: false
             }
         });
     };
-    return Question;
+    return Skill;
 };

@@ -3,6 +3,6 @@ CREATE DATABASE project2_db;
 USE project2_db;
 
 SELECT * FROM users;
-SELECT * FROM matches;
-SELECT * FROM questions;
+SELECT * FROM favorites;
+SELECT * FROM skills;
 

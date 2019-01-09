@@ -177,7 +177,30 @@ $(`#add-online-profiles`).on("click", function() {
     console.log("you clicked next on " + currentQuestion.id);
 });
 
-$(`#create-profile`).on("click", function() {
-    // post all of the user data collected through this form to an api route
-    // and update the database with this info
-});
+
+$("#create-profile").on("click", function(e) {
+    e.preventDefault();
+    $.ajax({
+      method: "PUT",
+      url: "/api/user",
+      data: newUser
+      })
+    })
+      .then(function(data) {
+        console.log(data);
+        window.location.replace("/questions");
+      })
+      .catch(function(err) {
+        console.log(err);
+        alert(err.responseText);
+      });
+  
+  
+// $(`#create-profile`).on("click", function() {
+//     $.get("api/user", function(){})
+//     console.log(newUser);
+//     console.log(newUserSkillsTrue);
+//     // post all of the user data collected through this form to an api route
+//     // and update the database with this info
+// });
+

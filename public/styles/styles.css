@@ -1,5 +1,29 @@
-body {
+#home {
   background-image: url("https://www.thebalancecareers.com/thmb/RYWmC5dIQeNG5qsWsfThiljSBNA=/400x250/filters:no_upscale():max_bytes(150000):strip_icc()/reflection-of-male-hacker-coding-working-hackathon-at-laptop-697538579-5ae5479fff1b780036674eaf.jpg");
   background-size: cover;
   height: 608px;
 }
+.question-title {
+  text-align: center;
+}
+/* #questionnnaire-item-build {
+  padding: 60px;
+}
+#questionnnaire-item-time {
+  display: none;
+}
+#questionnnaire-item-current-skills {
+  display: none;
+}
+#questionnnaire-item-learn-skills {
+  display: none;
+}
+#questionnnaire-item-idea {
+  display: none;
+}
+#questionnnaire-item-online-profiles {
+  display: none;
+}
+#questionnnaire-item-about {
+  display: none;
+} */

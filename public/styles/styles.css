@@ -6,7 +6,7 @@
 .question-title {
   text-align: center;
 }
-/* #questionnnaire-item-build {
+#questionnnaire-item-build {
   padding: 60px;
 }
 #questionnnaire-item-time {
@@ -26,4 +26,14 @@
 }
 #questionnnaire-item-about {
   display: none;
-} */
+}
+
+.selected {
+  background-color: #4CAF50; /* Green */
+}
+
+.hide-btn {
+  width: 300px;
+  height: 300px;
+  display: none;
+}

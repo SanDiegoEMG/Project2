@@ -6,6 +6,3 @@ SELECT * FROM users;
 SELECT * FROM matches;
 SELECT * FROM questions;
 
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;

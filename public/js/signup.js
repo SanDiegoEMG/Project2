@@ -12,16 +12,15 @@
           .trim(),
         password: $("#password-sign-up")
           .val()
+          .trim(),
+        userName: $("#user-name-sign-up")
+          .val()
           .trim()
       }
     })
       .then(function(data) {
         console.log(data);
-<<<<<<< HEAD
-        window.location.replace("questions");
-=======
         window.location.replace("/questions");
->>>>>>> 27ab43d5ac6912de352429cb3256138515fa8ee7
       })
       .catch(function(err) {
         console.log(err);

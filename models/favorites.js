@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Matches = sequelize.define("Match", {
+    var Favorite = sequelize.define("Favorite", {
       userName: {
         type: DataTypes.STRING,
         validate: {
@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     },
       matchScore: DataTypes.INTEGER,
     });
-    return Matches;
+    return Favorite;
   };
 
   // second table that will be related one to many from the user table ... so one user will have lots of matches

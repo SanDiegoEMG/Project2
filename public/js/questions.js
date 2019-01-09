@@ -1,4 +1,4 @@
-var newUser = [];
+var newUser = {};
 $('input:radio[name="appType"]').on("change", function (e) {
     $('input:radio[name="appType"]').each(function () {
         if (this.checked) {
@@ -9,11 +9,7 @@ $('input:radio[name="appType"]').on("change", function (e) {
     });
 });
 $("#add-build").on("click", function () {
-    var appChoice = {
-        appType: $('input:radio[name="appType"]:checked').val()
-    }
-    console.log(appChoice);
-    newUser.push(appChoice);
+    newUser.appType = $('input:radio[name="appType"]:checked').val();
 });
 
 $('input:radio[name="timeType"]').on("change", function (e) {
@@ -26,11 +22,7 @@ $('input:radio[name="timeType"]').on("change", function (e) {
     });
 });
 $("#add-time").on("click", function () {
-    var timeChoice = {
-        codingTime: $('input:radio[name="timeType"]:checked').val()
-    }
-    console.log(timeChoice);
-    newUser.push(timeChoice);
+    newUser.codingTime = $('input:radio[name="timeType"]:checked').val();
 });
 
 // $('input:checkbox[name="skillType"]').on("change", function (e) {
@@ -56,7 +48,7 @@ $(".skill").on("click", function () {
         $(this).addClass("skill-selected");
     }
 });
-
+var newUserSkillsTrue = {};
 $("#add-current-skills").on ("click", function () {
     var userSkills = [];
     $.each($(".skill-selected"), function (i) {
@@ -64,44 +56,40 @@ $("#add-current-skills").on ("click", function () {
         userSkills.push(skillName);
     });
     console.log(userSkills);
-    var skillsTrue = [];
     for (var i=0; i < userSkills.length; i++) {
         switch (userSkills[i]) {
             case "html":
-            skillsTrue.push({html: true});
+            newUserSkillsTrue.html = true;
             break;
             case "css":
-            skillsTrue.push({css: true});
+            newUserSkillsTrue.css = true;
             break;
             case "javascript":
-            skillsTrue.push({javascript: true});
+            newUserSkillsTrue.javascript = true;
             break;
             case "jquery":
-            skillsTrue.push({jquery: true});
+            newUserSkillsTrue.jquery = true;
             break;
             case "node":
-            skillsTrue.push({node: true});
+            newUserSkillsTrue.node = true;
             break;
             case "express":
-            skillsTrue.push({express: true});
+            newUserSkillsTrue.express = true;
             break;
             case "react":
-            skillsTrue.push({react: true});
+            newUserSkillsTrue.react = true;
             break;
             case "handlebars":
-            skillsTrue.push({handlebars: true});
+            newUserSkillsTrue.handlebars = true;
             break;
             case "mysql":
-            skillsTrue.push({mysql: true});
+            newUserSkillsTrue.mysql = true;
             break;
             case "mongodb":
-            skillsTrue.push({mongodb: true});
+            newUserSkillsTrue.mongodb = true;
         }
     }
-    console.log(skillsTrue);
-    newUser.push(skillsTrue);
 });
-
 
 $('input:radio[name="ideaType"]').on("change", function (e) {
     $('input:radio[name="ideaType"]').each(function () {
@@ -113,37 +101,21 @@ $('input:radio[name="ideaType"]').on("change", function (e) {
     });
 });
     $("#add-idea").on("click", function () {
-    var ideaChoice = {
-        concept: $('input:radio[name="ideaType"]:checked').val()
-    }
-    console.log(ideaChoice);
-    newUser.push(ideaChoice);
+        newUser.concept = $('input:radio[name="ideaType"]:checked').val()
+    
 });
 
 $("#add-online-profiles").on("click", function(e) {
     e.preventDefault();
-    var gitHub = $("#form-horizontal-text").val().trim()
-    var linkedIn = $("#form-horizontal-text2").val().trim()
-    var onlineProfiles = {
-        github: gitHub,
-        linkedin: linkedIn
-    }
-    console.log(gitHub);
-    console.log(linkedIn)
-    newUser.push(onlineProfiles);
+    newUser.github = $("#form-horizontal-text").val().trim()
+    newUser.linkedin = $("#form-horizontal-text2").val().trim()
   });
 
   $("#create-profile").on("click", function(e) {
     e.preventDefault();
-    var userProfile = $("#about-you").val().trim()
-    var aboutYou = {
-        profile: aboutYou
-    }
-    console.log(userProfile);
-    // shows up as undefined in console?
-    // newUser.push(aboutYou);
-    newUser.push(userProfile)
+    newUser.profile = $("#about-you").val().trim()
     console.log(newUser);
+    console.log(newUserSkillsTrue);
   });
 
   

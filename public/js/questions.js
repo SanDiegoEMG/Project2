@@ -48,52 +48,48 @@ $(".skill").on("click", function () {
         $(this).addClass("skill-selected");
     }
 });
-
-// $("#add-current-skills").on ("click", function () {
-//     var userSkills = [];
-//     $.each($(".skill-selected"), function (i) {
-//         var skillName = $(this).attr("id");
-//         userSkills.push(skillName);
-//     });
-//     console.log(userSkills);
-//     var skillsTrue = [];
-//     for (var i=0; i < userSkills.length; i++) {
-//         switch (userSkills[i]) {
-//             case "html":
-//             skillsTrue.push({html: true});
-//             break;
-//             case "css":
-//             skillsTrue.push({css: true});
-//             break;
-//             case "javascript":
-//             skillsTrue.push({javascript: true});
-//             break;
-//             case "jquery":
-//             skillsTrue.push({jquery: true});
-//             break;
-//             case "node":
-//             skillsTrue.push({node: true});
-//             break;
-//             case "express":
-//             skillsTrue.push({express: true});
-//             break;
-//             case "react":
-//             skillsTrue.push({react: true});
-//             break;
-//             case "handlebars":
-//             skillsTrue.push({handlebars: true});
-//             break;
-//             case "mysql":
-//             skillsTrue.push({mysql: true});
-//             break;
-//             case "mongodb":
-//             skillsTrue.push({mongodb: true});
-//         }
-//     }
-//     console.log(skillsTrue);
-//     newUser.skills = skillsTrue;
-// });
-
+var newUserSkillsTrue = {};
+$("#add-current-skills").on ("click", function () {
+    var userSkills = [];
+    $.each($(".skill-selected"), function (i) {
+        var skillName = $(this).attr("id");
+        userSkills.push(skillName);
+    });
+    console.log(userSkills);
+    for (var i=0; i < userSkills.length; i++) {
+        switch (userSkills[i]) {
+            case "html":
+            newUserSkillsTrue.html = true;
+            break;
+            case "css":
+            newUserSkillsTrue.css = true;
+            break;
+            case "javascript":
+            newUserSkillsTrue.javascript = true;
+            break;
+            case "jquery":
+            newUserSkillsTrue.jquery = true;
+            break;
+            case "node":
+            newUserSkillsTrue.node = true;
+            break;
+            case "express":
+            newUserSkillsTrue.express = true;
+            break;
+            case "react":
+            newUserSkillsTrue.react = true;
+            break;
+            case "handlebars":
+            newUserSkillsTrue.handlebars = true;
+            break;
+            case "mysql":
+            newUserSkillsTrue.mysql = true;
+            break;
+            case "mongodb":
+            newUserSkillsTrue.mongodb = true;
+        }
+    }
+});
 
 $('input:radio[name="ideaType"]').on("change", function (e) {
     $('input:radio[name="ideaType"]').each(function () {
@@ -119,6 +115,7 @@ $("#add-online-profiles").on("click", function(e) {
     e.preventDefault();
     newUser.profile = $("#about-you").val().trim()
     console.log(newUser);
+    console.log(newUserSkillsTrue);
   });
 
   

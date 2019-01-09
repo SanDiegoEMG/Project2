@@ -2,7 +2,7 @@
     <div class="question-title">
         <h2>What are you interested in building?</h2>
     </div>
-    <div class="question-container">
+    <div class="question-container" id="apptype">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <a>
                 <div>
@@ -25,11 +25,9 @@
                 </div>
             </a>
         </div>
-
-
+        <div class="question-actions">
+        <button class="uk-button uk-button-primary" id="appTypeNext">Next</button>
     </div>
-    <div class="question-actions">
-        <button class="uk-button uk-button-primary">Next</button>
     </div>
 </div>
 
@@ -37,24 +35,58 @@
     <div class="question-title">
         <h2>How much do you code?</h2>
     </div>
-    <div class="question-container">
+    <div class="question-container" id="timeType">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-            <div>
+            <a>
+                <div>
+                    <label for="less-ten">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="less10hours" id="less-ten">
+                            &#60; 10 hours per week
+                        </div>
+                    </label>
+                </div>
+            {{!-- <div>
                 <div class="uk-card uk-card-default uk-card-body">&#60; 10 hours per week</div>
-            </div>
+            </div> --}}
+            </a>
+            <a>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">10-15 hours per week</div>
+                <label for="ten-fif">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="10-15" id="ten-fif">
+                            10-15 hours per week
+                        </div>
+                    </label>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">10-15 hours per week</div> --}}
             </div>
+            </a>
+            <a>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">16-20 hours per week</div>
+                <label for="six-twenty">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="16-20" id="six-twenty">
+                            16-20 hours per week
+                        </div>
+                    </label>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">16-20 hours per week</div> --}}
             </div>
+            </a>
+            <a>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">&#62; 20 hours per week</div>
+                <label for="twenty-up">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="20-more" id="twenty-up">
+                            &#62; 20 hours per week
+                        </div>
+                    </label>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">&#62; 20 hours per week</div> --}}
             </div>
+            </a>
         </div>
-    </div>
-    <div class="question-actions">
+        <div class="question-actions">
         <button class="uk-button uk-button-primary">Next</button>
+    </div>
     </div>
 </div>
 
@@ -65,33 +97,121 @@
     <div class="question-container">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">HTML</div>
-                <div class="uk-card uk-card-default uk-card-body">CSS</div>
+                <a>
+                <label for="html-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="html-skill">
+                            HTML
+                        </div>
+                    </label>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">HTML</div> --}}
+                </a>
+                <a>
+                <label for="css-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="css-skill">
+                             CSS
+                        </div>
+                    </label>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">CSS</div> --}}
+                </a>
             </div>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">JAVASCRIPT</div>
-                <div class="uk-card uk-card-default uk-card-body">JQUERY</div>
+                <a>
+                <label for="javascript-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="javascript-skill">
+                             JAVASCRIPT
+                        </div>
+                    </label>           
+                     {{!-- <div class="uk-card uk-card-default uk-card-body">JAVASCRIPT</div> --}}
+
+                </a>
+                 <a>
+                <label for="jquery-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="jquery-skill">
+                             JQUERY
+                        </div>
+                    </label>           
+                      
+                      {{!-- <div class="uk-card uk-card-default uk-card-body">JQUERY</div> --}}
+                </a>
+               
             </div>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">NODE</div>
-                <div class="uk-card uk-card-default uk-card-body">EXPRESS</div>
+                 <a>
+                <label for="node-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="node-skill">
+                           NODE
+                        </div>
+                    </label>           
+                 
+                       {{!-- <div class="uk-card uk-card-default uk-card-body">NODE</div> --}}
+                </a>
+                 <a>
+                <label for="express-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="express-skill">
+                            EXPRESS
+                        </div>
+                    </label>           
+                      
+                     {{!-- <div class="uk-card uk-card-default uk-card-body">EXPRESS</div> --}}   
+                </a>
+              
             </div>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">REACT</div>
-                <div class="uk-card uk-card-default uk-card-body">HANDLEBARS</div>
+                    <a>
+                <label for="react-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="react-skill">
+                            REACT
+                        </div>
+                    </label>           
+                    {{!-- <div class="uk-card uk-card-default uk-card-body">REACT</div> --}}
+
+                </a>
+                  <a>
+                <label for="handlebars-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="handlebars-skill">
+                           HANDLEBARS
+                        </div>
+                    </label>           
+                {{!-- <div class="uk-card uk-card-default uk-card-body">HANDLEBARS</div> --}}
+
+                </a>
             </div>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">MYSQL</div>
-                <div class="uk-card uk-card-default uk-card-body">MONGODB</div>
+                 <label for="mysql-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="mysql-skill">
+                           MYSQL
+                        </div>
+                    </label>           
+                {{!-- <div class="uk-card uk-card-default uk-card-body">MYSQL</div> --}}
+
+                </a>
+                  <label for="mongodb-skill">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="mongodb-skill">
+                         MONGODB
+                        </div>
+                    </label>           
+                {{!-- <div class="uk-card uk-card-default uk-card-body">MONGODB</div> --}}
+
+                </a>
             </div>
-        </div>
+        </div> 
     </div>
     <div class="question-actions">
         <button class="uk-button uk-button-primary">Next</button>
     </div>
 </div>
 
-<div class="questionnaire-item uk-animation-slide-right" id="questionnnaire-item-learn-skills">
+{{!-- <div class="questionnaire-item uk-animation-slide-right" id="questionnnaire-item-learn-skills">
     <div class="question-title">
         <h2>Select the skills you would like to learn?</h2>
     </div>
@@ -122,7 +242,7 @@
     <div class="question-actions">
         <button class="uk-button uk-button-primary">Next</button>
     </div>
-</div>
+</div> --}}
 
 <div class="questionnaire-item uk-animation-slide-right" id="questionnnaire-item-idea">
     <div class="question-title">
@@ -131,16 +251,46 @@
     <div class="question-container">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">You already have an idea and you want help to develop
-                    it</div>
+                <a>
+                <div>
+                    <label for="have-idea">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="ideaType" value="less" id="have-idea">
+                            You already have an idea and you want help to develop it
+                        </div>
+                    </label>
+                </div>
+            </a>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">You already have an idea and you want help to develop
+                    it</div> --}}
             </div>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">You want to contribute to an idea already in
-                    development</div>
+                <a>
+                <div>
+                    <label for="want-idea">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="ideaType" value="less" id="want-idea">
+                            You want to contribute to an idea already in development
+                        </div>
+                    </label>
+                </div>
+            </a>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">You want to contribute to an idea already in
+                    development</div> --}}
             </div>
             <div>
-                <div class="uk-card uk-card-default uk-card-body">You want connect with a fellow developer and
-                    brainstorm an idea to develop</div>
+                <a>
+                <div>
+                    <label for="brainstorm-idea">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                            <input class="uk-radio hide-btn" type="radio" name="ideaType" value="less" id="brainstorm-idea">
+                            You want connect with a fellow developer and brainstorm an idea to develop
+                        </div>
+                    </label>
+                </div>
+            </a>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">You want connect with a fellow developer and
+                    brainstorm an idea to develop</div> --}}
             </div>
         </div>
     </div>
@@ -153,7 +303,7 @@
     <div class="question-title">
         <h2>Your developer profiles</h2>
     </div>
-    <div class="question-container">
+    <div class="question-container" id="socialType">
         <form class="uk-form-horizontal">
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-horizontal-text">GitHub</label>
@@ -162,16 +312,17 @@
                 </div>
             </div>
             <div class="uk-margin">
-                <label class="uk-form-label" for="form-horizontal-text">LinkedIn</label>
+                <label class="uk-form-label" for="form-horizontal-text2">LinkedIn</label>
                 <div class="uk-form-controls">
-                    <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Your LinkedIn Link">
+                    <input class="uk-input" id="form-horizontal-text2" type="text" placeholder="Your LinkedIn Link">
                 </div>
             </div>
         </form>
-    </div>
     <div class="question-actions">
-        <button class="uk-button uk-button-primary">Next</button>
+        <button id="social-link" class="uk-button uk-button-primary">Next</button>
     </div>
+    </div>
+    
 </div>
 
 <div class="questionnaire-item uk-animation-slide-right" id="questionnnaire-item-about">
@@ -181,12 +332,12 @@
     <div class="question-container">
         <form>
             <div class="uk-margin">
-                <label class="uk-form-label" for="form-text">About You</label>
-                <textarea class="uk-textarea" rows="5" placeholder="Describe yourself so your fellow developers can get to know you..."></textarea>
+                <label class="uk-form-label" for="about-you">About You</label>
+                <textarea id="about-you" class="uk-textarea" rows="5" placeholder="Describe yourself so your fellow developers can get to know you..."></textarea>
             </div>
         </form>
     </div>
     <div class="question-actions">
-        <button class="uk-button uk-button-primary">Create Profile</button>
+        <button class="uk-button uk-button-primary" id="create-file">Create Profile</button>
     </div>
 </div>

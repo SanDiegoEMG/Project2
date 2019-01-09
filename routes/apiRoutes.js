@@ -15,13 +15,12 @@ module.exports = function(app) {
   });
 
   // Create a new example
-  app.post("/api/examples", isAuthenticated, function(req, res) {
-    db.Example.create({
+  app.get("/api/users/:id", isAuthenticated, function(req, res) {
+    db.Users.update({
       UserId: req.user.id,
-      text: req.body.text,
-      description: req.body.description
-    }).then(function(dbExample) {
-      res.json(dbExample);
+      
+    }).then(function(newUser) {
+      res.json(newUser);
     });
   });
 
@@ -57,6 +56,23 @@ module.exports = function(app) {
       .catch(function(err) {
         res.status(422).json(err.errors[0].message);
       });
+  });
+
+  app.put("/api/user", isAuthenticated, function(req, res){
+    // update the user by id using req.user.id 
+    // fill out the rest from the body of the request
+    // respond back with the updated user
+    if(err) {
+      return res.status(400).send(data);
+    }
+    return res.json(user)
+
+  });
+
+  app.get("/api/user", function(req, res){
+    db.User.findall({}).then(function(dbUsers){
+      res.json(dbUsers);
+    });
   });
 
   // Route for logging user out

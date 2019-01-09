@@ -1,8 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     var Skill = sequelize.define("Skill", {
-        userName: DataTypes.STRING,
-        appType: DataTypes.STRING,
-        codingTime: DataTypes.INTEGER,
         html: DataTypes.BOOLEAN,
         css: DataTypes.BOOLEAN,
         javascript: DataTypes.BOOLEAN,

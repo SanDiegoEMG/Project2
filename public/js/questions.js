@@ -68,34 +68,34 @@ $("#add-current-skills").on ("click", function () {
     for (var i=0; i < userSkills.length; i++) {
         switch (userSkills[i]) {
             case "html":
-            skillsTrue += "{html: true}, ";
+            skillsTrue.push({html: true});
             break;
             case "css":
-            skillsTrue += "{css: true}, ";
+            skillsTrue.push({css: true});
             break;
             case "javascript":
-            skillsTrue += "{javascript: true}, ";
+            skillsTrue.push({javascript: true});
             break;
             case "jquery":
-            skillsTrue += "{jquery: true}, ";
+            skillsTrue.push({jquery: true});
             break;
             case "node":
-            skillsTrue += "{node: true}, ";
+            skillsTrue.push({node: true});
             break;
             case "express":
-            skillsTrue += "{express: true}, ";
+            skillsTrue.push({express: true});
             break;
             case "react":
-            skillsTrue += "{react: true}, ";
+            skillsTrue.push({react: true});
             break;
             case "handlebars":
-            skillsTrue += "{handlebars: true}, ";
+            skillsTrue.push({handlebars: true});
             break;
             case "mysql":
-            skillsTrue += "{mysql: true}, ";
+            skillsTrue.push({mysql: true});
             break;
             case "mongodb":
-            skillsTrue += "{mongodb: true}, ";
+            skillsTrue.push({mongodb: true});
         }
     }
     console.log(skillsTrue);

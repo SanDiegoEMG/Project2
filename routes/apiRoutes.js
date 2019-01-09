@@ -16,7 +16,7 @@ module.exports = function (app) {
 
   // Create a new example
   app.get("/api/users/:id", isAuthenticated, function (req, res) {
-    db.Users.update({
+    db.User.update({
       UserId: req.user.id,
 
     }).then(function (newUser) {
@@ -72,7 +72,7 @@ module.exports = function (app) {
   });
 
   app.get("/api/user", function (req, res) {
-    db.User.findall({}).then(function (dbUsers) {
+    db.User.findAll({}).then(function (dbUsers) {
       res.json(dbUsers);
     });
   });

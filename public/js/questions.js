@@ -8,6 +8,7 @@ $('input:radio[name="appType"]').on("change", function (e) {
         }
     });
 });
+
 $("#add-build").on("click", function () {
     newUser.appType = $('input:radio[name="appType"]:checked').val();
 });
@@ -21,6 +22,7 @@ $('input:radio[name="timeType"]').on("change", function (e) {
         }
     });
 });
+
 $("#add-time").on("click", function () {
     newUser.codingTime = $('input:radio[name="timeType"]:checked').val();
 });
@@ -48,6 +50,8 @@ $(".skill").on("click", function () {
         $(this).addClass("skill-selected");
     }
 });
+
+
 var newUserSkillsTrue = {};
 $("#add-current-skills").on ("click", function () {
     var userSkills = [];

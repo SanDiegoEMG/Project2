@@ -4,18 +4,29 @@
                     alt="site logo" uk-img></span></h1>
     </div>
 </div>
-<div class="uk-text-center" uk-grid>
-    <div class="uk-width-auto">
-        <div class="uk-card uk-card-default uk-card-body">
-            <h5>Hello! <span id="username" class="uk-text-emphasis uk-text-capitalize"> User Name</span> <span style="margin-left:1.25em"
-                    uk-icon="icon: pencil"></span></h5>
-            <p class="uk-text-left">About me blurb</p>
-            <p class="uk-text-left">Github link</p>
-            <p class="uk-text-left">Linkedin link</p>
+<div uk-grid>
+    <div class="uk-text-center">
+        <div class="uk-width-auto">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h5>Hello! <span id="username" class="uk-text-emphasis uk-text-capitalize"> {{this.userName}}</span>
+                    <span id="editProfileDetails" style="margin-left:1.25em" uk-icon="icon: pencil"></span></h5>
+                <p class="uk-text-left">Github</p>
+                <p class="uk-text-left">Linked in</p>
+                <p class="uk-text-left">About me blurb</p>
+            </div>
         </div>
+    </div>
 
-    </div>
     <div class="uk-width-expand">
-        <div class="uk-card uk-card-default uk-card-body">User Skills portfolio</div>
+        <div class="uk-card uk-card-default uk-card-body">Your Recommended Matches</div>
     </div>
+
+    <div class="uk-width-expand">
+        <div class="uk-card uk-card-default uk-card-body">Your Skills profile</div>
+    </div>
+
+</div>
+
+<div uk-grid>
+    <div class="uk-card uk-card-default uk-card-body">Personal Connections</div>
 </div>

@@ -4,30 +4,29 @@
     </div>
     <div class="question-container" id="apptype">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-            <a>
-                <div>
-                    <label for="app-mobile">
-                        <div id="app" data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-radio hide-btn" type="radio" name="appType" value="mobile" id="app-mobile">
-                            Mobile App
-                        </div>
-                    </label>
-                </div>
-            </a>
-            <a>
-                <div>
-                    <label for="app-web">
-                        <div id="web" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-radio hide-btn" type="radio" name="appType" value="web" id="app-web">
-                            Web App
-                        </div>
-                    </label>
-                </div>
-            </a>
+
+            <div>
+                <label for="app-mobile">
+                    <div id="app" data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-radio hide-btn" type="radio" name="appType" value="mobile" id="app-mobile">
+                        Mobile App
+                    </div>
+                </label>
+            </div>
+
+            <div>
+                <label for="app-web">
+                    <div id="web" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-radio hide-btn" type="radio" name="appType" value="web" id="app-web">
+                        Web App
+                    </div>
+                </label>
+            </div>
         </div>
+        
         <div class="question-actions">
-        <button class="uk-button uk-button-primary" id="appTypeNext">Next</button>
-    </div>
+            <button class="uk-button uk-button-primary" id="appTypeNext">Next</button>
+        </div>
     </div>
 </div>
 
@@ -37,56 +36,52 @@
     </div>
     <div class="question-container" id="timeType">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-            <a>
-                <div>
-                    <label for="less-ten">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="less10hours" id="less-ten">
-                            &#60; 10 hours per week
-                        </div>
-                    </label>
-                </div>
+
+            <div>
+                <label for="less-ten">
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-radio hide-btn" type="radio" name="timeType" value="less10hours" id="less-ten">
+                        &#60; 10 hours per week
+                    </div>
+                </label>
+            </div>
             {{!-- <div>
                 <div class="uk-card uk-card-default uk-card-body">&#60; 10 hours per week</div>
             </div> --}}
-            </a>
-            <a>
+
             <div>
                 <label for="ten-fif">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="10-15" id="ten-fif">
-                            10-15 hours per week
-                        </div>
-                    </label>
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-radio hide-btn" type="radio" name="timeType" value="10-15" id="ten-fif">
+                        10-15 hours per week
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">10-15 hours per week</div> --}}
             </div>
-            </a>
-            <a>
+
             <div>
                 <label for="six-twenty">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="16-20" id="six-twenty">
-                            16-20 hours per week
-                        </div>
-                    </label>
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-radio hide-btn" type="radio" name="timeType" value="16-20" id="six-twenty">
+                        16-20 hours per week
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">16-20 hours per week</div> --}}
             </div>
-            </a>
-            <a>
+
             <div>
                 <label for="twenty-up">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-radio hide-btn" type="radio" name="timeType" value="20-more" id="twenty-up">
-                            &#62; 20 hours per week
-                        </div>
-                    </label>
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-radio hide-btn" type="radio" name="timeType" value="20-more" id="twenty-up">
+                        &#62; 20 hours per week
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">&#62; 20 hours per week</div> --}}
             </div>
-            </a>
         </div>
         <div class="question-actions">
-        <button class="uk-button uk-button-primary">Next</button>
-    </div>
+            <button class="uk-button uk-button-primary">Next</button>
+        </div>
     </div>
 </div>
 
@@ -97,114 +92,104 @@
     <div class="question-container">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <div>
-                <a>
+
                 <label for="html-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="html-skill">
-                            HTML
-                        </div>
-                    </label>
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="HTML" id="html-skill">
+                        HTML
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">HTML</div> --}}
-                </a>
-                <a>
+
                 <label for="css-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="css-skill">
-                             CSS
-                        </div>
-                    </label>
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="CSS" id="css-skill">
+                        CSS
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">CSS</div> --}}
-                </a>
             </div>
             <div>
-                <a>
+
                 <label for="javascript-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="javascript-skill">
-                             JAVASCRIPT
-                        </div>
-                    </label>           
-                     {{!-- <div class="uk-card uk-card-default uk-card-body">JAVASCRIPT</div> --}}
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="JAVASCRIPT" id="javascript-skill">
+                        JAVASCRIPT
+                    </div>
+                </label>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">JAVASCRIPT</div> --}}
 
-                </a>
-                 <a>
+
                 <label for="jquery-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="jquery-skill">
-                             JQUERY
-                        </div>
-                    </label>           
-                      
-                      {{!-- <div class="uk-card uk-card-default uk-card-body">JQUERY</div> --}}
-                </a>
-               
-            </div>
-            <div>
-                 <a>
-                <label for="node-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="node-skill">
-                           NODE
-                        </div>
-                    </label>           
-                 
-                       {{!-- <div class="uk-card uk-card-default uk-card-body">NODE</div> --}}
-                </a>
-                 <a>
-                <label for="express-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="express-skill">
-                            EXPRESS
-                        </div>
-                    </label>           
-                      
-                     {{!-- <div class="uk-card uk-card-default uk-card-body">EXPRESS</div> --}}   
-                </a>
-              
-            </div>
-            <div>
-                    <a>
-                <label for="react-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="react-skill">
-                            REACT
-                        </div>
-                    </label>           
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">REACT</div> --}}
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="JQUERY" id="jquery-skill">
+                        JQUERY
+                    </div>
+                </label>
 
-                </a>
-                  <a>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">JQUERY</div> --}}
+
+            </div>
+            <div>
+
+                <label for="node-skill">
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="NODE" id="node-skill">
+                        NODE
+                    </div>
+                </label>
+
+                {{!-- <div class="uk-card uk-card-default uk-card-body">NODE</div> --}}
+
+                <label for="express-skill">
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="EXPRESS" id="express-skill">
+                        EXPRESS
+                    </div>
+                </label>
+
+                {{!-- <div class="uk-card uk-card-default uk-card-body">EXPRESS</div> --}}
+
+            </div>
+            <div>
+
+                <label for="react-skill">
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="REACT" id="react-skill">
+                        REACT
+                    </div>
+                </label>
+                {{!-- <div class="uk-card uk-card-default uk-card-body">REACT</div> --}}
+
+
                 <label for="handlebars-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="handlebars-skill">
-                           HANDLEBARS
-                        </div>
-                    </label>           
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="HANDLEBARS" id="handlebars-skill">
+                        HANDLEBARS
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">HANDLEBARS</div> --}}
 
-                </a>
             </div>
             <div>
-                 <label for="mysql-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="mysql-skill">
-                           MYSQL
-                        </div>
-                    </label>           
+                <label for="mysql-skill">
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="MYSQL" id="mysql-skill">
+                        MYSQL
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">MYSQL</div> --}}
 
-                </a>
-                  <label for="mongodb-skill">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
-                            <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="mobile" id="mongodb-skill">
-                         MONGODB
-                        </div>
-                    </label>           
+                <label for="mongodb-skill">
+                    <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <input class="uk-checkbox hide-btn" type="checkbox" name="skillType" value="MONGODB" id="mongodb-skill">
+                        MONGODB
+                    </div>
+                </label>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">MONGODB</div> --}}
 
-                </a>
             </div>
-        </div> 
+        </div>
     </div>
     <div class="question-actions">
         <button class="uk-button uk-button-primary">Next</button>
@@ -251,7 +236,7 @@
     <div class="question-container">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <div>
-                <a>
+
                 <div>
                     <label for="have-idea">
                         <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
@@ -260,12 +245,12 @@
                         </div>
                     </label>
                 </div>
-            </a>
-                {{!-- <div class="uk-card uk-card-default uk-card-body">You already have an idea and you want help to develop
+                {{!-- <div class="uk-card uk-card-default uk-card-body">You already have an idea and you want help to
+                    develop
                     it</div> --}}
             </div>
             <div>
-                <a>
+
                 <div>
                     <label for="want-idea">
                         <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
@@ -274,12 +259,11 @@
                         </div>
                     </label>
                 </div>
-            </a>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">You want to contribute to an idea already in
                     development</div> --}}
             </div>
             <div>
-                <a>
+
                 <div>
                     <label for="brainstorm-idea">
                         <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
@@ -288,7 +272,6 @@
                         </div>
                     </label>
                 </div>
-            </a>
                 {{!-- <div class="uk-card uk-card-default uk-card-body">You want connect with a fellow developer and
                     brainstorm an idea to develop</div> --}}
             </div>
@@ -318,11 +301,11 @@
                 </div>
             </div>
         </form>
-    <div class="question-actions">
-        <button id="social-link" class="uk-button uk-button-primary">Next</button>
+        <div class="question-actions">
+            <button id="social-link" class="uk-button uk-button-primary">Next</button>
+        </div>
     </div>
-    </div>
-    
+
 </div>
 
 <div class="questionnaire-item uk-animation-slide-right" id="questionnnaire-item-about">

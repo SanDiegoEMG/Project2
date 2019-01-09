@@ -22,6 +22,7 @@
 //     }
 // });
 
+
 $('input:radio[name="appType"]').on("change", function (e) {
     $('input:radio[name="appType"]').each(function () {
         if (this.checked) {
@@ -84,25 +85,18 @@ $('input:radio[name="ideaType"]').on("change", function (e) {
 
 $("#social-link").on("click", function(e) {
     e.preventDefault();
-    $.ajax({
-      method: "GET",
-      url: "/api/questio",
-      data: {
-        gitHub: $("#form-horizontal-text")
-          .val()
-          .trim(),
-        linkedIn: $("#form-horizontal-text2")
-          .val()
-          .trim(),
-      }
-    })
-      .then(function(data) {
-        console.log(data);
-      })
-      .catch(function(err) {
-        console.log(err);
-        alert(err.responseText);
-      });
+    var gitHub = $("#form-horizontal-text").val().trim()
+    var linkedIn = $("#form-horizontal-text2").val().trim()
+
+    console.log(gitHub);
+    console.log(linkedIn)
+  });
+
+  $("#create-file").on("click", function(e) {
+    e.preventDefault();
+    var aboutYou = $("#about-you").val().trim()
+
+    console.log(aboutYou)
   });
 
   // on submit of the form

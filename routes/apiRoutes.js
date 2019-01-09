@@ -15,8 +15,8 @@ module.exports = function(app) {
   });
 
   // Create a new example
-  app.post("/api/examples", isAuthenticated, function(req, res) {
-    db.Example.create({
+  app.post("/api/questions", isAuthenticated, function(req, res) {
+    db.Questions.create({
       UserId: req.user.id,
       text: req.body.text,
       description: req.body.description

@@ -8,7 +8,7 @@ $('input:radio[name="appType"]').on("change", function (e) {
         }
     });
 });
-    $("#add-build").on ("click", function () {
+$("#add-build").on("click", function () {
     var appChoice = {
         appType: $('input:radio[name="appType"]:checked').val()
     }
@@ -24,7 +24,8 @@ $('input:radio[name="timeType"]').on("change", function (e) {
             $(this).parent().removeClass("time-selected");
         }
     });
-
+});
+$("#add-time").on("click", function () {
     var timeChoice = {
         codingTime: $('input:radio[name="timeType"]:checked').val()
     }
@@ -110,7 +111,8 @@ $('input:radio[name="ideaType"]').on("change", function (e) {
             $(this).parent().removeClass("idea-selected");
         }
     });
-
+});
+    $("#add-idea").on("click", function () {
     var ideaChoice = {
         concept: $('input:radio[name="ideaType"]:checked').val()
     }
@@ -138,7 +140,9 @@ $("#add-online-profiles").on("click", function(e) {
         profile: aboutYou
     }
     console.log(userProfile);
-    newUser.push(userProfile);
+    // shows up as undefined in console?
+    // newUser.push(aboutYou);
+    newUser.push(userProfile)
     console.log(newUser);
   });
 
@@ -162,6 +166,7 @@ $("#add-online-profiles").on("click", function(e) {
 
 $(`#add-build`).on("click", function () {
     var currentQuestion = document.getElementById("questionnaire-item-build");
+    // var currentQuestion = $("#questionnaire-item-build");
     var nextQuestion = document.getElementById("questionnaire-item-time");
     currentQuestion.style.display = "none";
     nextQuestion.style.display = "block";

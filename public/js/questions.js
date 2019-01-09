@@ -1,27 +1,3 @@
-
-
-
-// $("#app").on("click", function() {
-//     var state = $(this).attr("data-state");
-//     if (state === "notSelected") {
-//       $(this).attr("data-state", "selected");
-//       console.log("this changed to selected ")
-//     } else {
-//       $(this).attr("data-state", "notSelected");
-//       console.log("this changed to notSelected")
-//     }
-//   });
-
-//   $('#web').on("click", (function() {
-//     var click = $(this);
-//     $(this.toggleClass('selected'));
-//     if($this.hasClass('selected')){
-//         $this.text('See More');         
-//     } else {
-//         $this.text('See Less');
-//     }
-// });
-
 var newUser = [];
 $('input:radio[name="appType"]').on("change", function (e) {
     $('input:radio[name="appType"]').each(function () {
@@ -31,7 +7,8 @@ $('input:radio[name="appType"]').on("change", function (e) {
             $(this).parent().removeClass("app-selected");
         }
     });
-
+});
+    $("#add-build").on ("click", function () {
     var appChoice = {
         appType: $('input:radio[name="appType"]:checked').val()
     }
@@ -227,7 +204,3 @@ $(`#create-profile`).on("click", function() {
     // post all of the user data collected through this form to an api route
     // and update the database with this info
 });
-
-
-
-

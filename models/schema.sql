@@ -4,5 +4,5 @@ USE project2_db;
 
 SELECT * FROM users;
 SELECT * FROM matches;
-SELECT * FROM skills;
+SELECT * FROM questions;
 

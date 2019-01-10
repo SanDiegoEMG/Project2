@@ -27,70 +27,56 @@ $("#add-time").on("click", function () {
     newUser.codingTime = $('input:radio[name="timeType"]:checked').val();
 });
 
-// $('input:checkbox[name="skillType"]').on("change", function (e) {
-//     $('input:checkbox[name="skillType"]').each(function () {
-//         if (this.checked) {
-//             $(this).parent().addClass("skill-selected");
-//         } else {
-//             $(this).parent().removeClass("skill-selected");
-//         }
-//     });
-
-//     var choices = {
-//         skillName: $('input:checkbox[name="skillType"]:checked').val()
-//     }
-//     console.log(choices);
-// });
 
 $(".skill").on("click", function () {
     if ($(this).hasClass("skill-selected")) {
         $(this).removeClass("skill-selected");
     }
-    else { 
+    else {
         $(this).addClass("skill-selected");
     }
 });
 
 
 var newUserSkillsTrue = {};
-$("#add-current-skills").on ("click", function () {
+$("#add-current-skills").on("click", function () {
     var userSkills = [];
     $.each($(".skill-selected"), function (i) {
         var skillName = $(this).attr("id");
         userSkills.push(skillName);
     });
     console.log(userSkills);
-    for (var i=0; i < userSkills.length; i++) {
+    for (var i = 0; i < userSkills.length; i++) {
         switch (userSkills[i]) {
             case "html":
-            newUserSkillsTrue.html = true;
-            break;
+                newUserSkillsTrue.html = true;
+                break;
             case "css":
-            newUserSkillsTrue.css = true;
-            break;
+                newUserSkillsTrue.css = true;
+                break;
             case "javascript":
-            newUserSkillsTrue.javascript = true;
-            break;
+                newUserSkillsTrue.javascript = true;
+                break;
             case "jquery":
-            newUserSkillsTrue.jquery = true;
-            break;
+                newUserSkillsTrue.jquery = true;
+                break;
             case "node":
-            newUserSkillsTrue.node = true;
-            break;
+                newUserSkillsTrue.node = true;
+                break;
             case "express":
-            newUserSkillsTrue.express = true;
-            break;
+                newUserSkillsTrue.express = true;
+                break;
             case "react":
-            newUserSkillsTrue.react = true;
-            break;
+                newUserSkillsTrue.react = true;
+                break;
             case "handlebars":
-            newUserSkillsTrue.handlebars = true;
-            break;
+                newUserSkillsTrue.handlebars = true;
+                break;
             case "mysql":
-            newUserSkillsTrue.mysql = true;
-            break;
+                newUserSkillsTrue.mysql = true;
+                break;
             case "mongodb":
-            newUserSkillsTrue.mongodb = true;
+                newUserSkillsTrue.mongodb = true;
         }
     }
 });
@@ -104,25 +90,25 @@ $('input:radio[name="ideaType"]').on("change", function (e) {
         }
     });
 });
-    $("#add-idea").on("click", function () {
-        newUser.concept = $('input:radio[name="ideaType"]:checked').val()
-    
+$("#add-idea").on("click", function () {
+    newUser.concept = $('input:radio[name="ideaType"]:checked').val()
+
 });
 
-$("#add-online-profiles").on("click", function(e) {
+$("#add-online-profiles").on("click", function (e) {
     e.preventDefault();
     newUser.github = $("#form-horizontal-text").val().trim()
     newUser.linkedin = $("#form-horizontal-text2").val().trim()
-  });
+});
 
-  $("#create-profile").on("click", function(e) {
+$("#create-profile").on("click", function (e) {
     e.preventDefault();
     newUser.profile = $("#about-you").val().trim()
     console.log(newUser);
     console.log(newUserSkillsTrue);
-  });
+});
 
-  
+
 
 // The following function doesn't work and I can't figure out why - returns error saying the variables are null
 // also jquery selectors are not working to select the element so using vanilla js - don't know issue
@@ -149,7 +135,7 @@ $(`#add-build`).on("click", function () {
     console.log("you clicked next on " + currentQuestion.id);
 });
 
-$(`#add-time`).on("click", function() {
+$(`#add-time`).on("click", function () {
     var currentQuestion = document.getElementById("questionnaire-item-time");
     var nextQuestion = document.getElementById("questionnaire-item-current-skills");
     currentQuestion.style.display = "none";
@@ -157,7 +143,7 @@ $(`#add-time`).on("click", function() {
     console.log("you clicked next on " + currentQuestion.id);
 });
 
-$(`#add-current-skills`).on("click", function() {
+$(`#add-current-skills`).on("click", function () {
     var currentQuestion = document.getElementById("questionnaire-item-current-skills");
     var nextQuestion = document.getElementById("questionnaire-item-idea");
     currentQuestion.style.display = "none";
@@ -165,7 +151,7 @@ $(`#add-current-skills`).on("click", function() {
     console.log("you clicked next on " + currentQuestion.id);
 });
 
-$(`#add-idea`).on("click", function() {
+$(`#add-idea`).on("click", function () {
     var currentQuestion = document.getElementById("questionnaire-item-idea");
     var nextQuestion = document.getElementById("questionnaire-item-online-profiles");
     currentQuestion.style.display = "none";
@@ -173,7 +159,7 @@ $(`#add-idea`).on("click", function() {
     console.log("you clicked next on " + currentQuestion.id);
 });
 
-$(`#add-online-profiles`).on("click", function() {
+$(`#add-online-profiles`).on("click", function () {
     var currentQuestion = document.getElementById("questionnaire-item-online-profiles");
     var nextQuestion = document.getElementById("questionnaire-item-about");
     currentQuestion.style.display = "none";
@@ -182,24 +168,24 @@ $(`#add-online-profiles`).on("click", function() {
 });
 
 
-$("#create-profile").on("click", function(e) {
+$("#create-profile").on("click", function (e) {
     e.preventDefault();
     $.ajax({
-      method: "PUT",
-      url: "/api/user",
-      data: newUser
-      })
+        method: "PUT",
+        url: "/api/user",
+        data: newUser
     })
-      .then(function(data) {
+})
+    .then(function (data) {
         console.log(data);
         window.location.replace("/questions");
-      })
-      .catch(function(err) {
+    })
+    .catch(function (err) {
         console.log(err);
         alert(err.responseText);
-      });
-  
-  
+    });
+
+
 // $(`#create-profile`).on("click", function() {
 //     $.get("api/user", function(){})
 //     console.log(newUser);

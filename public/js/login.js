@@ -2,7 +2,7 @@ $("#user-login").on("click", function(e) {
     e.preventDefault();
     $.ajax({
       method: "POST",
-      url: "/api/login",
+      url: "/api/signup",
       data: {
         email: $("#email")
           .val()

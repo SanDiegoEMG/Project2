@@ -15,8 +15,4 @@ module.exports = function(app) {
     res.render("404");
   });
 
-  // catch for any http route without a defined path
-  app.get("/profile", isAuthenticated, function(req, res) {
-    res.render("profile");
-  });
 };

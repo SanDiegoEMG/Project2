@@ -3,6 +3,9 @@
   background-size: cover;
   height: 608px;
 }
+.uk-navbar-container {
+  background: #69779b;
+}
 .container {
   text-align: center;
 }

@@ -74,9 +74,6 @@ module.exports = function (app) {
   });
 
   app.put("/api/user", isAuthenticated, function(req, res){
-
-
-
     // update the user by id using req.user.id 
     db.User.update(req.body, {where: {id: req.user.id}
       }).then(function (data) {

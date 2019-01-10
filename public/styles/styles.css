@@ -131,7 +131,7 @@ h2 {
   color:rgb(36, 37, 39);
   cursor: pointer;
 }
-#questionnaire-item-current-skills {
+#questionnaire-item-current-skills, #modal-noResponse {
   display: none;
 }
 #skills-title, #add-current-skills, .skill-selected {

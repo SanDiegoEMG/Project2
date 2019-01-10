@@ -1,7 +1,7 @@
 // empty object that will be added to upon click event from sign-up then pushed to user table in db
 var newUser = {};
 
-// process for collecting info from 'questions.handlebars' user prompts 
+// sets up selections for 'questions.handlebars' user prompts 
 // uses radio type to allow only 1 selection from 'appType' class
 $('input:radio[name="appType"]').on("change", function (e) {
     $('input:radio[name="appType"]').each(function () {
@@ -13,11 +13,27 @@ $('input:radio[name="appType"]').on("change", function (e) {
     });
 });
 
+
+
 // grabs user selection for 'appType' and adds it to newUser object
 $("#add-build").on("click", function () {
     newUser.appType = $('input:radio[name="appType"]:checked').val();
-    showNextQuestion("questionnaire-item-build", "questionnaire-item-time")
+    if (newUser.appType === undefined) {
+        console.log("oops! must make selection");
+        var modal = UIkit.modal("#modal-no-response");
+        modal.show();
+    } else {
+        showNextQuestion("questionnaire-item-build", "questionnaire-item-time")
+    }
 });
+
+// var obj = { 
+//     name: "Em"
+// };
+
+// obj.name;
+// obj["name"];
+
 
 // uses radio type to allow only 1 selection from 'timeType' class
 $('input:radio[name="timeType"]').on("change", function (e) {
@@ -52,7 +68,7 @@ var newUserSkillsTrue = {};
 // collects the skills with class 'skill-selected' and pushes them to newUserSkillsTrue array
 $("#add-current-skills").on("click", function () {
     var userSkills = [];
-    
+
     $.each($(".skill-selected"), function (i) {
         var skillName = $(this).attr("id");
         userSkills.push(skillName);

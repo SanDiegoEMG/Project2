@@ -58,15 +58,24 @@ module.exports = function (app) {
       });
   });
 
-  var skillArray = []
-  app.post("/api/skill", function(req, res) {
+  
+  
+  // var skillArray = []
+
+  app.post("/api/skill", isAuthenticated, function(req, res) {
    // Continue from here
     // console.log(req.body);
-      
-    db.Skill.create(req.body).then(function(dbskills) {
+    console.log(req.user);
+    var skillBody = req.body;
+    skillBody.UserId = req.user.id;  
+    db.Skill.create(skillBody).then(function(dbskills) {
       res.json(dbskills); 
-      skillArray.push(dbskills);
-      console.log(skillArray[1].dataValues)
+     
+      // skillArray.push(dbskills);
+
+      // console.log(skillArray[0])
+
+
     })
   });
 

@@ -16,12 +16,14 @@ var API = {
       data: JSON.stringify(example)
     });
   },
+
   getExamples: function() {
     return $.ajax({
       url: "api/examples",
       type: "GET"
     });
   },
+  
   deleteExample: function(id) {
     return $.ajax({
       url: "api/examples/" + id,

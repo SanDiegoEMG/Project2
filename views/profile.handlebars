@@ -8,8 +8,8 @@
     <div class="uk-text-center">
         <div class="uk-width-auto">
             <div class="uk-card uk-card-default uk-card-body">
-                <h5>Hello! <span id="username" class="uk-text-emphasis uk-text-capitalize"> {{this.userName}}</span>
-                    <span id="editProfileDetails" style="margin-left:1.25em" uk-icon="icon: pencil"></span></h5>
+                <h5 class="uk-text-left">Hello {{user.email}}! </h5>
+                {{!-- SPAN with pencil icon     <span id="editProfileDetails" style="margin-left:1.25em" uk-icon="icon: pencil"></span> --}}
                 <p class="uk-text-left">Github</p>
                 <p class="uk-text-left">Linked in</p>
                 <p class="uk-text-left">About me blurb</p>
@@ -18,7 +18,7 @@
     </div>
 
     <div class="uk-width-expand">
-        <div class="uk-card uk-card-default uk-card-body">Your Recommended Matches</div>
+        <div class="uk-card uk-card-default uk-card-body">Recommended Matches</div>
     </div>
 
     <div class="uk-width-expand">

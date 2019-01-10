@@ -46,10 +46,6 @@ $(".skill").on("click", function () {
     }
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 3b377882d22fbd9494b6446dc4d1ffbe9a18e734
 // empty object ready to record input from a user's skills responses
 var newUserSkillsTrue = {};
 

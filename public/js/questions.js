@@ -185,7 +185,7 @@ $("#create-profile").on("click", function(e) {
       url: "/api/user",
       data: newUser
       })
-    })
+   
       .then(function(data) {
         console.log(data);
         window.location.replace("/questions");
@@ -194,7 +194,23 @@ $("#create-profile").on("click", function(e) {
         console.log(err);
         alert(err.responseText);
       });
-  
+ })
+
+      $("#add-current-skills").on("click", function(e) {
+        
+        $.ajax({
+          method: "POST",
+          url: "/api/skill",
+          data: newUserSkillsTrue,
+          }).then(function(data) {
+            console.log(data);
+            // window.location.replace("/questions");
+          })
+          .catch(function(err) {
+            console.log(err);
+            alert(err.responseText);
+          })
+  });
   
 // $(`#create-profile`).on("click", function() {
 //     $.get("api/user", function(){})

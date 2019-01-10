@@ -58,6 +58,20 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/api/skill", function(req, res) {
+    console.log(req.body);
+    db.Skill.create(req.body).then(function(dbskills) {
+      res.json(dbskills);
+      // .then(function() {
+      //   res.redirect(307, "/api/login");
+      // })
+      // .catch(function(err) {
+      //   res.status(422).json(err.errors[0].message);
+      // });   
+    });
+
+  });
+
   app.put("/api/user", isAuthenticated, function(req, res){
     // update the user by id using req.user.id 
     // fill out the rest from the body of the request

@@ -48,9 +48,13 @@ $(".skill").on("click", function () {
         $(this).addClass("skill-selected");
     }
 });
+
+
+
 var newUserSkillsTrue = {};
 $("#add-current-skills").on("click", function () {
     var userSkills = [];
+    
     $.each($(".skill-selected"), function (i) {
         var skillName = $(this).attr("id");
         userSkills.push(skillName);
@@ -114,8 +118,8 @@ $("#add-online-profiles").on("click", function (e) {
 $("#create-profile").on("click", function (e) {
     e.preventDefault();
     newUser.profile = $("#about-you").val().trim()
-    console.log(newUser);
-    console.log(newUserSkillsTrue);
+    // console.log(newUser);
+    // console.log(newUserSkillsTrue);
 });
 
 
@@ -188,31 +192,32 @@ $("#create-profile").on("click", function (e) {
       })
    
       .then(function(data) {
-        console.log(data);
-        window.location.replace("/questions");
+        // console.log(data);
+        window.location.replace("/profile");
       })
       .catch(function(err) {
         console.log(err);
         alert(err.responseText);
       });
- })
 
-      $("#add-current-skills").on("click", function(e) {
+ })
+     
+     
+        $("#add-current-skills").on("click", function(e) {
         
         $.ajax({
           method: "POST",
           url: "/api/skill",
           data: newUserSkillsTrue,
-          }).then(function(data) {
-            console.log(data);
-            // window.location.replace("/questions");
+          }).then(function() {
+          
           })
           .catch(function(err) {
             console.log(err);
             alert(err.responseText);
           })
   });
-   master
+  
 // $(`#create-profile`).on("click", function() {
 //     $.get("api/user", function(){})
 //     console.log(newUser);

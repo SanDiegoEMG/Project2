@@ -136,7 +136,7 @@ $("#add-online-profiles").on("click", function (e) {
 // PUT request making the newUser object available to the server API (apiRoutes.js)
 $("#create-profile").on("click", function (e) {
     e.preventDefault();
-    newUser.profile = $("#about-you").val().trim()
+    newUser.profileStatement = $("#about-you").val().trim()
     console.log(newUser);
     console.log(newUserSkillsTrue);
     $.ajax({

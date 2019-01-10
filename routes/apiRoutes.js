@@ -68,20 +68,8 @@ module.exports = function (app) {
       skillArray.push(dbskills);
       console.log(skillArray[1].dataValues)
     })
-   
-
   });
 
-  // app.get("/api/skill", function(req, res){
-   
-  //   db.User.findAll({
-  //     where: {
-  //       id : id
-  //     }
-  //   }).then(function (e){
-  //     console.log(e)
-  //   })
-  // })
   
 
   app.put("/api/user", isAuthenticated, function(req, res){

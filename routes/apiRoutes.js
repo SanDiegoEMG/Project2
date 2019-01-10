@@ -58,20 +58,31 @@ module.exports = function (app) {
       });
   });
 
-
+  var skillArray = []
   app.post("/api/skill", function(req, res) {
-    console.log(req.body);
+   // Continue from here
+    // console.log(req.body);
+      
     db.Skill.create(req.body).then(function(dbskills) {
-      res.json(dbskills);
-      // .then(function() {
-      //   res.redirect(307, "/api/login");
-      // })
-      // .catch(function(err) {
-      //   res.status(422).json(err.errors[0].message);
-      // });   
-    });
+      res.json(dbskills); 
+      skillArray.push(dbskills);
+      console.log(skillArray[1].dataValues)
+    })
+   
 
   });
+
+  // app.get("/api/skill", function(req, res){
+   
+  //   db.User.findAll({
+  //     where: {
+  //       id : id
+  //     }
+  //   }).then(function (e){
+  //     console.log(e)
+  //   })
+  // })
+  
 
   app.put("/api/user", isAuthenticated, function(req, res){
     // update the user by id using req.user.id 

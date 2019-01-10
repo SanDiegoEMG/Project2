@@ -18,5 +18,5 @@ module.exports = function(sequelize, DataTypes) {
     return Favorite;
   };
 
-  // second table that will be related one to many from the user table ... so one user will have lots of matches
+
   

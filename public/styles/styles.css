@@ -17,6 +17,11 @@
   padding-top: 20px;
   padding-bottom:20px;
 }
+#logout {
+  margin-right: 20px;
+  font-size: 18px;
+  color:rgb(36, 37, 39);
+}
 #landing-page-content {
   border-radius: 10px;
   text-align: center;
@@ -102,28 +107,43 @@ h2 {
   color:rgb(36, 37, 39);
   padding-top: 20px;
 }
-#build-title {
-  background: #FF9279;
-}
-#add-build {
+.next-question {
   border-radius: 10px;
+}
+#build-title, #add-build, .app-selected {
   background: #FF9279;
 }
-#app {
+#app, #web {
   border-radius: 10px;
   border: 1px solid #FF9279;
   color:rgb(36, 37, 39);
-}
-#web {
-  border-radius: 10px;
-  border: 1px solid #FF9279;
-  color:rgb(36, 37, 39);
+  cursor: pointer;
 }
 #questionnaire-item-time {
   display: none;
 }
+#time-title, #add-time, .time-selected {
+  background: #5080FF;
+}
+.time-div {
+  border-radius: 10px;
+  border: 1px solid #5080FF;
+  color:rgb(36, 37, 39);
+  cursor: pointer;
+}
 #questionnaire-item-current-skills {
   display: none;
+}
+#skills-title, #add-current-skills, .skill-selected {
+  background: #f7f48b;
+  color: rgb(36, 37, 39);
+}
+.skill {
+  border-radius: 10px;
+  border: 1px solid #f7f48b;;
+  color:rgb(36, 37, 39);
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 #questionnaire-item-learn-skills {
   display: none;
@@ -131,16 +151,30 @@ h2 {
 #questionnaire-item-idea {
   display: none;
 }
+#idea-title, #add-idea, .idea-selected {
+  background: #FF9279;
+}
+.idea-div {
+  border-radius: 10px;
+  border: 1px solid #FF9279;
+  color:rgb(36, 37, 39);
+  cursor: pointer;
+}
 #questionnaire-item-online-profiles {
   display: none;
+}
+#online-profile-title, #add-online-profiles {
+  background: #5080FF;
 }
 #questionnaire-item-about {
   display: none;
 }
-.app-selected {
-  background-color: #FF9279; 
+#about-title, #create-profile {
+  background: #89B24C;
 }
-/* .time-selected, .skill-selected, .idea-selected */
+#create-profile {
+  border-radius: 10px;
+}
 .hide-btn {
   width: 300px;
   height: 300px;

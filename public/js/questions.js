@@ -46,12 +46,17 @@ $(".skill").on("click", function () {
 });
 
 
+<<<<<<< HEAD
+
+=======
 // empty object ready to record input from a user's skills responses
+>>>>>>> ef59017513eeec4f7a7319a6ac054ab14c11711e
 var newUserSkillsTrue = {};
 
 // collects the skills with class 'skill-selected' and pushes them to newUserSkillsTrue array
 $("#add-current-skills").on("click", function () {
     var userSkills = [];
+    
     $.each($(".skill-selected"), function (i) {
         var skillName = $(this).attr("id");
         userSkills.push(skillName);
@@ -119,8 +124,8 @@ $("#add-online-profiles").on("click", function (e) {
 $("#create-profile").on("click", function (e) {
     e.preventDefault();
     newUser.profile = $("#about-you").val().trim()
-    console.log(newUser);
-    console.log(newUserSkillsTrue);
+    // console.log(newUser);
+    // console.log(newUserSkillsTrue);
 });
 
 

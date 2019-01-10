@@ -6,18 +6,16 @@ module.exports = function(app) {
     return res.render("index");
   });
   
-  app.get("/questions", function(req, res) {
-    return res.render("questions");
+  app.get("/questions", isAuthenticated, function(req, res) {
+    db.User.findOne({
+      where: {
+        id: req.user.id
+      },
+      include: [db.Skill]
+    }).then(function(dbUser) {
+      res.render("questions", { user: dbUser });
+    });
   });
-
-  app.get("/profile", function(req, res) {
-    return res.render("profile");
-  });
-   
-  // Load login page
-  // app.get("/", function(req, res) {
-  //   res.render("index");
-  // });
 
   // Load profile page
   app.get("/profile", isAuthenticated, function(req, res) {
@@ -25,20 +23,9 @@ module.exports = function(app) {
       where: {
         id: req.user.id
       },
-      // include: [db.User]
+      include: [db.Skill]
     }).then(function(dbUser) {
       res.render("profile", { user: dbUser });
-    });
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", isAuthenticated, function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
     });
   });
 

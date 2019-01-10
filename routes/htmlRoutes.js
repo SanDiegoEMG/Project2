@@ -6,13 +6,13 @@ module.exports = function(app) {
     return res.render("index");
   });
   
-  app.get("/questions", function(req, res) {
-    return res.render("questions");
-  });
+  // app.get("/questions", function(req, res) {
+  //   return res.render("questions");
+  // });
 
-  app.get("/profile", function(req, res) {
-    return res.render("profile");
-  });
+  // app.get("/profile", function(req, res) {
+  //   return res.render("profile");
+  // });
    
   // Load login page
   // app.get("/", function(req, res) {
@@ -47,3 +47,4 @@ module.exports = function(app) {
     res.render("404");
   });
 };
+

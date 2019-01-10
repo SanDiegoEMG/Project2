@@ -1,22 +1,116 @@
 #home {
-  background-image: url("https://www.thebalancecareers.com/thmb/RYWmC5dIQeNG5qsWsfThiljSBNA=/400x250/filters:no_upscale():max_bytes(150000):strip_icc()/reflection-of-male-hacker-coding-working-hackathon-at-laptop-697538579-5ae5479fff1b780036674eaf.jpg");
+  background-image: url("../images/home-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 608px;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  text-align: center;
+  opacity: 0.75;
 }
-.uk-navbar-container {
-  background: #69779b;
+#nav-logo {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom:20px;
 }
-.container {
+#landing-page-content {
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background: white;
+  padding-bottom: 20px;
+  opacity: 0.97;
+}
+#landing-title {
+  background: #89B24C;
+  text-align: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  font-size: 17px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+h1 {
+  padding-top: 20px;
+  color: white;
+}
+a:link, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+#signup-link, #login-link {
+  background: #89B24C;
+  border-radius: 10px;
+  color:white;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#question-page-container {
+  background-image: url("../images/coding-together.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
   text-align: center;
 }
 .question-title {
   text-align: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  font-size: 17px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
 }
 .questionnaire-item {
+  border-radius: 10px;
   text-align: center;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background: white;
+  padding-bottom: 20px;
 }
-#questionnaire-item-build {
-  padding: 60px;
+.question-container {
+  padding: 20px 20px 20px 20px;
+}
+h2 {
+  color:rgb(36, 37, 39);
+  padding-top: 20px;
+}
+#build-title {
+  background: #FF9279;
+}
+#add-build {
+  border-radius: 10px;
+  background: #FF9279;
+}
+#app {
+  border-radius: 10px;
+  border: 1px solid #FF9279;
+  color:rgb(36, 37, 39);
+}
+#web {
+  border-radius: 10px;
+  border: 1px solid #FF9279;
+  color:rgb(36, 37, 39);
 }
 #questionnaire-item-time {
   display: none;
@@ -36,10 +130,10 @@
 #questionnaire-item-about {
   display: none;
 }
-
-.app-selected, .time-selected, .skill-selected, .idea-selected {
-  background-color: #4CAF50; /* Green */
+.app-selected {
+  background-color: #FF9279; 
 }
+/* .time-selected, .skill-selected, .idea-selected */
 .hide-btn {
   width: 300px;
   height: 300px;

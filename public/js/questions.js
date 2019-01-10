@@ -181,15 +181,13 @@ $(`#add-online-profiles`).on("click", function () {
 $("#create-profile").on("click", function (e) {
     e.preventDefault();
     $.ajax({
-
       method: "PUT",
       url: "/api/user",
       data: newUser
       })
-   
       .then(function(data) {
         console.log(data);
-        window.location.replace("/questions");
+        window.location.replace("/profile");
       })
       .catch(function(err) {
         console.log(err);
@@ -197,8 +195,7 @@ $("#create-profile").on("click", function (e) {
       });
  })
 
-      $("#add-current-skills").on("click", function(e) {
-        
+      $("#add-current-skills").on("click", function(e) {   
         $.ajax({
           method: "POST",
           url: "/api/skill",
@@ -212,7 +209,6 @@ $("#create-profile").on("click", function (e) {
             alert(err.responseText);
           })
   });
-   master
 // $(`#create-profile`).on("click", function() {
 //     $.get("api/user", function(){})
 //     console.log(newUser);
@@ -220,4 +216,3 @@ $("#create-profile").on("click", function (e) {
 //     // post all of the user data collected through this form to an api route
 //     // and update the database with this info
 // });
-

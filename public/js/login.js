@@ -1,24 +1,23 @@
 $("#user-login").on("click", function(e) {
-    e.preventDefault();
-    $.ajax({
-      method: "POST",
-      url: "/api/login",
-      data: {
-        email: $("#email")
-          .val()
-          .trim(),
-        password: $("#password")
-          .val()
-          .trim()
-      }
+  e.preventDefault();
+  $.ajax({
+    method: "POST",
+    url: "/api/login",
+    data: {
+      email: $("#email")
+        .val()
+        .trim(),
+      password: $("#password")
+        .val()
+        .trim()
+    }
+  })
+    .then(function(data) {
+      console.log(data);
+      window.location.replace("/profile");
     })
-      .then(function(data) {
-        console.log(data);
-        window.location.replace("/profile");
-      })
-      .catch(function(err) {
-        console.log(err);
-        alert(err.responseText);
-      });
-  });
-  
+    .catch(function(err) {
+      console.log(err);
+      alert(err.responseText);
+    });
+});

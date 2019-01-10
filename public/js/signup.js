@@ -1,3 +1,4 @@
+ // at end of sign-up modal - grabs info entered there, makes it available to the server API and redirects the user to the questions.handlebars page 
  $("#user-sign-up").on("click", function(e) {
     e.preventDefault();
     $.ajax({

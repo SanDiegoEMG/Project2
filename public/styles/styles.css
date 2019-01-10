@@ -1,25 +1,149 @@
 #home {
-  background-image: url("https://www.thebalancecareers.com/thmb/RYWmC5dIQeNG5qsWsfThiljSBNA=/400x250/filters:no_upscale():max_bytes(150000):strip_icc()/reflection-of-male-hacker-coding-working-hackathon-at-laptop-697538579-5ae5479fff1b780036674eaf.jpg");
+  background-image: url("../images/home-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 608px;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  text-align: center;
+  opacity: 0.75;
 }
-.container {
+#nav-logo {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom:20px;
+}
+#logout {
+  margin-right: 20px;
+  font-size: 18px;
+  color:rgb(36, 37, 39);
+}
+#landing-page-content {
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background: white;
+  padding-bottom: 20px;
+  opacity: 0.97;
+}
+#landing-title {
+  background: #89B24C;
+  text-align: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  font-size: 17px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+h1 {
+  padding-top: 20px;
+  color: white;
+}
+a:link, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+#signup-link, #login-link {
+  background: #89B24C;
+  border-radius: 10px;
+  color:white;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#user-login, #user-sign-up {
+  background: #89B24C;
+  border-radius: 10px;
+}
+#cancel-login, #cancel-sign-up {
+  border-radius: 10px;
+}
+#question-page-container {
+  background-image: url("../images/coding-together.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
   text-align: center;
 }
 .question-title {
   text-align: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  font-size: 17px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
 }
 .questionnaire-item {
+  border-radius: 10px;
   text-align: center;
+  margin-top: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background: white;
+  padding-bottom: 20px;
 }
-#questionnaire-item-build {
-  padding: 60px;
+.question-container {
+  padding: 20px 20px 20px 20px;
+}
+h2 {
+  color:rgb(36, 37, 39);
+  padding-top: 20px;
+}
+.next-question {
+  border-radius: 10px;
+}
+#build-title, #add-build, .app-selected {
+  background: #FF9279;
+}
+#app, #web {
+  border-radius: 10px;
+  border: 1px solid #FF9279;
+  color:rgb(36, 37, 39);
+  cursor: pointer;
 }
 #questionnaire-item-time {
   display: none;
 }
+#time-title, #add-time, .time-selected {
+  background: #5080FF;
+}
+.time-div {
+  border-radius: 10px;
+  border: 1px solid #5080FF;
+  color:rgb(36, 37, 39);
+  cursor: pointer;
+}
 #questionnaire-item-current-skills {
   display: none;
+}
+#skills-title, #add-current-skills, .skill-selected {
+  background: #f7f48b;
+  color: rgb(36, 37, 39);
+}
+.skill {
+  border-radius: 10px;
+  border: 1px solid #f7f48b;;
+  color:rgb(36, 37, 39);
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 #questionnaire-item-learn-skills {
   display: none;
@@ -27,15 +151,29 @@
 #questionnaire-item-idea {
   display: none;
 }
+#idea-title, #add-idea, .idea-selected {
+  background: #FF9279;
+}
+.idea-div {
+  border-radius: 10px;
+  border: 1px solid #FF9279;
+  color:rgb(36, 37, 39);
+  cursor: pointer;
+}
 #questionnaire-item-online-profiles {
   display: none;
+}
+#online-profile-title, #add-online-profiles {
+  background: #5080FF;
 }
 #questionnaire-item-about {
   display: none;
 }
-
-.app-selected, .time-selected, .skill-selected, .idea-selected {
-  background-color: #4CAF50; /* Green */
+#about-title, #create-profile {
+  background: #89B24C;
+}
+#create-profile {
+  border-radius: 10px;
 }
 .hide-btn {
   width: 300px;

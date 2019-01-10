@@ -1,11 +1,11 @@
-<div class="container">
+<div id="question-page-container">
 
     <div class="questionnaire-item" id="questionnaire-item-build">
-        <div class="question-title">
+        <div class="question-title" id="build-title">
             <h2>What are you interested in building?</h2>
         </div>
         <div class="question-container" id="apptype">
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
                 <div>
                     <label for="app-mobile">
                         <div id="app" class="uk-card uk-card-default uk-card-body">
@@ -24,21 +24,21 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="question-actions">
             <button class="uk-button uk-button-primary next-question" id="add-build">Next</button>
         </div>
     </div>
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-time">
-        <div class="question-title">
+        <div class="question-title" id="time-title">
             <h2>How much do you code?</h2>
         </div>
         <div class="question-container" id="timeType">
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
                 <div>
                     <label for="less-ten">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body time-div">
                             <input class="uk-radio hide-btn" type="radio" name="timeType" value="less10hours" id="less-ten">
                             &#60; 10 hours per week
                         </div>
@@ -49,7 +49,7 @@
                 </div> --}}
                 <div>
                     <label for="ten-fif">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body time-div">
                             <input class="uk-radio hide-btn" type="radio" name="timeType" value="10-15" id="ten-fif">
                             10-15 hours per week
                         </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div>
                     <label for="six-twenty">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body time-div">
                             <input class="uk-radio hide-btn" type="radio" name="timeType" value="16-20" id="six-twenty">
                             16-20 hours per week
                         </div>
@@ -67,7 +67,7 @@
                 </div>
                 <div>
                     <label for="twenty-up">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body time-div">
                             <input class="uk-radio hide-btn" type="radio" name="timeType" value="20-more" id="twenty-up">
                             &#62; 20 hours per week
                         </div>
@@ -82,11 +82,11 @@
     </div>
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-current-skills">
-        <div class="question-title">
+        <div class="question-title" id="skills-title">
             <h2>Select all of your current skills.</h2>
         </div>
         <div class="question-container">
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
                 <div>
                     <div class="uk-card uk-card-default uk-card-body skill" id="html">HTML</div>
                     <div class="uk-card uk-card-default uk-card-body skill" id="css">CSS</div>
@@ -119,7 +119,7 @@
             <h2>Select the skills you would like to learn?</h2>
         </div>
         <div class="question-container">
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
                 <div>
                     <div class="uk-card uk-card-default uk-card-body learn-skill" id="html">HTML</div>
                     <div class="uk-card uk-card-default uk-card-body learn-skill" id="css">CSS</div>
@@ -148,14 +148,14 @@
     </div> --}}
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-idea">
-        <div class="question-title">
+        <div class="question-title" id="idea-title">
             <h2>Application Concept. Select the answer that best describes your situation</h2>
         </div>
         <div class="question-container">
-            <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
                 <div>
                     <label for="have-idea">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body idea-div">
                             <input class="uk-radio hide-btn" type="radio" name="ideaType" value="haveIdea" id="have-idea">
                             You already have an idea and you want help to develop it
                         </div>
@@ -163,7 +163,7 @@
                 </div>
                 <div>
                     <label for="want-idea">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body idea-div">
                             <input class="uk-radio hide-btn" type="radio" name="ideaType" value="wantIdea" id="want-idea">
                             You want to contribute to an idea already in development
                         </div>
@@ -171,9 +171,9 @@
                 </div>
                 <div>
                     <label for="brainstorm-idea">
-                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body">
+                        <div data-state="notSelected" class="uk-card uk-card-default uk-card-body idea-div">
                             <input class="uk-radio hide-btn" type="radio" name="ideaType" value="brainstormIdea" id="brainstorm-idea">
-                            You want connect with a fellow developer and brainstorm an idea to develop
+                            You want connect with a developer and brainstorm an idea
                         </div>
                     </label>
                 </div>
@@ -185,7 +185,7 @@
     </div>
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-online-profiles">
-        <div class="question-title">
+        <div class="question-title" id="online-profile-title">
             <h2>Your developer profiles</h2>
         </div>
         <div class="question-container" id="socialType">
@@ -210,13 +210,12 @@
     </div>
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-about">
-        <div class="question-title">
+        <div class="question-title" id="about-title">
             <h2>About You</h2>
         </div>
         <div class="question-container">
             <form>
                 <div class="uk-margin">
-                    <label class="uk-form-label" for="about-you">Your Developer Story</label>
                     <textarea class="uk-textarea" id="about-you" rows="5" placeholder="Describe yourself so your fellow developers can get to know you..."></textarea>
                 </div>
             </form>

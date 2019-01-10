@@ -6,6 +6,7 @@ module.exports = function(app) {
     return res.render("index");
   });
   
+<<<<<<< HEAD
   // app.get("/questions", function(req, res) {
   //   return res.render("questions");
   // });
@@ -18,6 +19,18 @@ module.exports = function(app) {
   // app.get("/", function(req, res) {
   //   res.render("index");
   // });
+=======
+  app.get("/questions", isAuthenticated, function(req, res) {
+    db.User.findOne({
+      where: {
+        id: req.user.id
+      },
+      include: [db.Skill]
+    }).then(function(dbUser) {
+      res.render("questions", { user: dbUser });
+    });
+  });
+>>>>>>> 3b377882d22fbd9494b6446dc4d1ffbe9a18e734
 
   // Load profile page
   app.get("/profile", isAuthenticated, function(req, res) {
@@ -25,20 +38,9 @@ module.exports = function(app) {
       where: {
         id: req.user.id
       },
-      // include: [db.User]
+      include: [db.Skill]
     }).then(function(dbUser) {
       res.render("profile", { user: dbUser });
-    });
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", isAuthenticated, function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
     });
   });
 

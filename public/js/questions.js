@@ -181,20 +181,38 @@ $(`#add-online-profiles`).on("click", function () {
 $("#create-profile").on("click", function (e) {
     e.preventDefault();
     $.ajax({
-        method: "PUT",
-        url: "/api/user",
-        data: newUser
-    })
-        .then(function (data) {
+
+      method: "PUT",
+      url: "/api/user",
+      data: newUser
+      })
+   
+      .then(function(data) {
+        console.log(data);
+        window.location.replace("/questions");
+      })
+      .catch(function(err) {
+        console.log(err);
+        alert(err.responseText);
+      });
+ })
+
+      $("#add-current-skills").on("click", function(e) {
+        
+        $.ajax({
+          method: "POST",
+          url: "/api/skill",
+          data: newUserSkillsTrue,
+          }).then(function(data) {
             console.log(data);
-            window.location.replace("/profile");
-        })
-        .catch(function (err) {
+            // window.location.replace("/questions");
+          })
+          .catch(function(err) {
             console.log(err);
             alert(err.responseText);
-        });
-});
-
+          })
+  });
+   master
 // $(`#create-profile`).on("click", function() {
 //     $.get("api/user", function(){})
 //     console.log(newUser);

@@ -46,11 +46,7 @@ $(".skill").on("click", function () {
 });
 
 
-<<<<<<< HEAD
-
-=======
 // empty object ready to record input from a user's skills responses
->>>>>>> ef59017513eeec4f7a7319a6ac054ab14c11711e
 var newUserSkillsTrue = {};
 
 // collects the skills with class 'skill-selected' and pushes them to newUserSkillsTrue array

@@ -55,6 +55,13 @@ a:link, a:hover, a:visited, a:active {
   margin-left: 20px;
   margin-right: 20px;
 }
+#user-login, #user-sign-up {
+  background: #89B24C;
+  border-radius: 10px;
+}
+#cancel-login, #cancel-sign-up {
+  border-radius: 10px;
+}
 #question-page-container {
   background-image: url("../images/coding-together.jpg");
   background-position: center;

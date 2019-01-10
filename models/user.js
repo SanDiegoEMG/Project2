@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     appType: DataTypes.STRING,
-    codingTime: DataTypes.INTEGER,
+    codingTime: DataTypes.STRING,
     projectIdea: DataTypes.STRING,
     github: DataTypes.STRING,
     linkedin: DataTypes.STRING,

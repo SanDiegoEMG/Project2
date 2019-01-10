@@ -1,4 +1,12 @@
+// empty object that will be added to upon click event from sign-up
+// then pushed to user table in db
 var newUser = {};
+
+
+// process for collecting info from 'questions' when a new user creates an 
+
+
+// uses radio type to allow only 1 selection from 'appType' class
 $('input:radio[name="appType"]').on("change", function (e) {
     $('input:radio[name="appType"]').each(function () {
         if (this.checked) {
@@ -9,10 +17,13 @@ $('input:radio[name="appType"]').on("change", function (e) {
     });
 });
 
+
+// grabs the user selection for 'appType' and adds it to newUser object
 $("#add-build").on("click", function () {
     newUser.appType = $('input:radio[name="appType"]:checked').val();
 });
 
+// uses radio type to allow only 1 selection from 'timeType' class
 $('input:radio[name="timeType"]').on("change", function (e) {
     $('input:radio[name="timeType"]').each(function () {
         if (this.checked) {

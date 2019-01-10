@@ -14,9 +14,7 @@ module.exports = function (sequelize, DataTypes) {
     Skill.associate = function (models) {
         models.Skill.belongsTo(models.User, {
             onDelete: "CASCADE",
-            foreignKey: {
-                allowNull: false
-            }
+           
         });
     };
     return Skill;

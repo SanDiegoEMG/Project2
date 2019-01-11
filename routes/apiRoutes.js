@@ -94,12 +94,11 @@ module.exports = function (app) {
       });
   });
     
-  
-      // console.log(req.body.appType)
+      // console.log(req.body.userLevel)
   app.get("/api/user/compare", isAuthenticated, function(req, res){
       db.User.findAll({
           where: {
-            appType : req.user.appType,
+            userLevel : req.user.userLevel,
             id: {
               $ne: req.user.id
             }

@@ -118,7 +118,7 @@ h2 {
 #build-title, #add-build, .app-selected {
   background: #FF9279;
 }
-#app, #web {
+#beg, #int, #advanced{
   border-radius: 10px;
   border: 1px solid #FF9279;
   color:rgb(36, 37, 39);

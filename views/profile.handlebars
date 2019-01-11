@@ -1,8 +1,32 @@
 <div id="profile-page-container">
 
-    <div class="profile-card" id="user-bio">
-        <div class="profile-title">
-            <h3>Hello {{user.fullName}}!</h3>
+    <div class="uk-grid-match" uk-grid>
+        <div class="uk-text-center">
+            <div class="uk-width-auto">
+                <div class="uk-card uk-card-default uk-width-1-1@m uk-card-body profile-card">
+                    {{!-- <a href="#modal-example" uk-toggle>Idea?</a>
+
+                    <!-- This is the modal -->
+                    <div id="modal-example" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body">
+                            <h2 class="uk-modal-title">What's your idea?</h2>
+                            <textarea></textarea>
+                            <p class="uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <button class="uk-button uk-button-primary" type="button">Post</button>
+                            </p>
+                        </div>
+                    </div> --}}
+                    <h5>Hello {{user.fullName}}! <span id="username" class="uk-text-emphasis uk-text-capitalize">
+                            {{this.userName}}</span>
+                        <span id="editProfileDetails" style="margin-left:1.25em" uk-icon="icon: pencil"></span></h5>
+                    <p class="uk-text-left">Github: <a href="{{user.github}}">{{user.github}}</p></a>
+                    <p class="uk-text-left">LinkedIn: <a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
+                    <p class="uk-text-left">{{user.profileStatement}}</p>
+                    <button id="delete" type="submit">Delete</button>
+                </div>
+            </div>
+
         </div>
         <div class="profile-content">
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>

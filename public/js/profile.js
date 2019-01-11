@@ -11,7 +11,7 @@ $.ajax({
   })
     .then(function(data) {
       console.log(data);
-    //   window.location.replace("/questions");
+      alert("moved to connect")
     })
     .catch(function(err) {
       console.log(err);

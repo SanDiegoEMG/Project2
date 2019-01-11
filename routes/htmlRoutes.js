@@ -5,6 +5,10 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     return res.render("index");
   });
+
+  app.get("/login", function(req, res) {
+    return res.render("login");
+  });
   
   app.get("/questions", isAuthenticated, function(req, res) {
     db.User.findOne({
@@ -24,7 +28,8 @@ module.exports = function(app) {
         id: req.user.id
       },
       include: [db.Skill]
-    }).then(function(dbUser) {
+    })
+    .then(function(dbUser) {
       db.User.findAll({
         where: {
           userLevel : req.user.userLevel,
@@ -33,9 +38,10 @@ module.exports = function(app) {
           }
         }
         
-      }).then(function (dbMatches) {
+      })
+      .then(function (dbMatches) {
         res.render("profile", { user: dbUser, matches: dbMatches });
-      });
+      })
     });
   });
 

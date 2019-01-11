@@ -248,6 +248,20 @@ h2 {
   text-align: center;
   opacity: 0.75;
 }
+#joined {
+  background-color: rgb(140, 173, 245);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  text-align: center;
+  opacity: 0.75;
+}
 #error {
   border-radius: 10px;
   text-align: center;

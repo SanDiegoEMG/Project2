@@ -4,7 +4,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 // const Op = Sequelize.Op
 
 module.exports = function (app) {
-  // Get all user data
+  // Get all data for one user using their unique id
   app.get("/api/users/:id", isAuthenticated, function (req, res) {
     db.User.findAll({
       where: {
@@ -19,7 +19,6 @@ module.exports = function (app) {
   app.get("/api/users/:id", isAuthenticated, function (req, res) {
     db.User.update({
       UserId: req.user.id,
-
     }).then(function (newUser) {
       res.json(newUser);
     });
@@ -124,6 +123,18 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
+  // creating a user in the favorite table when connect is clicked
+  app.post("/api/user/connect", function (req, res) {
+    var favBody = req.body;
+    favBody.userId = req.user.id
+    db.Favorite.create(favBody
+    ).then(function (data) {
 
+      res.json(data);
+    })
+      .catch(function (err) {
+        res.status(400).send(err);
+      });
+  });
 
 };

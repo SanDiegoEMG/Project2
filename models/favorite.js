@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes) {
         validate: {
             len: [1]
         }
-    }
+    },
+    userId: DataTypes.INTEGER
     // ,
     //   score: DataTypes.INTEGER,
     //   matchName: {

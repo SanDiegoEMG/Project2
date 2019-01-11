@@ -22,7 +22,7 @@
   font-size: 18px;
   color:rgb(36, 37, 39);
 }
-#landing-page-content, .profile-card {
+#landing-page-content {
   border-radius: 10px;
   text-align: center;
   margin-top: 60px;
@@ -80,7 +80,7 @@ a:link, a:hover, a:visited, a:active {
   z-index: 0;
   text-align: center;
 }
-.question-title {
+.question-title, .profile-title {
   text-align: center;
   align-items: center;
   border-top-left-radius: 5px;
@@ -100,14 +100,14 @@ a:link, a:hover, a:visited, a:active {
   background: white;
   padding-bottom: 20px;
 }
-.question-container {
+.question-container, .profile-content {
   padding: 20px 20px 20px 20px;
 }
 h2 {
   color:rgb(36, 37, 39);
   padding-top: 20px;
 }
-.next-question {
+.next-question, .connect-modal  {
   border-radius: 10px;
 }
 
@@ -140,7 +140,7 @@ h2 {
 #questionnaire-item-current-skills, #modal-noResponse {
   display: none;
 }
-#skills-title, #add-current-skills, .skill-selected {
+#skills-title, #add-current-skills, .skill-selected, .profile-title {
   background: #f7f48b;
   color: rgb(36, 37, 39);
 }
@@ -182,18 +182,54 @@ h2 {
   border-radius: 10px;
 }
 #profile-page-container {
-    background-image: url("../images/coding-alone-dark.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-    text-align: center;
+  background-image: url("../images/coding-alone-dark.jpg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  text-align: center;
   }
+.profile-card {
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-left: 1%;
+  margin-right: 1%;
+  background: white;
+  padding-bottom: 20px;
+  min-height: 300px;
+  max-height: 600px;
+  opacity: 0.9;
+  float: left;
+}
+.profile-content {
+  text-align: left;
+}
+.uk-icon-link {
+  cursor: pointer;
+}
+#user-bio {
+  width: 40%;
+}
+#user-skills {
+  width: 28%;
+}
+#user-matches {
+  width: 26%;
+} 
+#user-connections {
+  width: 98%;
+  margin-bottom: 60px;
+} 
+#connect-header, #connect {
+  background: #5080FF;
+}
+#connect-title, #connect {
+  color: white;
+}
 .hide-btn {
   width: 300px;
   height: 300px;

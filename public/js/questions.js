@@ -20,6 +20,7 @@ $("#add-build").on("click", function () {
     modalAndNextScreen("appType", "questionnaire-item-build", "questionnaire-item-time");
 });
 
+//back button to previous question section
 $("#back-build").on("click", function (e) {
     e.preventDefault();
     console.log("back button clicked at back-build")
@@ -131,6 +132,7 @@ $("#add-current-skills").on("click", function () {
     }
 });
 
+//back button to previous question section
 $("#back-from-skills").on("click", function () {
     showPreviousQuestion("questionnaire-item-current-skills", "questionnaire-item-time");
  });
@@ -154,6 +156,7 @@ $("#add-idea").on("click", function () {
     modalAndNextScreen("projectIdea", "questionnaire-item-idea", "questionnaire-item-online-profiles");
 });
 
+//back button to previous question section
 $("#back-from-idea").on("click", function () {
     showPreviousQuestion("questionnaire-item-idea", "questionnaire-item-current-skills");
  });
@@ -166,6 +169,7 @@ $("#add-online-profiles").on("click", function (e) {
     showNextQuestion("questionnaire-item-online-profiles", "questionnaire-item-about")
 });
 
+//back button to previous question section
 $("#back-from-online-profiles").on("click", function () {
     showPreviousQuestion("questionnaire-item-online-profiles", "questionnaire-item-idea");
  });
@@ -192,6 +196,21 @@ $("#create-profile").on("click", function (e) {
         });
 });
 
+$("#delete").on("click", function(e){
+    e.preventDefault();
+    window.location.replace("/")
+    $.ajax({
+        method: "DELETE",
+        url: "/api/user/:id" 
+    }).then(function(data){
+        console.log("deleted" + data.id)
+        
+    })
+})
+// the following function controls the ui view of question.handlebars data ... it makes an effective 'carousel' when the submit button of each section is clicked
+// jquery selectors are not working here to select the element so using vanilla js - don't know issue
+
+//back button to previous question section
 $("#back-from-about-me").on("click", function () {
     showPreviousQuestion("questionnaire-item-about", "questionnaire-item-online-profiles");
  });

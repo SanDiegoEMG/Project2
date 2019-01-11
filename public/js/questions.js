@@ -2,9 +2,9 @@
 var newUser = {};
 
 // process for collecting info from 'questions.handlebars' user prompts 
-// uses radio type to allow only 1 selection from 'appType' class
-$('input:radio[name="appType"]').on("change", function (e) {
-    $('input:radio[name="appType"]').each(function () {
+// uses radio type to allow only 1 selection from 'userLevel' class
+$('input:radio[name="userLevel"]').on("change", function (e) {
+    $('input:radio[name="userLevel"]').each(function () {
         if (this.checked) {
             $(this).parent().addClass("app-selected");
         } else {
@@ -13,9 +13,9 @@ $('input:radio[name="appType"]').on("change", function (e) {
     });
 });
 
-// grabs user selection for 'appType' and adds it to newUser object
+// grabs user selection for 'userLevel' and adds it to newUser object
 $("#add-build").on("click", function () {
-    newUser.appType = $('input:radio[name="appType"]:checked').val();
+    newUser.userLevel = $('input:radio[name="userLevel"]:checked').val();
     showNextQuestion("questionnaire-item-build", "questionnaire-item-time")
 });
 

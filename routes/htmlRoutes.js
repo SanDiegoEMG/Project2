@@ -38,10 +38,16 @@ module.exports = function(app) {
           }
         }
         
-      })
-      .then(function (dbMatches) {
-        res.render("profile", { user: dbUser, matches: dbMatches });
-      })
+      }).then(function (dbMatches) {
+        db.Favorite.findAll({
+          where: {
+            UserId: req.user.id
+          }
+        }).then(function(userFavorites){
+          //res.json({user: dbUser, matches: dbMatches, favorites: userFavorites });
+          res.render("profile", { user: dbUser, matches: dbMatches, favorites: userFavorites });
+        });
+      });
     });
   });
 

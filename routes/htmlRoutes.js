@@ -25,7 +25,17 @@ module.exports = function(app) {
       },
       include: [db.Skill]
     }).then(function(dbUser) {
-      res.render("profile", { user: dbUser });
+      db.User.findAll({
+        where: {
+          appType : req.user.appType,
+          id: {
+            $ne: req.user.id
+          }
+        }
+        
+      }).then(function (dbMatches) {
+        res.render("profile", { user: dbUser, matches: dbMatches });
+      });
     });
   });
 

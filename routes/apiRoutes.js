@@ -1,6 +1,7 @@
 var db = require("../models");
 var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+// const Op = Sequelize.Op
 
 module.exports = function (app) {
   // Get all user data
@@ -48,7 +49,7 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     db.User.create(req.body)
       .then(function () {
         res.redirect(307, "/api/login");
@@ -60,43 +61,33 @@ module.exports = function (app) {
 
   
   
-  // var skillArray = []
+ 
 
   app.post("/api/skill", isAuthenticated, function(req, res) {
-   // Continue from here
-    // console.log(req.body);
-    console.log(req.user);
+   
+    // console.log(req.user);
     var skillBody = req.body;
-    skillBody.UserId = req.user.id;  
+    skillBody.UserId = req.user.id;
+
     db.Skill.create(skillBody).then(function(dbskills) {
       res.json(dbskills); 
      
-      // skillArray.push(dbskills);
-
-      // console.log(skillArray[0])
-
-
     })
    
 
   });
 
-  // app.get("/api/skill", function(req, res){
-   
-  //   db.User.findAll({
-  //     where: {
-  //       id : id
-  //     }
-  //   }).then(function (e){
-  //     console.log(e)
-  //   })
-  // })
+
   
 
   app.put("/api/user", isAuthenticated, function(req, res){
+    
+
     // update the user by id using req.user.id 
-    db.User.update(req.body, {where: {id: req.user.id}
-      }).then(function (data) {
+    db.User.update(req.body, {
+      where: { id: req.user.id }
+    }).then(function (data) {
+
       res.json(data);
     })
       // fill out the rest from the body of the request
@@ -105,7 +96,23 @@ module.exports = function (app) {
         res.status(400).send(err);
       });
   });
+    
+      // console.log(req.body.appType)
+  app.get("/api/user/compare", isAuthenticated, function(req, res){
+      db.User.findAll({
+          where: {
+            appType : req.user.appType,
+            id: {
+              $ne: req.user.id
+            }
+          }
+          
+        }).then(function (dbUser) {
+          res.json(dbUser);
+        });
+  });
 
+  
   app.get("/api/user", function (req, res) {
     db.User.findAll({}).then(function (dbUsers) {
       res.json(dbUsers);
@@ -117,4 +124,7 @@ module.exports = function (app) {
     req.logout();
     res.redirect("/");
   });
+
+
+
 };

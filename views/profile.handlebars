@@ -20,6 +20,11 @@
     <div class="profile-card" id="user-matches">
         <div class="profile-title">
             <h3>Recommended Matches</h3>
+            <ul>
+            {{#each matches}}
+                <li>{{this.fullName}}</li>
+            {{/each}}
+        </ul>
         </div>
     </div>
 </div>

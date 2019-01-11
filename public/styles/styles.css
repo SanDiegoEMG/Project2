@@ -189,7 +189,6 @@ h2 {
   }
 .profile-card {
   border-radius: 10px;
-  text-align: center;
   margin-top: 60px;
   margin-left: 1%;
   margin-right: 1%;
@@ -199,6 +198,12 @@ h2 {
   max-height: 600px;
   opacity: 0.9;
   float: left;
+}
+.profile-content {
+  text-align: left;
+}
+.uk-icon-link {
+  cursor: pointer;
 }
 #user-bio {
   width: 40%;

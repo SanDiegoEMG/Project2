@@ -1,5 +1,4 @@
 <div id="question-page-container">
-
     <div class="questionnaire-item" id="questionnaire-item-build">
         <div class="question-title" id="build-title">
             <h2>What is your coding level?</h2>
@@ -34,6 +33,7 @@
         </div>
 
         <div class="question-actions">
+            <button class="uk-button back-button" id="back-build"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
             <button class="uk-button uk-button-primary next-question" id="add-build">Next</button>
         </div>
     </div>
@@ -52,9 +52,7 @@
                         </div>
                     </label>
                 </div>
-                {{!-- <div>
-                    <div class="uk-card uk-card-default uk-card-body">&#60; 10 hours per week</div>
-                </div> --}}
+
                 <div>
                     <label for="ten-fif">
                         <div data-state="notSelected" class="uk-card uk-card-default uk-card-body time-div">
@@ -62,7 +60,6 @@
                             10-15 hours per week
                         </div>
                     </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">10-15 hours per week</div> --}}
                 </div>
                 <div>
                     <label for="six-twenty">
@@ -71,7 +68,6 @@
                             16-20 hours per week
                         </div>
                     </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">16-20 hours per week</div> --}}
                 </div>
                 <div>
                     <label for="twenty-up">
@@ -80,11 +76,11 @@
                             &#62; 20 hours per week
                         </div>
                     </label>
-                    {{!-- <div class="uk-card uk-card-default uk-card-body">&#62; 20 hours per week</div> --}}
                 </div>
             </div>
         </div>
         <div class="question-actions">
+             <button class="uk-button back-button" id="back-from-time"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
             <button class="uk-button uk-button-primary next-question" id="add-time">Next</button>
         </div>
     </div>
@@ -118,42 +114,10 @@
             </div>
         </div>
         <div class="question-actions">
+            <button class="uk-button back-button" id="back-from-skills"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
             <button class="uk-button uk-button-primary next-question" id="add-current-skills">Next</button>
         </div>
     </div>
-
-    {{!-- <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-learn-skills">
-        <div class="question-title">
-            <h2>Select the skills you would like to learn?</h2>
-        </div>
-        <div class="question-container">
-            <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="html">HTML</div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="css">CSS</div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="javascript">JAVASCRIPT</div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="jquery">JQUERY</div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="node">NODE</div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="express">EXPRESS</div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="react">REACT</div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="handlebars">HANDLEBARS</div>
-                </div>
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="mysql">MYSQL</div>
-                    <div class="uk-card uk-card-default uk-card-body learn-skill" id="mongodb">MONGODB</div>
-                </div>
-            </div>
-        </div>
-        <div class="question-actions">
-            <button class="uk-button uk-button-primary next-question" id="add-learn-skills">Next</button>
-        </div>
-    </div> --}}
 
     <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-idea">
         <div class="question-title" id="idea-title">
@@ -188,6 +152,7 @@
             </div>
         </div>
         <div class="question-actions">
+            <button class="uk-button back-button" id="back-from-idea"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
             <button class="uk-button uk-button-primary next-question" id="add-idea">Next</button>
         </div>
     </div>
@@ -213,6 +178,7 @@
             </form>
         </div>
         <div class="question-actions">
+            <button class="uk-button back-button" id="back-from-online-profiles"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
             <button class="uk-button uk-button-primary next-question" id="add-online-profiles">Next</button>
         </div>
     </div>
@@ -229,7 +195,53 @@
             </form>
         </div>
         <div class="question-actions">
+            <button class="uk-button back-button" id="back-from-about-me"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
             <button class="uk-button uk-button-primary" id="create-profile">Create Profile</button>
         </div>
     </div>
+
+
+    {{!-- modal hidden unless user does not make a selection: see public/js/questions.js --}}
+    <div id="modal-no-response" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h4 class="uk-modal-title">Must make selection</h4>
+            <button class="uk-modal-close" type="button"><span uk-icon="icon: close">close</button>
+        </div>
+    </div>
 </div>
+
+
+
+
+{{!-- <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-learn-skills">
+    <div class="question-title">
+        <h2>Select the skills you would like to learn?</h2>
+    </div>
+    <div class="question-container">
+        <div class="uk-grid-match uk-child-width-expand uk-text-center" uk-grid>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="html">HTML</div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="css">CSS</div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="javascript">JAVASCRIPT</div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="jquery">JQUERY</div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="node">NODE</div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="express">EXPRESS</div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="react">REACT</div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="handlebars">HANDLEBARS</div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="mysql">MYSQL</div>
+                <div class="uk-card uk-card-default uk-card-body learn-skill" id="mongodb">MONGODB</div>
+            </div>
+        </div>
+    </div>
+    <div class="question-actions">
+        <button class="uk-button uk-button-primary next-question" id="add-learn-skills">Next</button>
+    </div>
+</div> --}}

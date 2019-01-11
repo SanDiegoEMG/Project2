@@ -26,11 +26,11 @@ module.exports = function (app) {
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", isAuthenticated, function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (
-      dbExample
+  app.delete("/api/user/:id", isAuthenticated, function (req, res) {
+    db.User.destroy({ where: { id: req.user.id } }).then(function (
+     
     ) {
-      res.json(dbExample);
+      // res.redirect("/");
     });
   });
 
@@ -118,6 +118,8 @@ module.exports = function (app) {
       res.json(dbUsers);
     });
   });
+
+  
 
   // Route for logging user out
   app.get("/logout", function (req, res) {

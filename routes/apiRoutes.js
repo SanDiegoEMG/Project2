@@ -94,6 +94,7 @@ module.exports = function (app) {
       });
   });
     
+  
       // console.log(req.body.appType)
   app.get("/api/user/compare", isAuthenticated, function(req, res){
       db.User.findAll({

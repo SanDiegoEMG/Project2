@@ -22,7 +22,7 @@
   font-size: 18px;
   color:rgb(36, 37, 39);
 }
-#landing-page-content, .profile-card {
+#landing-page-content {
   border-radius: 10px;
   text-align: center;
   margin-top: 60px;
@@ -80,7 +80,7 @@ a:link, a:hover, a:visited, a:active {
   z-index: 0;
   text-align: center;
 }
-.question-title {
+.question-title, .profile-title {
   text-align: center;
   align-items: center;
   border-top-left-radius: 5px;
@@ -100,7 +100,7 @@ a:link, a:hover, a:visited, a:active {
   background: white;
   padding-bottom: 20px;
 }
-.question-container {
+.question-container, .profile-content {
   padding: 20px 20px 20px 20px;
 }
 h2 {
@@ -134,7 +134,7 @@ h2 {
 #questionnaire-item-current-skills {
   display: none;
 }
-#skills-title, #add-current-skills, .skill-selected {
+#skills-title, #add-current-skills, .skill-selected, .profile-title {
   background: #f7f48b;
   color: rgb(36, 37, 39);
 }
@@ -188,6 +188,26 @@ h2 {
     z-index: 0;
     text-align: center;
   }
+.profile-card {
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: white;
+  padding-bottom: 20px;
+  opacity: 0.9;
+  float: left;
+}
+#user-bio {
+  width: 400px;
+}
+#user-connections {
+  width: 400px;
+}
+#user-matches {
+  width: 300px;
+}  
 .hide-btn {
   width: 300px;
   height: 300px;

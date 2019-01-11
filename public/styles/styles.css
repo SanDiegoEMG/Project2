@@ -135,7 +135,7 @@ h2 {
 #build-title, #add-build, .app-selected {
   background: #FF9279;
 }
-#app, #web {
+#beg, #int, #advanced{
   border-radius: 10px;
   border: 1px solid #FF9279;
   color:rgb(36, 37, 39);
@@ -265,4 +265,41 @@ h2 {
   width: 300px;
   height: 300px;
   display: none;
+}
+#broken {
+  background-image: url("../images/broken.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  text-align: center;
+  opacity: 0.75;
+}
+#error {
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 60px;
+  margin-left: 40%;
+  margin-right: 40px;
+  background: white;
+  padding-bottom: 20px;
+  opacity: 0.8;
+}
+#error-title {
+  background: #FF9279;
+  text-align: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  font-size: 17px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
+  margin-bottom: 20px;
 }

@@ -90,11 +90,11 @@ module.exports = function (app) {
       });
   });
     
-      // console.log(req.body.appType)
+      // console.log(req.body.userLevel)
   app.get("/api/user/compare", isAuthenticated, function(req, res){
       db.User.findAll({
           where: {
-            appType : req.user.appType,
+            userLevel : req.user.userLevel,
             id: {
               $ne: req.user.id
             }
@@ -120,6 +120,18 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
+  // creating a user in the favorite table when connect is clicked
+  app.post("/api/user/connect", function (req, res) {
+    var favBody = req.body;
+    favBody.userId = req.user.id
+    db.Favorite.create(favBody
+    ).then(function (data) {
 
+      res.json(data);
+    })
+      .catch(function (err) {
+        res.status(400).send(err);
+      });
+  });
 
 };

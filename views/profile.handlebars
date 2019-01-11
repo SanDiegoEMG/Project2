@@ -13,13 +13,16 @@
             </div>
         </div>
 
-        <div class="uk-width-expand">
-            <div class="uk-card uk-card-default uk-width-1-1@m uk-card-body profile-card">Your Recommended Matches</div>
-        </div>
 
-        <div class="uk-width-expand">
-            <div class="uk-card uk-card-default uk-width-1-1@m uk-card-body profile-card">Your Skills profile</div>
-        </div>
+    <div class="uk-width-expand">
+        <div class="uk-card uk-card-default uk-card-body">Your Recommended Matches</div>
+        <ul>
+            {{#each matches}}
+                <li>{{this.fullName}}</li>
+            {{/each}}
+        </ul>
+    </div>
+
 
     </div>
 

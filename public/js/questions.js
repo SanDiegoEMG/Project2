@@ -153,6 +153,23 @@ $("#create-profile").on("click", function (e) {
             alert(err.responseText);
         });
 });
+$("#delete").on("click", function (e) {
+    e.preventDefault();
+   
+    $.ajax({
+        method: "DELETE",
+        url: "/api/user",
+        data: newUser
+    })
+        .then(function (data) {
+            console.log(data);
+            window.location.replace("/profile");
+        })
+        .catch(function (err) {
+            console.log(err);
+            alert(err.responseText);
+        });
+});
 // the following function controls the ui view of question.handlebars data ... it makes an effective 'carousel' when the submit button of each section is clicked
 // jquery selectors are not working here to select the element so using vanilla js - don't know issue
 

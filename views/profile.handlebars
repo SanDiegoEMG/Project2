@@ -1,4 +1,5 @@
 <div id="profile-page-container">
+
     <div class="uk-grid-match" uk-grid>
         <div class="uk-text-center">
             <div class="uk-width-auto">
@@ -12,23 +13,73 @@
                     <button id="delete" type="submit">Delete</button>
                 </div>
             </div>
+
         </div>
+        <div class="profile-content">
+            <p>Github: <a href="{{user.github}}">{{user.github}}</p></a>
+            <p>LinkedIn: <a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
+            <p>{{user.profileStatement}}</p>
+        </div>
+    </div>
 
+    <div class="profile-card" id="user-skills">
+        <div class="profile-title">
+            <h3>Your Skills Profile</h3>
+        </div>
+        <div class="profile-content"></div>
+    </div>
 
-    <div class="uk-width-expand">
-        <div class="uk-card uk-card-default uk-card-body">Your Recommended Matches</div>
-        <ul>
+    <div class="profile-card" id="user-matches">
+        <div class="profile-title">
+            <h3>Recommended Matches</h3>
+        </div>
+        <div class="profile-content">
             {{#each matches}}
-                <li>{{this.fullName}}</li>
+            <h4 class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info">{{this.userName}} &nbsp;</h4>
+
+            <div id="more-match-info" uk-modal>
+                <div class="uk-modal-dialog">
+                    <div class="uk-modal-header" id="connect-header">
+                        <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
+                    </div>
+                    <div class="uk-modal-body">
+                        <p id="match-full-name">{{this.fullName}}</p>
+                        {{#if this.github}}
+                        <p><span uk-icon="github-alt"></span>&nbsp; : &nbsp;{{this.github}}</p>
+                        {{/if}}
+                        {{#if this.linkedin}}
+                        <p><span uk-icon="linkedin"></span>&nbsp; : &nbsp;{{this.linkedin}}</p>
+                        {{/if}}
+                        <p>{{this.profileStatement}}</p>
+                    </div>
+                    <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>
+                        <button class="uk-button connect-modal" id="connect" type="button">Connect</button>
+                    </div>
+                </div>
+            </div>
+
             {{/each}}
-        </ul>
+        </div>
     </div>
 
-
-    </div>
-
-    <div uk-grid>
-        <div class="uk-card uk-card-default uk-card-body profile-card">Personal Connections</div>
+    <div class="profile-card" id="user-connections">
+        <div class="profile-title">
+            <h3>Personal Connections</h3>
+        </div>
+        <div class="profile-content">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Lectus urna duis convallis convallis tellus id interdum velit. Orci eu lobortis
+                elementum nibh tellus. Enim ut sem viverra aliquet. Ac placerat vestibulum lectus mauris ultrices eros
+                in cursus turpis. Platea dictumst vestibulum rhoncus est pellentesque elit. Amet cursus sit amet dictum
+                sit amet. Tincidunt nunc pulvinar sapien et. Nunc eget lorem dolor sed viverra ipsum nunc aliquet
+                bibendum. Non sodales neque sodales ut etiam sit amet nisl. Consequat ac felis donec et odio. Pharetra
+                magna ac placerat vestibulum lectus mauris ultrices. Tincidunt tortor aliquam nulla facilisi cras
+                fermentum. Justo laoreet sit amet cursus sit amet. Facilisis volutpat est velit egestas dui. Id semper
+                risus in hendrerit gravida rutrum quisque non. Sit amet justo donec enim diam vulputate ut pharetra.
+                Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Quis eleifend quam adipiscing vitae proin
+                sagittis nisl.</h4>
+        </div>
     </div>
 
 </div>

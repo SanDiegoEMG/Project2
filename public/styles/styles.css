@@ -176,39 +176,43 @@ h2 {
   border-radius: 10px;
 }
 #profile-page-container {
-    background-image: url("../images/coding-alone-dark.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-    text-align: center;
+  background-image: url("../images/coding-alone-dark.jpg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  display: block;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  text-align: center;
   }
 .profile-card {
   border-radius: 10px;
   text-align: center;
-  height: 50%;
   margin-top: 60px;
   margin-left: 1%;
   margin-right: 1%;
   background: white;
   padding-bottom: 20px;
+  min-height: 300px;
+  max-height: 600px;
   opacity: 0.9;
   float: left;
 }
 #user-bio {
   width: 40%;
 }
-#user-connections {
+#user-skills {
   width: 28%;
 }
 #user-matches {
   width: 26%;
-}  
+} 
+#user-connections {
+  width: 98%;
+  margin-bottom: 60px;
+} 
 .hide-btn {
   width: 300px;
   height: 300px;

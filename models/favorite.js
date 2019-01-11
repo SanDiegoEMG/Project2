@@ -8,9 +8,9 @@ module.exports = function(sequelize, DataTypes) {
     }
     });
     Favorite.associate = function (models) {
-        models.Favorite.belongsTo(models.User, {
-            onDelete: "CASCADE"
-        });
+        models.Favorite.belongsTo(models.User, {as : "user", foreignKey: "UserId"});
+            // onDelete: "CASCADE"
+        // });
     };
     return Favorite;
   };

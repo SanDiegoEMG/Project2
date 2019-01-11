@@ -34,6 +34,7 @@ module.exports = function(app) {
         }
         
       }).then(function (dbMatches) {
+        console.log(dbMatches)
         res.render("profile", { user: dbUser, matches: dbMatches });
       });
     });

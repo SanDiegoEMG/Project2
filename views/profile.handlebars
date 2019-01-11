@@ -92,7 +92,10 @@
         </div>
         <div class="profile-content">
             <ul>
-                <p>{{user.Favorite.userName}}</p>
+                {{#each favorites}}
+                    <p>{{this.userName}}</p>
+                {{/each}}
+                
             </ul>
         </div>
     </div>

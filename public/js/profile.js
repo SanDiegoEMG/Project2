@@ -11,7 +11,6 @@ $.ajax({
   })
     .then(function(data) {
       console.log(data);
-    //   window.location.replace("/questions");
     })
     .catch(function(err) {
       console.log(err);

@@ -68,7 +68,17 @@
         <div id="modal-example" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
                 <h2 class="uk-modal-title">Sign Up</h2>
-                <form>
+                
+               {{!-- <form id="sign-up">
+    <p>Username: <input type="text" id="username"></p>
+    <p>Password: <input type="password" id="pwd1"></p>
+    <p>Confirm Password: <input type="password" id="pwd2"></p>
+    <button type="submit">Submit</button>
+    </form>
+                --}}
+               
+               
+                <form id="sign-up">
 
                     <fieldset class="uk-fieldset">
 
@@ -79,14 +89,13 @@
                             <input id="email-sign-up" class="uk-input" type="Email" placeholder="Email">
                         </div>
                         <div class="uk-margin">
-                            <input id="user-name-sign-up" class="uk-input" type="text" placeholder="Username">
+                            <input id="user-name-sign-up" class="uk-input" type="text" placeholder="Username" name= "username">
                         </div>
                         <div class="uk-margin">
-                            <input id="password-sign-up" class="uk-input" type="password" placeholder="Password">
+                            <input id="password-sign-up" class="uk-input" type="password" placeholder="Password"
+                            name ="pwd1">
                         </div>
-                        <div class="uk-margin">
-                            <input id="confirm-password-sign-up" class="uk-input" type="password" placeholder="Confirm Password">
-                        </div>
+                        
                 </form>
                 <p class="uk-text-right">
                     <button id="cancel-sign-up" class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>

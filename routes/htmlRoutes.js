@@ -34,8 +34,14 @@ module.exports = function(app) {
         }
         
       }).then(function (dbMatches) {
-        // res.json({user: dbUser, matches: dbMatches});
-        res.render("profile", { user: dbUser, matches: dbMatches });
+        db.Favorite.findAll({
+          where: {
+            UserId: req.user.id
+          }
+        }).then(function(userFavorites){
+          //res.json({user: dbUser, matches: dbMatches, favorites: userFavorites });
+          res.render("profile", { user: dbUser, matches: dbMatches, favorites: userFavorites });
+        });
       });
     });
   });

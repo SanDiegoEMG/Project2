@@ -6,14 +6,16 @@ module.exports = function(sequelize, DataTypes) {
             len: [1]
         }
     },
-      score: DataTypes.INTEGER,
-      matchName: {
-        type: DataTypes.STRING,
-        validate: {
-            len: [1]
-        }
-    },
-      matchScore: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
+    // ,
+    //   score: DataTypes.INTEGER,
+    //   matchName: {
+    //     type: DataTypes.STRING,
+    //     validate: {
+    //         len: [1]
+    //     }
+    // },
+    //   matchScore: DataTypes.INTEGER,
     });
     return Favorite;
   };

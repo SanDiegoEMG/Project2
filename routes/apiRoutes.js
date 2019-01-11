@@ -127,6 +127,16 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
+  // creating a user in the favorite table when connect is clicked
+  app.post("/api/user/connect", function (req, res) {
+    db.Favorite.create(req.body
+    ).then(function (data) {
 
+      res.json(data);
+    })
+      .catch(function (err) {
+        res.status(400).send(err);
+      });
+  });
 
 };

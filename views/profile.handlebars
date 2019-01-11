@@ -16,7 +16,38 @@
         <div class="profile-title">
             <h3>Your Skills Profile</h3>
         </div>
-        <div class="profile-content"></div>
+        <div class="profile-content">
+            {{#if user.Skill.html}}
+                    <p>&nbsp;HTML&nbsp;|
+                {{/if}}
+                {{#if user.Skill.css}}
+                    &nbsp;CSS&nbsp;|
+                {{/if}}
+                {{#if user.Skill.javascript}}
+                    &nbsp;JAVASCRIPT&nbsp;|
+                {{/if}}
+                {{#if user.Skill.jquery}}
+                    &nbsp;JQUERY&nbsp;|
+                {{/if}}
+                {{#if user.Skill.node}}
+                    &nbsp;NODE&nbsp;|
+                {{/if}}
+                {{#if user.Skill.express}}
+                    &nbsp;EXPRESS&nbsp;|
+                {{/if}}
+                {{#if user.Skill.react}}
+                    &nbsp;REACT&nbsp;|
+                {{/if}}
+                {{#if user.Skill.mongodb}}
+                    &nbsp;MONGODB&nbsp;|
+                {{/if}}
+                {{#if user.Skill.mysql}}
+                    &nbsp;MYSQL&nbsp;|
+                {{/if}}
+                {{#if user.Skill.handlebars}}
+                    &nbsp;HANDLEBARS&nbsp;|</p>
+                {{/if}}
+        </div>
     </div>
 
     <div class="profile-card" id="user-matches">

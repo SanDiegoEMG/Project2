@@ -18,22 +18,14 @@ $('input:radio[name="appType"]').on("change", function (e) {
 // grabs user selection for 'appType' and adds it to newUser object
 $("#add-build").on("click", function () {
     newUser.appType = $('input:radio[name="appType"]:checked').val();
-    if (newUser.appType === undefined) {
-        console.log("oops! must make selection");
-        var modal = UIkit.modal("#modal-no-response");
-        modal.show();
-    } else {
-        showNextQuestion("questionnaire-item-build", "questionnaire-item-time")
-    }
+    // if (newUser.appType === undefined) {
+    //     var modal = UIkit.modal("#modal-no-response");
+    //     modal.show();
+    // } else {
+    //     showNextQuestion("questionnaire-item-build", "questionnaire-item-time")
+    // }
+    modalForNoSelection("appType", "questionnaire-item-build", "questionnaire-item-time");
 });
-
-// var obj = { 
-//     name: "Em"
-// };
-
-// obj.name;
-// obj["name"];
-
 
 // uses radio type to allow only 1 selection from 'timeType' class
 $('input:radio[name="timeType"]').on("change", function (e) {
@@ -49,7 +41,8 @@ $('input:radio[name="timeType"]').on("change", function (e) {
 // grabs user selection for 'timeType' and adds it to newUser object
 $("#add-time").on("click", function () {
     newUser.codingTime = $('input:radio[name="timeType"]:checked').val();
-    showNextQuestion("questionnaire-item-time", "questionnaire-item-current-skills")
+    // showNextQuestion("questionnaire-item-time", "questionnaire-item-current-skills")
+    modalForNoSelection("codingTime", "questionnaire-item-time", "questionnaire-item-current-skills");
 });
 
 // adds/removes class on skills choices ... no radio bc many can be selected
@@ -65,11 +58,12 @@ $(".skill").on("click", function () {
 // empty object ready to record input from a user's skills responses
 var newUserSkillsTrue = {};
 
+var userSkills = [];
+
 // collects the skills with class 'skill-selected' and pushes them to newUserSkillsTrue array
 $("#add-current-skills").on("click", function () {
-    var userSkills = [];
-
     $.each($(".skill-selected"), function (i) {
+        userSkills = [];
         var skillName = $(this).attr("id");
         userSkills.push(skillName);
     });
@@ -115,13 +109,19 @@ $("#add-current-skills").on("click", function () {
     }).then(function (data) {
         console.log(data);
         // window.location.replace("/questions");
+    }).catch(function (err) {
+        console.log(err);
+        alert(err.responseText);
     })
-        .catch(function (err) {
-            console.log(err);
-            alert(err.responseText);
-        })
-    showNextQuestion("questionnaire-item-current-skills", "questionnaire-item-idea")
+    // showNextQuestion("questionnaire-item-current-skills", "questionnaire-item-idea")
+    if (userSkills.length === 0) {
+        var modal = UIkit.modal("#modal-no-response");
+        modal.show();
+    } else {
+        showNextQuestion("questionnaire-item-current-skills", "questionnaire-item-idea");
+    }
 });
+
 
 // grabs user selection for 'ideaType' 
 $('input:radio[name="ideaType"]').on("change", function (e) {
@@ -137,7 +137,8 @@ $('input:radio[name="ideaType"]').on("change", function (e) {
 // stores input from 'ideaType' to newUser object
 $("#add-idea").on("click", function () {
     newUser.projectIdea = $('input:radio[name="ideaType"]:checked').val();
-    showNextQuestion("questionnaire-item-idea", "questionnaire-item-online-profiles")
+    // showNextQuestion("questionnaire-item-idea", "questionnaire-item-online-profiles")
+    modalForNoSelection("projectIdea", "questionnaire-item-idea", "questionnaire-item-online-profiles");
 });
 
 // collects inputs from user response to github and linkedin profile addresses and stores in newUser object
@@ -169,13 +170,25 @@ $("#create-profile").on("click", function (e) {
             alert(err.responseText);
         });
 });
+
+
 // the following function controls the ui view of question.handlebars data ... it makes an effective 'carousel' when the submit button of each section is clicked
 // jquery selectors are not working here to select the element so using vanilla js - don't know issue
-
 function showNextQuestion(qItem, nextQItem) {
     var currentQuestion = document.getElementById(qItem);
     var nextQuestion = document.getElementById(nextQItem);
     console.log(currentQuestion.id + " " + nextQuestion.id);
     currentQuestion.style.display = "none";
     nextQuestion.style.display = "block";
+};
+
+// included at each 'next' section of questions that has a radio
+// shows modal if the user hasn't made a selection
+function modalForNoSelection(att, currentWindow, nextWindow) {
+    if (newUser[att] === undefined) {
+        var modal = UIkit.modal("#modal-no-response");
+        modal.show();
+    } else {
+        showNextQuestion(currentWindow, nextWindow);
+    }
 };

@@ -24,7 +24,7 @@ $("#add-build").on("click", function () {
     // } else {
     //     showNextQuestion("questionnaire-item-build", "questionnaire-item-time")
     // }
-    modalForNoSelection("appType", "questionnaire-item-build", "questionnaire-item-time");
+    modalAndNextScreen("appType", "questionnaire-item-build", "questionnaire-item-time");
 });
 
 // uses radio type to allow only 1 selection from 'timeType' class
@@ -42,7 +42,7 @@ $('input:radio[name="timeType"]').on("change", function (e) {
 $("#add-time").on("click", function () {
     newUser.codingTime = $('input:radio[name="timeType"]:checked').val();
     // showNextQuestion("questionnaire-item-time", "questionnaire-item-current-skills")
-    modalForNoSelection("codingTime", "questionnaire-item-time", "questionnaire-item-current-skills");
+    modalAndNextScreen("codingTime", "questionnaire-item-time", "questionnaire-item-current-skills");
 });
 
 // adds/removes class on skills choices ... no radio bc many can be selected
@@ -138,7 +138,7 @@ $('input:radio[name="ideaType"]').on("change", function (e) {
 $("#add-idea").on("click", function () {
     newUser.projectIdea = $('input:radio[name="ideaType"]:checked').val();
     // showNextQuestion("questionnaire-item-idea", "questionnaire-item-online-profiles")
-    modalForNoSelection("projectIdea", "questionnaire-item-idea", "questionnaire-item-online-profiles");
+    modalAndNextScreen("projectIdea", "questionnaire-item-idea", "questionnaire-item-online-profiles");
 });
 
 // collects inputs from user response to github and linkedin profile addresses and stores in newUser object
@@ -184,7 +184,7 @@ function showNextQuestion(qItem, nextQItem) {
 
 // included at each 'next' section of questions that has a radio
 // shows modal if the user hasn't made a selection
-function modalForNoSelection(att, currentWindow, nextWindow) {
+function modalAndNextScreen(att, currentWindow, nextWindow) {
     if (newUser[att] === undefined) {
         var modal = UIkit.modal("#modal-no-response");
         modal.show();

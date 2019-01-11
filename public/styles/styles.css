@@ -191,22 +191,23 @@ h2 {
 .profile-card {
   border-radius: 10px;
   text-align: center;
+  height: 50%;
   margin-top: 60px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 1%;
+  margin-right: 1%;
   background: white;
   padding-bottom: 20px;
   opacity: 0.9;
   float: left;
 }
 #user-bio {
-  width: 400px;
+  width: 40%;
 }
 #user-connections {
-  width: 400px;
+  width: 28%;
 }
 #user-matches {
-  width: 300px;
+  width: 26%;
 }  
 .hide-btn {
   width: 300px;

@@ -17,9 +17,8 @@
   padding-top: 20px;
   padding-bottom:20px;
 }
-#logout {
+#logout, #settings {
   margin-right: 20px;
-  font-size: 18px;
   color:rgb(36, 37, 39);
 }
 #landing-page-content {
@@ -110,6 +109,12 @@ h2 {
 .next-question, .connect-modal  {
   border-radius: 10px;
 }
+
+.back-button {
+  float: left;
+  background: transparent;
+}
+
 #build-title, #add-build, .app-selected {
   background: #FF9279;
 }
@@ -131,7 +136,7 @@ h2 {
   color:rgb(36, 37, 39);
   cursor: pointer;
 }
-#questionnaire-item-current-skills {
+#questionnaire-item-current-skills, #modal-noResponse {
   display: none;
 }
 #skills-title, #add-current-skills, .skill-selected, .profile-title {

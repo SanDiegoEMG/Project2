@@ -73,10 +73,7 @@ module.exports = function (app) {
       res.json(dbskills); 
      
     })
-   
-
   });
-
 
   
 

@@ -1,21 +1,11 @@
 <div id="profile-page-container">
 
-    <div class="uk-grid-match" uk-grid>
-        <div class="uk-text-center">
-            <div class="uk-width-auto">
-                <div class="uk-card uk-card-default uk-width-1-1@m uk-card-body profile-card">
-                    <h5>Hello {{user.fullName}}! <span id="username" class="uk-text-emphasis uk-text-capitalize">
-                            {{this.userName}}</span>
-                        <span id="editProfileDetails" style="margin-left:1.25em" uk-icon="icon: pencil"></span></h5>
-                    <p class="uk-text-left">Github: <a href="{{user.github}}">{{user.github}}</p></a>
-                    <p class="uk-text-left">LinkedIn: <a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
-                    <p class="uk-text-left">{{user.profileStatement}}</p>
-                    <button id="delete" type="submit">Delete</button>
-                </div>
-            </div>
-
+    <div class="profile-card" id="user-bio">
+        <div class="profile-title">
+            <h3>Hello {{user.fullName}}!</h3>
         </div>
         <div class="profile-content">
+            <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p>Github: <a href="{{user.github}}">{{user.github}}</p></a>
             <p>LinkedIn: <a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
             <p>{{user.profileStatement}}</p>
@@ -35,9 +25,11 @@
         </div>
         <div class="profile-content">
             {{#each matches}}
-            <h4 class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info">{{this.userName}} &nbsp;</h4>
-
-            <div id="more-match-info" uk-modal>
+            <ul>
+                <p class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">{{this.userName}}
+                    &nbsp;</p>
+            </ul>
+            <div id="more-match-info{{this.id}}" uk-modal>
                 <div class="uk-modal-dialog">
                     <div class="uk-modal-header" id="connect-header">
                         <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
@@ -68,17 +60,9 @@
             <h3>Personal Connections</h3>
         </div>
         <div class="profile-content">
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Lectus urna duis convallis convallis tellus id interdum velit. Orci eu lobortis
-                elementum nibh tellus. Enim ut sem viverra aliquet. Ac placerat vestibulum lectus mauris ultrices eros
-                in cursus turpis. Platea dictumst vestibulum rhoncus est pellentesque elit. Amet cursus sit amet dictum
-                sit amet. Tincidunt nunc pulvinar sapien et. Nunc eget lorem dolor sed viverra ipsum nunc aliquet
-                bibendum. Non sodales neque sodales ut etiam sit amet nisl. Consequat ac felis donec et odio. Pharetra
-                magna ac placerat vestibulum lectus mauris ultrices. Tincidunt tortor aliquam nulla facilisi cras
-                fermentum. Justo laoreet sit amet cursus sit amet. Facilisis volutpat est velit egestas dui. Id semper
-                risus in hendrerit gravida rutrum quisque non. Sit amet justo donec enim diam vulputate ut pharetra.
-                Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Quis eleifend quam adipiscing vitae proin
-                sagittis nisl.</h4>
+            <ul>
+
+            </ul>
         </div>
     </div>
 

@@ -5,18 +5,13 @@ module.exports = function(sequelize, DataTypes) {
         validate: {
             len: [1]
         }
-    },
-    userId: DataTypes.INTEGER
-    // ,
-    //   score: DataTypes.INTEGER,
-    //   matchName: {
-    //     type: DataTypes.STRING,
-    //     validate: {
-    //         len: [1]
-    //     }
-    // },
-    //   matchScore: DataTypes.INTEGER,
+    }
     });
+    Favorite.associate = function (models) {
+        models.Favorite.belongsTo(models.User, {as : "user", foreignKey: "UserId"});
+            // onDelete: "CASCADE"
+        // });
+    };
     return Favorite;
   };
 

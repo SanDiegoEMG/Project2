@@ -107,7 +107,7 @@ h2 {
   color:rgb(36, 37, 39);
   padding-top: 20px;
 }
-.next-question {
+.next-question, .connect-modal  {
   border-radius: 10px;
 }
 #build-title, #add-build, .app-selected {
@@ -218,6 +218,12 @@ h2 {
   width: 98%;
   margin-bottom: 60px;
 } 
+#connect-header, #connect {
+  background: #5080FF;
+}
+#connect-title, #connect {
+  color: white;
+}
 .hide-btn {
   width: 300px;
   height: 300px;

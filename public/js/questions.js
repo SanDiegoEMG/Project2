@@ -1,10 +1,10 @@
 // empty object that will be added to upon click events from sign-up and here then pushed to user table in db
 var newUser = {};
 
-// sets up selections for 'questions.handlebars' user prompts 
-// uses radio type to allow only 1 selection from 'appType' class
-$('input:radio[name="appType"]').on("change", function (e) {
-    $('input:radio[name="appType"]').each(function () {
+// process for collecting info from 'questions.handlebars' user prompts 
+// uses radio type to allow only 1 selection from 'userLevel' class
+$('input:radio[name="userLevel"]').on("change", function (e) {
+    $('input:radio[name="userLevel"]').each(function () {
         if (this.checked) {
             $(this).parent().addClass("app-selected");
         } else {
@@ -14,10 +14,10 @@ $('input:radio[name="appType"]').on("change", function (e) {
 });
 
 
-// grabs user selection for 'appType' and adds it to newUser object
+// grabs user selection for 'userLevel' and adds it to newUser object
 $("#add-build").on("click", function () {
-    newUser.appType = $('input:radio[name="appType"]:checked').val();
-    modalAndNextScreen("appType", "questionnaire-item-build", "questionnaire-item-time");
+    newUser.userLevel = $('input:radio[name="userLevel"]:checked').val();
+    modalAndNextScreen("userLevel", "questionnaire-item-build", "questionnaire-item-time");
 });
 
 //back button to previous question section

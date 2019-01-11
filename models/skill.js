@@ -13,8 +13,7 @@ module.exports = function (sequelize, DataTypes) {
     });
     Skill.associate = function (models) {
         models.Skill.belongsTo(models.User, {
-            onDelete: "CASCADE",
-           
+            onDelete: "CASCADE"
         });
     };
     return Skill;

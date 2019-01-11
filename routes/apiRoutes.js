@@ -4,7 +4,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 // const Op = Sequelize.Op
 
 module.exports = function (app) {
-  // Get all user data
+  // Get all data for one user using their unique id
   app.get("/api/users/:id", isAuthenticated, function (req, res) {
     db.User.findAll({
       where: {
@@ -19,7 +19,6 @@ module.exports = function (app) {
   app.get("/api/users/:id", isAuthenticated, function (req, res) {
     db.User.update({
       UserId: req.user.id,
-
     }).then(function (newUser) {
       res.json(newUser);
     });

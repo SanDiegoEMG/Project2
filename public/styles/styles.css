@@ -110,6 +110,12 @@ h2 {
 .next-question {
   border-radius: 10px;
 }
+
+.back-button {
+  float: left;
+  background: transparent;
+}
+
 #build-title, #add-build, .app-selected {
   background: #FF9279;
 }

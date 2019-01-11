@@ -25,7 +25,10 @@
         </div>
 
         <div class="question-actions">
-            <button class="uk-button back-button" id="back-build"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
+        {{!--  removed back button from first question screen  --}}
+        {{!--  was causing trouble with duplicating acct creation --}}
+
+            {{!-- <button class="uk-button back-button" id="back-build"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button> --}}
             <button class="uk-button uk-button-primary next-question" id="add-build">Next</button>
         </div>
     </div>
@@ -196,11 +199,15 @@
     {{!-- modal hidden unless user does not make a selection: see public/js/questions.js --}}
     <div id="modal-no-response" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-            <h4 class="uk-modal-title">Must make selection</h4>
-            <button class="uk-modal-close" type="button"><span uk-icon="icon: close">close</button>
+            <h4 class="uk-modal-title uk-text-danger uk-text-center">Selection required</h4>
+            <button class="uk-modal-close uk-position-bottom-center" id="modalCloseButton" type="button"><span uk-icon="icon: close">close</button>
         </div>
     </div>
 </div>
+
+
+
+
 
 
 

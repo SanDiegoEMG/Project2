@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     // these entries come from prompts on questions.handlebars
-    appType: DataTypes.STRING,
+    userLevel: DataTypes.STRING,
     codingTime: DataTypes.STRING,
     projectIdea: DataTypes.STRING,
     github: DataTypes.STRING,

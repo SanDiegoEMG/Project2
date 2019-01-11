@@ -27,7 +27,7 @@ module.exports = function(app) {
     }).then(function(dbUser) {
       db.User.findAll({
         where: {
-          appType : req.user.appType,
+          userLevel : req.user.userLevel,
           id: {
             $ne: req.user.id
           }

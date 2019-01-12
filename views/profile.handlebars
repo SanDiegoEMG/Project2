@@ -1,3 +1,27 @@
+<nav class="uk-navbar-container" style="background: #C2CCB4" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li><a href="/"><img id="nav-logo" data-src="./images/code_with_friends_logo.png" alt="site logo" uk-img></a></li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="#" id="settings">Settings</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="/questions">Edit Account</a></li>
+                        <li><a href="#" id="delete">Delete Account</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="/logout"><span uk-icon="icon: sign-out" id="logout">LOG OUT</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div id="profile-page-container">
 
     <div class="profile-card" id="user-bio">
@@ -8,6 +32,7 @@
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
             <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
+            <p><strong>Bio</strong></p>
             <p>{{user.profileStatement}}</p>
         </div>
     </div>
@@ -18,34 +43,34 @@
         </div>
         <div class="profile-content">
             {{#if user.Skill.html}}
-            <p>&nbsp;HTML&nbsp;|
+            <p>&nbsp;HTML&nbsp;
                 {{/if}}
                 {{#if user.Skill.css}}
-                &nbsp;CSS&nbsp;|
+                &nbsp;CSS&nbsp;
                 {{/if}}
                 {{#if user.Skill.javascript}}
-                &nbsp;JAVASCRIPT&nbsp;|
+                &nbsp;JAVASCRIPT&nbsp;
                 {{/if}}
                 {{#if user.Skill.jquery}}
-                &nbsp;JQUERY&nbsp;|
+                &nbsp;JQUERY&nbsp;
                 {{/if}}
                 {{#if user.Skill.node}}
-                &nbsp;NODE&nbsp;|
+                &nbsp;NODE&nbsp;
                 {{/if}}
                 {{#if user.Skill.express}}
-                &nbsp;EXPRESS&nbsp;|
+                &nbsp;EXPRESS&nbsp;
                 {{/if}}
                 {{#if user.Skill.react}}
-                &nbsp;REACT&nbsp;|
+                &nbsp;REACT&nbsp;
                 {{/if}}
                 {{#if user.Skill.mongodb}}
-                &nbsp;MONGODB&nbsp;|
+                &nbsp;MONGODB&nbsp;
                 {{/if}}
                 {{#if user.Skill.mysql}}
-                &nbsp;MYSQL&nbsp;|
+                &nbsp;MYSQL&nbsp;
                 {{/if}}
                 {{#if user.Skill.handlebars}}
-                &nbsp;HANDLEBARS&nbsp;|</p>
+                &nbsp;HANDLEBARS&nbsp;</p>
             {{/if}}
         </div>
     </div>
@@ -59,7 +84,6 @@
             <ul>
                 <p class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">{{this.userName}}
                     &nbsp;</p>
-                <button class"uk-button">Connect</button>
 
                 <div id="more-match-info{{this.id}}" uk-modal>
                     <div class="uk-modal-dialog">
@@ -76,35 +100,35 @@
                             {{/if}}
                             <p><strong>Skills</strong></p>
                             {{#if this.Skill.html}}
-            <p>&nbsp;HTML&nbsp;
-                {{/if}}
-                {{#if this.Skill.css}}
-                &nbsp;CSS&nbsp;
-                {{/if}}
-                {{#if this.Skill.javascript}}
-                &nbsp;JAVASCRIPT&nbsp;
-                {{/if}}
-                {{#if this.Skill.jquery}}
-                &nbsp;JQUERY&nbsp;
-                {{/if}}
-                {{#if this.Skill.node}}
-                &nbsp;NODE&nbsp;
-                {{/if}}
-                {{#if this.Skill.express}}
-                &nbsp;EXPRESS&nbsp;
-                {{/if}}
-                {{#if this.Skill.react}}
-                &nbsp;REACT&nbsp;
-                {{/if}}
-                {{#if this.Skill.mongodb}}
-                &nbsp;MONGODB&nbsp;
-                {{/if}}
-                {{#if this.Skill.mysql}}
-                &nbsp;MYSQL&nbsp;
-                {{/if}}
-                {{#if this.Skill.handlebars}}
-                &nbsp;HANDLEBARS&nbsp;</p>
-            {{/if}}
+                            <p>&nbsp;HTML&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.css}}
+                                &nbsp;CSS&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.javascript}}
+                                &nbsp;JAVASCRIPT&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.jquery}}
+                                &nbsp;JQUERY&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.node}}
+                                &nbsp;NODE&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.express}}
+                                &nbsp;EXPRESS&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.react}}
+                                &nbsp;REACT&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.mongodb}}
+                                &nbsp;MONGODB&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.mysql}}
+                                &nbsp;MYSQL&nbsp;
+                                {{/if}}
+                                {{#if this.Skill.handlebars}}
+                                &nbsp;HANDLEBARS&nbsp;</p>
+                            {{/if}}
                         </div>
                         <div class="uk-modal-footer uk-text-right">
                             <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>

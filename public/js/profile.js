@@ -14,5 +14,4 @@ $.ajax({
       console.log(err);
       alert(err.responseText);
     });
-    location.reload();
 });

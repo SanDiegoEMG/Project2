@@ -10,6 +10,7 @@ $("[data-connect-submit]").on("click", function (e) {
     }
   })
     .then(function (data) {
+      window.location.reload()
     })
     .catch(function (err) {
       console.log(err);

@@ -188,8 +188,7 @@ $("#create-profile").on("click", function (e) {
     })
         .then(function (data) {
             console.log(data);
-            window.location.replace("/login");
-            
+            window.location.replace("/profile");
         })
         .catch(function (err) {
             console.log(err);

@@ -30,9 +30,9 @@ module.exports = function(app) {
       include: [db.Skill]
     })
     .then(function(dbUser) {
-      db.User.findAll({
+       db.User.findAll({
         where: {
-          userLevel : req.user.userLevel,
+          userLevel : dbUser.userLevel,
           id: {
             $ne: req.user.id
           }

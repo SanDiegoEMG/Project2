@@ -70,10 +70,10 @@ a:link, a:hover, a:visited, a:active {
 .tiny-text {
   font-size: 7pt;
   color: grey;
-  margin: 5pt 0 0 10pt;
+  margin: 5pt 0 0 10px;
 }
 #modalCloseButton {
-  margin-bottom: 10pt;
+  margin-bottom: 10px;
 }
 #cancel-login, #cancel-sign-up {
   border-radius: 10px;
@@ -118,7 +118,7 @@ h2 {
   color:rgb(36, 37, 39);
   padding-top: 20px;
 }
-.next-question, .connect-modal, .back-button, #create-profile  {
+.next-question, .back-button, #create-profile  {
   border-radius: 10px;
   color: white;
 }
@@ -184,7 +184,7 @@ h2 {
 #about-title, #create-profile, #back-from-about-me {
   background: #89B24C;
 }
-#create-profile {
+#create-profile, .connect-modal {
   border-radius: 10px;
 }
 #profile-page-container {
@@ -206,8 +206,7 @@ h2 {
   margin-right: 1%;
   background: white;
   padding-bottom: 20px;
-  min-height: 300px;
-  max-height: 600px;
+  height: 400px;
   opacity: 0.9;
   float: left;
 }

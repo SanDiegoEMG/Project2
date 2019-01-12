@@ -37,7 +37,7 @@ module.exports = function(app) {
             $ne: req.user.id
           }
         },
-        include: [db.Skill]
+        // include: [db.Skill]
       }).then(function (dbMatches) {
       
         

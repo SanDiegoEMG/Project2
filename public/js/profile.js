@@ -16,4 +16,4 @@ $("[data-connect-submit]").on("click", function (e) {
       console.log(err);
       alert(err.responseText);
     });
-}); 
+});  

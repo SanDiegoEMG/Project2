@@ -202,6 +202,7 @@ h2 {
 .profile-card {
   border-radius: 10px;
   margin-top: 60px;
+  margin-bottom: 120px;
   margin-left: 1%;
   margin-right: 1%;
   background: white;
@@ -211,23 +212,25 @@ h2 {
   float: left;
 }
 .profile-content {
-  text-align: left;
+  text-align: center;
 }
 .uk-icon-link {
   cursor: pointer;
 }
+#user-avatar {
+  width: 20%;
+}
 #user-bio {
-  width: 40%;
+  width: 20%;
 }
 #user-skills {
-  width: 28%;
+  width: 20%;
 }
 #user-matches {
   width: 26%;
 } 
 #user-connections {
-  width: 98%;
-  margin-bottom: 60px;
+  width: 26%;
 } 
 #connect-header, #connect {
   background: #5080FF;
@@ -242,20 +245,6 @@ h2 {
 }
 #broken {
   background-image: url("../images/broken.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-  text-align: center;
-  opacity: 0.75;
-}
-#joined {
-  background-color: rgb(140, 173, 245);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

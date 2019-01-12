@@ -1,5 +1,4 @@
 $("#connect").on("click", function(e) {
-    e.preventDefault();
 var uName = $(this).data("user");
 console.log(uName);
 $.ajax({
@@ -15,4 +14,5 @@ $.ajax({
       console.log(err);
       alert(err.responseText);
     });
+    location.reload();
 });

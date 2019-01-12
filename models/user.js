@@ -36,6 +36,7 @@ module.exports = function (sequelize, DataTypes) {
 
   User.associate = function (models) {
     models.User.hasOne(models.Skill);
+    models.User.hasMany(models.Favorite);
   };
 
   // Create custom method for User model. This will compares unhashed password entered by user to the hashed password stored in our database

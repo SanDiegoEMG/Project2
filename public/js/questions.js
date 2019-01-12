@@ -188,7 +188,8 @@ $("#create-profile").on("click", function (e) {
     })
         .then(function (data) {
             console.log(data);
-            window.location.replace("/profile");
+            window.location.replace("/login");
+            
         })
         .catch(function (err) {
             console.log(err);
@@ -198,16 +199,17 @@ $("#create-profile").on("click", function (e) {
 
 $("#delete").on("click", function(e){
     e.preventDefault();
-
-    window.location.replace("/");
+    if(confirm("Are you sure you want to delete your profile?")){
+            $.ajax({
+                method: "DELETE",
+                url: "/api/user/:id",
+                success:   window.location.replace("/")
+            })
+        }else{
+            alert("good choice!")
+        }
     
-    $.ajax({
-        method: "DELETE",
-        url: "/api/user/:id" 
-    }).then(function(data){
-        console.log("deleted" + data.id)
-        
-    });
+    
 })
 // the following function controls the ui view of question.handlebars data ... it makes an effective 'carousel' when the submit button of each section is clicked
 // jquery selectors are not working here to select the element so using vanilla js - don't know issue

@@ -54,6 +54,8 @@ module.exports = function (app) {
         res.redirect(307, "/api/login");
       })
       .catch(function (err) {
+        console.error(err);
+
         res.status(422).json(err.errors[0].message);
       });
   });
@@ -124,17 +126,18 @@ module.exports = function (app) {
   });
 
   // creating a user in the favorite table when connect is clicked
-  app.post("/api/user/connect", function (req, res) {
+  app.post("/api/user/connect", isAuthenticated, function (req, res) {
     var favBody = req.body;
-    favBody.userId = req.user.id
+    favBody.UserId = req.user.id;
+    // favBody.userId = req.user.id
     db.Favorite.create(favBody
     ).then(function (data) {
 
       res.json(data);
+      console.log(data);
     })
       .catch(function (err) {
         res.status(400).send(err);
       });
   });
-
 };

@@ -1,6 +1,30 @@
+<nav class="uk-navbar-container" style="background: #C2CCB4" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li><a href="/"><img id="nav-logo" data-src="./images/code_with_friends_logo.png" alt="site logo" uk-img></a></li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="#" id="settings">Settings</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="/questions">Edit Account</a></li>
+                        <li><a href="#" id="delete">Delete Account</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="/logout"><span uk-icon="icon: sign-out" id="logout">LOG OUT</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div id="question-page-container">
-    <div class="questionnaire-item" id="questionnaire-item-build">
-        <div class="question-title" id="build-title">
+    <div class="questionnaire-item" id="questionnaire-item-level">
+        <div class="question-title" id="level-title">
             <h2>What is your coding level?</h2>
         </div>
         <div class="question-container" id="userLevel">
@@ -33,11 +57,7 @@
         </div>
 
         <div class="question-actions">
-        {{!--  removed back button from first question screen  --}}
-        {{!--  was causing trouble with duplicating acct creation --}}
-
-            {{!-- <button class="uk-button back-button" id="back-build"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button> --}}
-            <button class="uk-button uk-button-primary next-question" id="add-build">Next</button>
+            <button class="uk-button next-question" id="add-level">Next</button>
         </div>
     </div>
 
@@ -83,8 +103,8 @@
             </div>
         </div>
         <div class="question-actions">
-             <button class="uk-button back-button" id="back-from-time"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
-            <button class="uk-button uk-button-primary next-question" id="add-time">Next</button>
+             <button class="uk-button back-button" id="back-from-time"><span uk-icon="chevron-left"></span>back</button>
+            <button class="uk-button next-question" id="add-time">Next<span uk-icon="chevron-right"></span></button>
         </div>
     </div>
 
@@ -117,8 +137,8 @@
             </div>
         </div>
         <div class="question-actions">
-            <button class="uk-button back-button" id="back-from-skills"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
-            <button class="uk-button uk-button-primary next-question" id="add-current-skills">Next</button>
+            <button class="uk-button back-button" id="back-from-skills"><span uk-icon="chevron-left"></span></span>back</button>
+            <button class="uk-button next-question" id="add-current-skills">Next<span uk-icon="chevron-right"></span></button>
         </div>
     </div>
 
@@ -155,8 +175,8 @@
             </div>
         </div>
         <div class="question-actions">
-            <button class="uk-button back-button" id="back-from-idea"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
-            <button class="uk-button uk-button-primary next-question" id="add-idea">Next</button>
+            <button class="uk-button back-button" id="back-from-idea"><span uk-icon="chevron-left"></span>back</button>
+            <button class="uk-button next-question" id="add-idea">Next<span uk-icon="chevron-right"></span></button>
         </div>
     </div>
 
@@ -181,8 +201,8 @@
             </form>
         </div>
         <div class="question-actions">
-            <button class="uk-button back-button" id="back-from-online-profiles"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
-            <button class="uk-button uk-button-primary next-question" id="add-online-profiles">Next</button>
+            <button class="uk-button back-button" id="back-from-online-profiles"><span uk-icon="chevron-left"></span>back</button>
+            <button class="uk-button next-question" id="add-online-profiles">Next<span uk-icon="chevron-right"></span></button>
         </div>
     </div>
 
@@ -198,8 +218,8 @@
             </form>
         </div>
         <div class="question-actions">
-            <button class="uk-button back-button" id="back-from-about-me"><span uk-icon="chevron-left"></span><span class="uk-text-lowercase">back</span></button>
-            <button class="uk-button uk-button-primary" id="create-profile">Create Profile</button>
+            <button class="uk-button back-button" id="back-from-about-me"><span uk-icon="chevron-left"></span>back</button>
+            <button class="uk-button" id="create-profile">Create Profile</button>
         </div>
     </div>
 
@@ -208,47 +228,7 @@
     <div id="modal-no-response" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
             <h4 class="uk-modal-title uk-text-danger uk-text-center">Selection required</h4>
-            <button class="uk-modal-close uk-position-bottom-center" id="modalCloseButton" type="button"><span uk-icon="icon: close">close</button>
+            <button class="uk-modal-close uk-position-bottom-center" id="modalCloseButton" type="button"><span uk-icon="icon: close"></span>close</button>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-{{!-- <div class="questionnaire-item uk-animation-slide-right" id="questionnaire-item-learn-skills">
-    <div class="question-title">
-        <h2>Select the skills you would like to learn?</h2>
-    </div>
-    <div class="question-container">
-        <div class="uk-grid-match uk-child-width-expand uk-text-center" uk-grid>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="html">HTML</div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="css">CSS</div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="javascript">JAVASCRIPT</div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="jquery">JQUERY</div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="node">NODE</div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="express">EXPRESS</div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="react">REACT</div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="handlebars">HANDLEBARS</div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="mysql">MYSQL</div>
-                <div class="uk-card uk-card-default uk-card-body learn-skill" id="mongodb">MONGODB</div>
-            </div>
-        </div>
-    </div>
-    <div class="question-actions">
-        <button class="uk-button uk-button-primary next-question" id="add-learn-skills">Next</button>
-    </div>
-</div> --}}

@@ -29,8 +29,16 @@ module.exports = function (sequelize, DataTypes) {
     userLevel: DataTypes.STRING,
     codingTime: DataTypes.STRING,
     projectIdea: DataTypes.STRING,
-    github: DataTypes.STRING,
-    linkedin: DataTypes.STRING,
+    github: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "github.com/join"
+    },
+    linkedin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "linkedin.com/start/join"
+    },
     profileStatement: DataTypes.TEXT,
   });
 

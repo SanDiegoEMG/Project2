@@ -15,15 +15,15 @@ $('input:radio[name="userLevel"]').on("change", function (e) {
 
 
 // grabs user selection for 'userLevel' and adds it to newUser object
-$("#add-build").on("click", function () {
+$("#add-level").on("click", function () {
     newUser.userLevel = $('input:radio[name="userLevel"]:checked').val();
-    modalAndNextScreen("userLevel", "questionnaire-item-build", "questionnaire-item-time");
+    modalAndNextScreen("userLevel", "questionnaire-item-level", "questionnaire-item-time");
 });
 
 //back button to previous question section
-$("#back-build").on("click", function (e) {
+$("#back-level").on("click", function (e) {
     e.preventDefault();
-    console.log("back button clicked at back-build")
+    console.log("back button clicked at back-level")
     window.location.replace("/");
 });
 
@@ -50,7 +50,7 @@ $("#add-time").on("click", function () {
 
 // takes users back to how much time they can spend
 $("#back-from-time").on("click", function () {
-   showPreviousQuestion("questionnaire-item-time","questionnaire-item-build");
+   showPreviousQuestion("questionnaire-item-time","questionnaire-item-level");
 });
 
 // adds/removes class on skills choices ... no radio bc many can be selected

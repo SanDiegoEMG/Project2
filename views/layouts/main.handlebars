@@ -17,35 +17,6 @@
 </head>
 
 <body>
-    <nav class="uk-navbar-container" style="background: #C2CCB4" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                <li><a href="/"><img id="nav-logo" data-src="./images/code_with_friends_logo.png" alt="site logo" uk-img></a></li>
-            </ul>
-        </div>
-        <div class="uk-navbar-right">
-            {{#if user}}
-            <ul class="uk-navbar-nav">
-                {{!-- <li class="uk-active"><a href="#">Active</a></li> --}}
-
-                <li>
-                    <a href="#" id="settings">Settings</a>
-                    <div class="uk-navbar-dropdown">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a href="/questions">Edit Account</a></li>
-                            <li><a href="#" id="delete">Delete Account</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-
-                <li>
-                    <a href="/logout"><span uk-icon="icon: sign-out" id="logout">LOG OUT</span></a>
-                </li>
-            </ul>
-            {{/if}}
-        </div>
-    </nav>
 
     {{{body}}}
 

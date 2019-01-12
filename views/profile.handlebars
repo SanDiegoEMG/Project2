@@ -29,20 +29,13 @@
             <h3>Hello {{user.fullName}}!</h3>
         </div>
         <div class="profile-content">
-            <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
+            <div id="avatar-area">
+                <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
+            </div>
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
             <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
-            <p><strong>Bio</strong></p>
-            <p>{{user.profileStatement}}</p>
-        </div>
-    </div>
-
-    <div class="profile-card" id="user-skills">
-        <div class="profile-title">
-            <h3>Your Skills Profile</h3>
-        </div>
-        <div class="profile-content">
+            <p><strong>Skills</strong></p>
             {{#if user.Skill.html}}
             <p>&nbsp;HTML&nbsp;
                 {{/if}}
@@ -73,6 +66,8 @@
                 {{#if user.Skill.handlebars}}
                 &nbsp;HANDLEBARS&nbsp;</p>
             {{/if}}
+            <p><strong>Bio</strong></p>
+            <p>{{user.profileStatement}}</p>
         </div>
     </div>
 
@@ -135,8 +130,8 @@
                         </div>
                         <div class="uk-modal-footer uk-text-right">
                             <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>
-                            <button class="uk-button connect-modal uk-modal-close" data-connect-submit data-user="{{this.userName}}" id="connect"
-                                type="button">Connect</button>
+                            <button class="uk-button connect-modal uk-modal-close" data-connect-submit data-user="{{this.userName}}"
+                                id="connect" type="button">Connect</button>
                         </div>
                     </div>
                 </div>

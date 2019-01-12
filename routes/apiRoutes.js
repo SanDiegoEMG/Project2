@@ -5,24 +5,15 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   // Get all data for one user using their unique id
-  // app.get("/api/users/:id", isAuthenticated, function (req, res) {
+  // app.get("/api/user/:id", isAuthenticated, function (req, res) {
   //   db.User.findAll({
   //     where: {
-  //       UserId: req.params.id
+  //       id: req.params.id
   //     }
   //   }).then(function (dbUser) {
   //     res.json(dbUser);
   //   });
   // });
-
-  // Create a new example
-  app.get("/api/users/:id", isAuthenticated, function (req, res) {
-    db.User.update({
-      UserId: req.user.id,
-    }).then(function (newUser) {
-      res.json(newUser);
-    });
-  });
 
   // Delete an example by id
   app.delete("/api/user/:id", isAuthenticated, function (req, res) {
@@ -48,7 +39,6 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function (req, res) {
-    // console.log(req.body);
     db.User.create(req.body)
       .then(function () {
         res.redirect(307, "/api/login");

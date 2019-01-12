@@ -13,9 +13,10 @@
   opacity: 0.75;
 }
 #nav-logo {
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom:20px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom:10px;
+  height: 80px;
 }
 #logout, #settings {
   margin-right: 20px;
@@ -44,10 +45,16 @@
   line-height: 25px;
   margin-bottom: 20px;
 }
+
+.landing-description {
+  padding: 5pt 5pt 5pt 20pt;
+}
+
 h1 {
   padding-top: 20px;
   color: white;
 }
+
 a:link, a:hover, a:visited, a:active {
   text-decoration: none;
 }
@@ -63,6 +70,17 @@ a:link, a:hover, a:visited, a:active {
   background: #89B24C;
   border-radius: 10px;
 }
+
+.tiny-text {
+  font-size: 7pt;
+  color: grey;
+  margin: 5pt 0 0 10pt;
+}
+
+#modalCloseButton {
+  margin-bottom: 10pt;
+}
+
 #cancel-login, #cancel-sign-up {
   border-radius: 10px;
 }
@@ -136,13 +154,16 @@ h2 {
   color:rgb(36, 37, 39);
   cursor: pointer;
 }
+
 #questionnaire-item-current-skills, #modal-noResponse {
   display: none;
 }
+
 #skills-title, #add-current-skills, .skill-selected, .profile-title {
   background: #f7f48b;
   color: rgb(36, 37, 39);
 }
+
 .skill {
   border-radius: 10px;
   border: 1px solid #f7f48b;;
@@ -150,36 +171,46 @@ h2 {
   margin-bottom: 20px;
   cursor: pointer;
 }
+
 #questionnaire-item-learn-skills {
   display: none;
 }
+
 #questionnaire-item-idea {
   display: none;
 }
+
 #idea-title, #add-idea, .idea-selected {
   background: #FF9279;
 }
+
 .idea-div {
   border-radius: 10px;
   border: 1px solid #FF9279;
   color:rgb(36, 37, 39);
   cursor: pointer;
 }
+
 #questionnaire-item-online-profiles {
   display: none;
 }
+
 #online-profile-title, #add-online-profiles {
   background: #5080FF;
 }
+
 #questionnaire-item-about {
   display: none;
 }
+
 #about-title, #create-profile {
   background: #89B24C;
 }
+
 #create-profile {
   border-radius: 10px;
 }
+
 #profile-page-container {
   background-image: url("../images/coding-alone-dark.jpg");
   background-position: center;
@@ -192,6 +223,7 @@ h2 {
   z-index: 0;
   text-align: center;
   }
+
 .profile-card {
   border-radius: 10px;
   margin-top: 60px;
@@ -204,6 +236,7 @@ h2 {
   opacity: 0.9;
   float: left;
 }
+
 .profile-content {
   text-align: left;
 }

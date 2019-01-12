@@ -127,7 +127,6 @@ module.exports = function (app) {
   app.post("/api/user/connect", isAuthenticated, function (req, res) {
     var favBody = req.body;
     favBody.UserId = req.user.id;
-    // favBody.userId = req.user.id
     db.Favorite.create(favBody
     ).then(function (data) {
 

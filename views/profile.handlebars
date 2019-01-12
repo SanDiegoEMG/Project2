@@ -18,35 +18,35 @@
         </div>
         <div class="profile-content">
             {{#if user.Skill.html}}
-                    <p>&nbsp;HTML&nbsp;|
+            <p>&nbsp;HTML&nbsp;|
                 {{/if}}
                 {{#if user.Skill.css}}
-                    &nbsp;CSS&nbsp;|
+                &nbsp;CSS&nbsp;|
                 {{/if}}
                 {{#if user.Skill.javascript}}
-                    &nbsp;JAVASCRIPT&nbsp;|
+                &nbsp;JAVASCRIPT&nbsp;|
                 {{/if}}
                 {{#if user.Skill.jquery}}
-                    &nbsp;JQUERY&nbsp;|
+                &nbsp;JQUERY&nbsp;|
                 {{/if}}
                 {{#if user.Skill.node}}
-                    &nbsp;NODE&nbsp;|
+                &nbsp;NODE&nbsp;|
                 {{/if}}
                 {{#if user.Skill.express}}
-                    &nbsp;EXPRESS&nbsp;|
+                &nbsp;EXPRESS&nbsp;|
                 {{/if}}
                 {{#if user.Skill.react}}
-                    &nbsp;REACT&nbsp;|
+                &nbsp;REACT&nbsp;|
                 {{/if}}
                 {{#if user.Skill.mongodb}}
-                    &nbsp;MONGODB&nbsp;|
+                &nbsp;MONGODB&nbsp;|
                 {{/if}}
                 {{#if user.Skill.mysql}}
-                    &nbsp;MYSQL&nbsp;|
+                &nbsp;MYSQL&nbsp;|
                 {{/if}}
                 {{#if user.Skill.handlebars}}
-                    &nbsp;HANDLEBARS&nbsp;|</p>
-                {{/if}}
+                &nbsp;HANDLEBARS&nbsp;|</p>
+            {{/if}}
         </div>
     </div>
 
@@ -59,29 +59,61 @@
             <ul>
                 <p class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">{{this.userName}}
                     &nbsp;</p>
-            </ul>
-            <div id="more-match-info{{this.id}}" uk-modal>
-                <div class="uk-modal-dialog">
-                    <div class="uk-modal-header" id="connect-header">
-                        <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
-                    </div>
-                    <div class="uk-modal-body">
-                        <p id="match-full-name">{{this.fullName}}</p>
-                        {{#if this.github}}
-                        <p><span uk-icon="github-alt"></span>&nbsp; : &nbsp;{{this.github}}</p>
-                        {{/if}}
-                        {{#if this.linkedin}}
-                        <p><span uk-icon="linkedin"></span>&nbsp; : &nbsp;{{this.linkedin}}</p>
-                        {{/if}}
-                        <p>{{this.profileStatement}}</p>
-                    </div>
-                    <div class="uk-modal-footer uk-text-right">
-                        <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>
-                        <button class="uk-button connect-modal" data-user="{{this.userName}}" id="connect" type="button">Connect</button>
+                <button class"uk-button">Connect</button>
+
+                <div id="more-match-info{{this.id}}" uk-modal>
+                    <div class="uk-modal-dialog">
+                        <div class="uk-modal-header" id="connect-header">
+                            <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
+                        </div>
+                        <div class="uk-modal-body">
+                            <p id="match-full-name">{{this.fullName}}</p>
+                            {{#if this.github}}
+                            <p><span uk-icon="github-alt"></span>&nbsp; : &nbsp;{{this.github}}</p>
+                            {{/if}}
+                            {{#if this.linkedin}}
+                            <p><span uk-icon="linkedin"></span>&nbsp; : &nbsp;{{this.linkedin}}</p>
+                            {{/if}}
+                            <p><strong>Skills</strong></p>
+                            {{#if this.Skill.html}}
+            <p>&nbsp;HTML&nbsp;
+                {{/if}}
+                {{#if this.Skill.css}}
+                &nbsp;CSS&nbsp;
+                {{/if}}
+                {{#if this.Skill.javascript}}
+                &nbsp;JAVASCRIPT&nbsp;
+                {{/if}}
+                {{#if this.Skill.jquery}}
+                &nbsp;JQUERY&nbsp;
+                {{/if}}
+                {{#if this.Skill.node}}
+                &nbsp;NODE&nbsp;
+                {{/if}}
+                {{#if this.Skill.express}}
+                &nbsp;EXPRESS&nbsp;
+                {{/if}}
+                {{#if this.Skill.react}}
+                &nbsp;REACT&nbsp;
+                {{/if}}
+                {{#if this.Skill.mongodb}}
+                &nbsp;MONGODB&nbsp;
+                {{/if}}
+                {{#if this.Skill.mysql}}
+                &nbsp;MYSQL&nbsp;
+                {{/if}}
+                {{#if this.Skill.handlebars}}
+                &nbsp;HANDLEBARS&nbsp;</p>
+            {{/if}}
+                        </div>
+                        <div class="uk-modal-footer uk-text-right">
+                            <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>
+                            <button class="uk-button connect-modal uk-modal-close" data-user="{{this.userName}}" id="connect"
+                                type="button">Connect</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </ul>
             {{/each}}
         </div>
     </div>
@@ -93,9 +125,9 @@
         <div class="profile-content">
             <ul>
                 {{#each favorites}}
-                    <p>{{this.userName}}</p>
+                <p>{{this.userName}}</p>
                 {{/each}}
-                
+
             </ul>
         </div>
     </div>

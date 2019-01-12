@@ -5,15 +5,15 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   // Get all data for one user using their unique id
-  app.get("/api/users/:id", isAuthenticated, function (req, res) {
-    db.User.findAll({
-      where: {
-        UserId: req.params.id
-      }
-    }).then(function (dbUser) {
-      res.json(dbUser);
-    });
-  });
+  // app.get("/api/users/:id", isAuthenticated, function (req, res) {
+  //   db.User.findAll({
+  //     where: {
+  //       UserId: req.params.id
+  //     }
+  //   }).then(function (dbUser) {
+  //     res.json(dbUser);
+  //   });
+  // });
 
   // Create a new example
   app.get("/api/users/:id", isAuthenticated, function (req, res) {
@@ -54,6 +54,8 @@ module.exports = function (app) {
         res.redirect(307, "/api/login");
       })
       .catch(function (err) {
+        console.error(err);
+
         res.status(422).json(err.errors[0].message);
       });
   });

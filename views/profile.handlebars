@@ -26,13 +26,11 @@
 
     {{!-- left most card on first row - Info About User --}}
     <div class="profile-card" id="user-bio">
-        <div class="profile-title">
-            <h3>Hello {{user.fullName}}!</h3>
-        </div>
         <div class="profile-content">
             <div id="avatar-area">
                 <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
             </div>
+            <h3>Hello {{user.fullName}}!</h3>
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
             <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
@@ -74,15 +72,18 @@
 
     {{!-- right most card on first row - displays recommended connections --}}
     <div class="profile-card" id="user-matches">
-        <div class="profile-title">
+        <div class="profile-title" id="matches-title">
             <h3>Recommended Connections</h3>
         </div>
 
         <div class="profile-content">
             {{#each matches}}
             <ul>
-                <p class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">{{this.userName}}
-                    &nbsp;</p>
+                <p class="uk-icon-link match-content" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">
+                    <img class="match-avatar" src="./images/default-profile-pic.png">
+                    &nbsp;{{this.userName}}&nbsp;
+                </p>
+                <hr>
 
                 {{!-- modal that displays more details when a recommended connection username is clicked --}}
                 <div id="more-match-info{{this.id}}" uk-modal>
@@ -152,13 +153,16 @@
 
     {{!-- second row card - displays connections that the current user has made from recommendations --}}
     <div class="profile-card" id="user-connections">
-        <div class="profile-title">
+        <div class="profile-title" id="connections-title">
             <h3>Personal Connections</h3>
         </div>
         <div class="profile-content">
             <ul>
                 {{#each favorites}}
-                <p>{{this.userName}}</p>
+                <p class="match-content"><img class="match-avatar" src="./images/default-profile-pic.png">
+                    &nbsp;{{this.userName}}&nbsp;
+                </p>
+                <hr>
                 {{/each}}
 
             </ul>

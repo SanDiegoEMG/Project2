@@ -329,3 +329,13 @@ h2 {
   line-height: 25px;
   margin-bottom: 20px;
 }
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 960px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 640px) {
+}
+@media screen and (max-width: 425px) {
+}

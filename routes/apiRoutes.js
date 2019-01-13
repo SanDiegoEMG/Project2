@@ -98,13 +98,18 @@ module.exports = function (app) {
       db.User.findAll({
           where: {
             userLevel : req.user.userLevel,
+            codingTime: req.user.codingTime,
             id: {
-              $ne: req.user.id
-            }
+              $ne: req.user.id,
+            },
           }
           
         }).then(function (dbUser) {
+          /// add a loop to get the first 5
+         
+
           res.json(dbUser);
+          
         });
   });
 

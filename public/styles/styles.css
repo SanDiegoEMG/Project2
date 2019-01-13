@@ -215,7 +215,7 @@ h2 {
 }
 .profile-card {
   border-radius: 10px;
-  margin-top: 60px;
+  margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
   background: white;
@@ -328,6 +328,16 @@ h2 {
   line-height: 25px;
   margin-bottom: 20px;
 }
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: #C2CCB4;
+  padding-top: 20px;
+}
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
@@ -342,9 +352,6 @@ h2 {
   }
 }
 @media screen and (max-width: 960px) {
-  .profile-card {
-    margin-top: 20px;
-  }
   .skill, .idea-div {
     font-size: 10px;
   }

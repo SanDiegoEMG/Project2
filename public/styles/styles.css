@@ -198,8 +198,18 @@ h2 {
 #about-title, #create-profile, #back-from-about-me {
   background: #89B24C;
 }
-#create-profile, .connect-modal, .disconnect {
+#create-profile, .connect-modal {
   border-radius: 10px;
+}
+.disconnect {
+  height: 20px;
+  width: 60px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 0, 0px;
+  color: white;
+  line-height: auto;
 }
 #profile-page-container {
   background-image: url("../images/coding-alone-dark.jpg");

@@ -160,7 +160,7 @@ h2 {
 #questionnaire-item-current-skills, #modal-noResponse {
   display: none;
 }
-#skills-title, #add-current-skills, #back-from-skills, .skill-selected, .profile-title {
+#skills-title, #add-current-skills, #back-from-skills, .skill-selected {
   background: #f7f48b;
   color: rgb(36, 37, 39);
 }
@@ -216,12 +216,11 @@ h2 {
 .profile-card {
   border-radius: 10px;
   margin-top: 60px;
-  margin-bottom: 120px;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 10px;
+  margin-right: 10px;
   background: white;
   padding-bottom: 20px;
-  height: 600px;
+  min-height: 400px;
   opacity: 0.9;
   float: left;
 }
@@ -249,12 +248,14 @@ h2 {
   opacity: 1;
   font-size: 18px;
 } 
-#user-skills {
-  width: 20%;
-}
 #user-matches {
-  width: 36%;
+  width: 400px;
+  border: 10px solid #f7f48b;
 } 
+#matches-title {
+  background: #f7f48b;
+  color: rgb(36, 37, 39)
+}
 .match-content {
   font-size: 18px;
   font-weight: bolder;
@@ -264,8 +265,13 @@ h2 {
   height: 40px;
 }
 #user-connections {
-  width: 36%;
+  width: 400px;
+  border: 10px solid #FF9279;
 } 
+#connections-title {
+  background: #FF9279;
+  color: rgb(36, 37, 39);
+}
 #connect-header, #connect {
   background: #5080FF;
 }
@@ -276,10 +282,6 @@ h2 {
   width: 300px;
   height: 300px;
   display: none;
-}
-hr {
-  margin-left: 0px;
-  margin-right:0px;
 }
 #broken {
   background-image: url("../images/broken.jpg");

@@ -26,11 +26,11 @@
 
     {{!-- left most card on first row - Info About User --}}
     <div class="profile-card" id="user-bio">
-            <h3>Hello {{user.fullName}}!</h3>
         <div class="profile-content">
             <div id="avatar-area">
                 <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
             </div>
+            <h3>Hello {{user.fullName}}!</h3>
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
             <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
@@ -72,7 +72,7 @@
 
     {{!-- right most card on first row - displays recommended connections --}}
     <div class="profile-card" id="user-matches">
-        <div class="profile-title">
+        <div class="profile-title" id="matches-title">
             <h3>Recommended Connections</h3>
         </div>
 
@@ -153,7 +153,7 @@
 
     {{!-- second row card - displays connections that the current user has made from recommendations --}}
     <div class="profile-card" id="user-connections">
-        <div class="profile-title">
+        <div class="profile-title" id="connections-title">
             <h3>Personal Connections</h3>
         </div>
         <div class="profile-content">

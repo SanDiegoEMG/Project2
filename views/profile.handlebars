@@ -26,9 +26,7 @@
 
     {{!-- left most card on first row - Info About User --}}
     <div class="profile-card" id="user-bio">
-        <div class="profile-title">
             <h3>Hello {{user.fullName}}!</h3>
-        </div>
         <div class="profile-content">
             <div id="avatar-area">
                 <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
@@ -81,8 +79,11 @@
         <div class="profile-content">
             {{#each matches}}
             <ul>
-                <p class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">{{this.userName}}
-                    &nbsp;</p>
+                <p class="uk-icon-link match-content" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">
+                    <img class="match-avatar" src="./images/default-profile-pic.png">
+                    &nbsp;{{this.userName}}&nbsp;
+                </p>
+                <hr>
 
                 {{!-- modal that displays more details when a recommended connection username is clicked --}}
                 <div id="more-match-info{{this.id}}" uk-modal>
@@ -158,7 +159,10 @@
         <div class="profile-content">
             <ul>
                 {{#each favorites}}
-                <p>{{this.userName}}</p>
+                <p class="match-content"><img class="match-avatar" src="./images/default-profile-pic.png">
+                    &nbsp;{{this.userName}}&nbsp;
+                </p>
+                <hr>
                 {{/each}}
 
             </ul>

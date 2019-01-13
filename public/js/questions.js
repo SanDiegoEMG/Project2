@@ -159,6 +159,13 @@ $("#add-idea").on("click", function () {
 //back button to previous question section
 $("#back-from-idea").on("click", function () {
     showPreviousQuestion("questionnaire-item-idea", "questionnaire-item-current-skills");
+       // ajax call to prevent duplicate entries into Skills table
+       $.ajax({
+        method: "DELETE",
+        url: "/api/skill",
+    }) .then (function (data){
+        console.log(data)
+    })
  });
 
 // collects inputs from user response to github and linkedin profile addresses and stores in newUser object

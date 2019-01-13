@@ -81,10 +81,10 @@ a:link, a:hover, a:visited, a:active {
 .tiny-text {
   font-size: 7pt;
   color: grey;
-  margin: 5pt 0 0 10pt;
+  margin: 5pt 0 0 10px;
 }
 #modalCloseButton {
-  margin-bottom: 10pt;
+  margin-bottom: 10px;
 }
 #cancel-login, #cancel-sign-up {
   border-radius: 10px;
@@ -102,7 +102,7 @@ a:link, a:hover, a:visited, a:active {
   z-index: 0;
   text-align: center;
 }
-.question-title, .profile-title {
+.question-title {
   text-align: center;
   align-items: center;
   border-top-left-radius: 5px;
@@ -129,7 +129,7 @@ h2 {
   color:rgb(36, 37, 39);
   padding-top: 20px;
 }
-.next-question, .connect-modal, .back-button, #create-profile  {
+.next-question, .back-button, #create-profile  {
   border-radius: 10px;
   color: white;
 }
@@ -160,7 +160,7 @@ h2 {
 #questionnaire-item-current-skills, #modal-noResponse {
   display: none;
 }
-#skills-title, #add-current-skills, #back-from-skills, .skill-selected, .profile-title {
+#skills-title, #add-current-skills, #back-from-skills, .skill-selected {
   background: #f7f48b;
   color: rgb(36, 37, 39);
 }
@@ -198,7 +198,7 @@ h2 {
 #about-title, #create-profile, #back-from-about-me {
   background: #89B24C;
 }
-#create-profile {
+#create-profile, .connect-modal {
   border-radius: 10px;
 }
 #profile-page-container {
@@ -216,34 +216,71 @@ h2 {
 .profile-card {
   border-radius: 10px;
   margin-top: 60px;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 10px;
+  margin-right: 10px;
   background: white;
   padding-bottom: 20px;
-  min-height: 300px;
-  max-height: 600px;
+  min-height: 400px;
   opacity: 0.9;
   float: left;
+}
+.profile-title {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 17px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
 }
 .profile-content {
   text-align: left;
 }
+#avatar-area {
+  text-align: center;
+}
 .uk-icon-link {
   cursor: pointer;
 }
+.skill-logo {
+  height: 40px;
+}
+#user-avatar {
+  width: 50%;
+}
 #user-bio {
-  width: 40%;
-}
-#user-skills {
-  width: 28%;
-}
+  width: 328px;
+  margin-left: 0px;
+  margin-top: 0px;
+  border-radius: 0px;
+  height: 100vh;
+  opacity: 1;
+  font-size: 18px;
+} 
 #user-matches {
-  width: 26%;
+  width: 400px;
+  border: 10px solid #f7f48b;
 } 
+#matches-title {
+  background: #f7f48b;
+  color: rgb(36, 37, 39)
+}
+.match-content {
+  font-size: 18px;
+  font-weight: bolder;
+  color: #5080FF;
+}
+.match-avatar {
+  height: 40px;
+}
 #user-connections {
-  width: 98%;
-  margin-bottom: 60px;
+  width: 400px;
+  border: 10px solid #FF9279;
 } 
+#connections-title {
+  background: #FF9279;
+  color: rgb(36, 37, 39);
+}
 #connect-header, #connect {
   background: #5080FF;
 }
@@ -257,20 +294,6 @@ h2 {
 }
 #broken {
   background-image: url("../images/broken.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-  text-align: center;
-  opacity: 0.75;
-}
-#joined {
-  background-color: rgb(140, 173, 245);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -305,4 +328,14 @@ h2 {
   justify-content: center;
   line-height: 25px;
   margin-bottom: 20px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 960px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 640px) {
+}
+@media screen and (max-width: 425px) {
 }

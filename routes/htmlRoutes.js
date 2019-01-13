@@ -37,10 +37,9 @@ module.exports = function(app) {
             $ne: req.user.id
           }
         },
-        // include: [db.Skill]
+        include: [db.Skill]
       }).then(function (dbMatches) {
       
-        
        db.Favorite.findAll({
           where: {
             UserId: req.user.id

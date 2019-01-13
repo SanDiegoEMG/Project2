@@ -81,10 +81,10 @@ a:link, a:hover, a:visited, a:active {
 .tiny-text {
   font-size: 7pt;
   color: grey;
-  margin: 5pt 0 0 10pt;
+  margin: 5pt 0 0 10px;
 }
 #modalCloseButton {
-  margin-bottom: 10pt;
+  margin-bottom: 10px;
 }
 #cancel-login, #cancel-sign-up {
   border-radius: 10px;
@@ -129,7 +129,7 @@ h2 {
   color:rgb(36, 37, 39);
   padding-top: 20px;
 }
-.next-question, .connect-modal, .back-button, #create-profile  {
+.next-question, .back-button, #create-profile  {
   border-radius: 10px;
   color: white;
 }
@@ -198,7 +198,7 @@ h2 {
 #about-title, #create-profile, #back-from-about-me {
   background: #89B24C;
 }
-#create-profile {
+#create-profile, .connect-modal {
   border-radius: 10px;
 }
 #profile-page-container {
@@ -216,33 +216,41 @@ h2 {
 .profile-card {
   border-radius: 10px;
   margin-top: 60px;
+  margin-bottom: 120px;
   margin-left: 1%;
   margin-right: 1%;
   background: white;
   padding-bottom: 20px;
-  min-height: 300px;
-  max-height: 600px;
+  height: 600px;
   opacity: 0.9;
   float: left;
 }
 .profile-content {
   text-align: left;
 }
+#avatar-area {
+  text-align: center;
+}
 .uk-icon-link {
   cursor: pointer;
 }
+.skill-logo {
+  height: 40px;
+}
+#user-avatar {
+  width: 50%;
+}
 #user-bio {
-  width: 40%;
+  width: 20%;
 }
 #user-skills {
-  width: 28%;
+  width: 20%;
 }
 #user-matches {
-  width: 26%;
+  width: 36%;
 } 
 #user-connections {
-  width: 98%;
-  margin-bottom: 60px;
+  width: 36%;
 } 
 #connect-header, #connect {
   background: #5080FF;
@@ -257,20 +265,6 @@ h2 {
 }
 #broken {
   background-image: url("../images/broken.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-  text-align: center;
-  opacity: 0.75;
-}
-#joined {
-  background-color: rgb(140, 173, 245);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

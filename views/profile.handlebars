@@ -29,52 +29,46 @@
         <div class="profile-title">
             <h3>Hello {{user.fullName}}!</h3>
         </div>
-         <div class="profile-content">
-            {{!-- uk-card-body as class with the profile content above to keep text within the border? uk-card-body --}}
-            <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
-            <p class="uk-text-truncate"><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
-            <p class="uk-text-truncate"><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
-            <p><strong>About me</strong></p>
-            <p class="uk-text-break">{{user.profileStatement}}</p>
-        </div>
-    </div>
-    
-    {{!-- middle card on first row - displays current user's skills --}}
-    <div class="profile-card" id="user-skills">
-        <div class="profile-title">
-            <h3>My Skills Profile</h3>
-        </div>
         <div class="profile-content">
-            {{#if user.Skill.html}}
-            <p class="uk-text-center">&nbsp;HTML&nbsp;
+            <div id="avatar-area">
+                <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
+            </div>
+            <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
+            <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
+            <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
+            <p><strong>Skills</strong><br>
+                {{#if user.Skill.html}}
+                <img src="./images/html.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.css}}
-                &nbsp;CSS&nbsp;
+                <img src="./images/css.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.javascript}}
-                &nbsp;JAVASCRIPT&nbsp;
+                <img src="./images/javascript.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.jquery}}
-                &nbsp;JQUERY&nbsp;
+                <img src="./images/jquery.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.node}}
-                &nbsp;NODE&nbsp;
+                <img src="./images/node.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.express}}
-                &nbsp;EXPRESS&nbsp;
+                <img src="./images/expressjs.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.react}}
-                &nbsp;REACT&nbsp;
+                <img src="./images/react.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mongodb}}
-                &nbsp;MONGODB&nbsp;
+                <img src="./images/mongobd.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mysql}}
-                &nbsp;MYSQL&nbsp;
+                <img src="./images/mysql.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.handlebars}}
-                &nbsp;HANDLEBARS&nbsp;</p>
-            {{/if}}
+                <img src="./images/handlebars.png" class="skill-logo">
+                {{/if}}
+                <p><strong>Bio</strong><br>
+                    {{user.profileStatement}}</p>
         </div>
     </div>
 
@@ -83,7 +77,7 @@
         <div class="profile-title">
             <h3>Recommended Connections</h3>
         </div>
-        
+
         <div class="profile-content">
             {{#each matches}}
             <ul>
@@ -97,57 +91,54 @@
                             <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
                         </div>
                         <div class="uk-modal-body">
-                            {{!-- To reengage the commented out line below, need to replace the handlebars after fullName   look, it is obvious --}}
+                            {{!-- To reengage the commented out line below, need to replace the handlebars after
+                            fullName look, it is obvious --}}
                             {{!-- <p id="match-full-name">{{this.fullName</p> --}}
                             {{#if this.github}}
-                            <p class="uk-text-truncate"><span uk-icon="github-alt"></span>&nbsp; : &nbsp;{{this.github}}</p>
+                            <p class="uk-text-truncate"><span uk-icon="github-alt"></span>&nbsp; :
+                                &nbsp;{{this.github}}</p>
                             {{/if}}
                             {{#if this.linkedin}}
-                            <p class="uk-text-truncate"><span uk-icon="linkedin"></span>&nbsp; : &nbsp;{{this.linkedin}}</p>
+                            <p class="uk-text-truncate"><span uk-icon="linkedin"></span>&nbsp; :
+                                &nbsp;{{this.linkedin}}</p>
                             {{/if}}
-                            <p><strong> Skills</strong></p>
-                            {{#if this.Skill.html}}
-                            <div>&nbsp;HTML&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.css}}
-                                &nbsp;CSS&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.javascript}}
-                                &nbsp;JAVASCRIPT&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.jquery}}
-                                &nbsp;JQUERY&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.node}}
-                                &nbsp;NODE&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.express}}
-                                &nbsp;EXPRESS&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.react}}
-                                &nbsp;REACT&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.mongodb}}
-                                &nbsp;MONGODB&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.mysql}}
-                                &nbsp;MYSQL&nbsp;
-                                {{/if}}
-                                {{#if this.Skill.handlebars}}
-                                &nbsp;HANDLEBARS&nbsp;</div>
+                            {{#if user.Skill.html}}
+                            <img src="./images/html.png" class="skill-logo">
                             {{/if}}
-
-                            {{!-- added profile statement onto modal --}}
-                            <div>
-                                <p></p>
-                                <p class="uk-text-break"><strong>About</strong> {{this.profileStatement}}</p>
-                            </div>
+                            {{#if user.Skill.css}}
+                            <img src="./images/css.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.javascript}}
+                            <img src="./images/javascript.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.jquery}}
+                            <img src="./images/jquery.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.node}}
+                            <img src="./images/node.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.express}}
+                            <img src="./images/expressjs.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.react}}
+                            <img src="./images/react.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.mongodb}}
+                            <img src="./images/mongobd.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.mysql}}
+                            <img src="./images/mysql.png" class="skill-logo">
+                            {{/if}}
+                            {{#if user.Skill.handlebars}}
+                            <img src="./images/handlebars.png" class="skill-logo">
+                            {{/if}}
+                            <p><strong>Bio</strong><br>
+                                {{this.profileStatement}}</p>
                         </div>
 
                         {{!-- Modal footer with close & connect buttons --}}
                         <div class="uk-modal-footer uk-text-right">
-                            <button class="uk-button uk-button-default uk-modal-close round" type="button">Close</button>
-
+                            <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>
                             <button class="uk-button connect-modal uk-modal-close" data-connect-submit data-user="{{this.userName}}"
                                 id="connect" type="button">Connect</button>
                         </div>
@@ -175,4 +166,3 @@
     </div>
 
 </div>
-

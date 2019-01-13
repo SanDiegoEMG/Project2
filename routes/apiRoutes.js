@@ -126,7 +126,6 @@ module.exports = function (app) {
     ).then(function (data) {
 
       res.json(data);
-      console.log(data);
     })
       .catch(function (err) {
         res.status(400).send(err);

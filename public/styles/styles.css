@@ -338,18 +338,29 @@ h2 {
   #user-bio {
     width: 280px;
   }
+  #idea-title h2 {
+    font-size: 24px;
+  }
 }
 @media screen and (max-width: 960px) {
   .profile-card {
     margin-top: 20px;
+  }
+  .skill, .idea-div {
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 768px) {
   #introParagraph {
     font-size: 12px;
     }
-    #makeBig {
+  #makeBig {
     font-size: 18px;
+    }
+  .skill {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 10px;
     }
 }
 @media screen and (max-width: 640px) {
@@ -358,6 +369,12 @@ h2 {
     margin-left: 0px;
     margin-top: 0px;
     border-radius: 0px;
+  }
+  .skill {
+    font-size: 18px;
+  }
+  #idea-title h2 {
+    font-size: 18px;
   }
   #logout, #settings {
     margin-right: 0px;
@@ -381,5 +398,7 @@ h2 {
     padding-bottom: 0px;
     height: 20px;
   }
-
+  #online-profile-title h2 {
+    font-size: 24px;
+  }
 }

@@ -30,7 +30,7 @@
             <div id="avatar-area">
                 <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
             </div>
-            <h3>Hello {{user.fullName}}!</h3>
+            <h3>Hi {{user.fullName}}</h3>
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
             <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
@@ -57,7 +57,7 @@
                 <img src="./images/react.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mongodb}}
-                <img src="./images/mongobd.png" class="skill-logo">
+                <img src="./images/mongodb.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mysql}}
                 <img src="./images/mysql.png" class="skill-logo">
@@ -92,45 +92,43 @@
                             <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
                         </div>
                         <div class="uk-modal-body">
-                            {{!-- To reengage the commented out line below, need to replace the handlebars after
-                            fullName look, it is obvious --}}
-                            {{!-- <p id="match-full-name">{{this.fullName</p> --}}
+                            <p><strong>{{this.fullName}}</strong></p>
                             {{#if this.github}}
-                            <p class="uk-text-truncate"><span uk-icon="github-alt"></span>&nbsp; :
-                                &nbsp;{{this.github}}</p>
+                            <a href="{{this.github}}"><p class="uk-text-truncate"><span uk-icon="github-alt"></span>&nbsp; :
+                                &nbsp;{{this.github}}</p></a>
                             {{/if}}
                             {{#if this.linkedin}}
-                            <p class="uk-text-truncate"><span uk-icon="linkedin"></span>&nbsp; :
-                                &nbsp;{{this.linkedin}}</p>
+                            <a href="{{this.linkedin}}"><p class="uk-text-truncate"><span uk-icon="linkedin"></span>&nbsp; :
+                                &nbsp;{{this.linkedin}}</p></a>
                             {{/if}}
-                            {{#if user.Skill.html}}
+                            {{#if this.Skill.html}}
                             <img src="./images/html.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.css}}
+                            {{#if this.Skill.css}}
                             <img src="./images/css.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.javascript}}
+                            {{#if this.Skill.javascript}}
                             <img src="./images/javascript.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.jquery}}
+                            {{#if this.Skill.jquery}}
                             <img src="./images/jquery.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.node}}
+                            {{#if this.Skill.node}}
                             <img src="./images/node.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.express}}
+                            {{#if this.Skill.express}}
                             <img src="./images/expressjs.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.react}}
+                            {{#if this.Skill.react}}
                             <img src="./images/react.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.mongodb}}
-                            <img src="./images/mongobd.png" class="skill-logo">
+                            {{#if this.Skill.mongodb}}
+                            <img src="./images/mongodb.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.mysql}}
+                            {{#if this.Skill.mysql}}
                             <img src="./images/mysql.png" class="skill-logo">
                             {{/if}}
-                            {{#if user.Skill.handlebars}}
+                            {{#if this.Skill.handlebars}}
                             <img src="./images/handlebars.png" class="skill-logo">
                             {{/if}}
                             <p><strong>Bio</strong><br>

@@ -32,8 +32,8 @@
             </div>
             <h3>Hi {{user.fullName}}</h3>
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
-            <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
-            <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
+            <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}" target="blank">{{user.github}}</p></a>
+            <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}" target="blank">{{user.linkedin}}</p></a>
             <p><strong>Skills</strong><br>
                 {{#if user.Skill.html}}
                 <img src="./images/html.png" class="skill-logo">

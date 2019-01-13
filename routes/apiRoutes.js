@@ -87,27 +87,6 @@ module.exports = function (app) {
         res.status(400).send(err);
       });
   });
-<<<<<<< HEAD
-    
-      // console.log(req.body.userLevel)
-  app.get("/api/user/compare", isAuthenticated, function(req, res){
-      db.User.findAll({
-          where: {
-            userLevel : req.user.userLevel,
-            codingTime: req.user.codingTime,
-            id: {
-              $ne: req.user.id,
-            },
-          }
-          
-        }).then(function (dbUser) {
-          /// add a loop to get the first 5
-         
-
-          res.json(dbUser);
-          
-        });
-=======
 
   // console.log(req.body.userLevel)
   app.get("/api/user/compare", isAuthenticated, function (req, res) {
@@ -122,7 +101,6 @@ module.exports = function (app) {
     }).then(function (dbUser) {
       res.json(dbUser);
     });
->>>>>>> 8bf597a6d119f53cc8e35b2a3eaedc20c5f8b0a7
   });
 
 

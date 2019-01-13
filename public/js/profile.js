@@ -9,11 +9,12 @@ $("[data-connect-submit]").on("click", function (e) {
       userName: uName
     }
   })
-    .then(function (data) {
-      window.location.reload()
-    })
-    .catch(function (err) {
-      console.log(err);
-      alert(err.responseText);
-    });
+  .then(function (data) {
+    this.userName.hide()
+    window.location.reload()
+  })
+  .catch(function (err) {
+    console.log(err);
+    alert(err.responseText);
+  });
 });  

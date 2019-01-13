@@ -13,10 +13,10 @@
   opacity: 0.75;
 }
 #nav-logo {
-  padding-left: 40px;
+  padding-left: 20px;
   padding-top: 10px;
   padding-bottom:10px;
-  height: 95px;
+  height: 80px;
 }
 #logout, #settings {
   margin-right: 20px;
@@ -48,15 +48,15 @@
 }
 
 .landing-description {
-  padding: 5pt 5pt 5pt 20pt;
+  padding: 5px 5px 5px 5px;
 }
 
 #introParagraph {
-font-size: 1.2em;
+font-size: 18px;
 }
 
 #makeBig {
-font-size: 2.1em;
+font-size: 24px;
 }
 
 h1 {
@@ -80,7 +80,7 @@ a:link, a:hover, a:visited, a:active {
 }
 .tiny-text {
   font-size: 7pt;
-  color: grey;
+  color: rgb(36, 37, 39);
   margin: 5pt 0 0 10px;
 }
 #modalCloseButton {
@@ -166,7 +166,7 @@ h2 {
 }
 .skill {
   border-radius: 10px;
-  border: 1px solid #f7f48b;;
+  border: 1px solid #f7f48b;
   color:rgb(36, 37, 39);
   margin-bottom: 20px;
   cursor: pointer;
@@ -228,7 +228,7 @@ h2 {
   text-align: center;
   align-items: center;
   display: flex;
-  font-size: 17px;
+  font-size: 18px;
   height: 70px;
   justify-content: center;
   line-height: 25px;
@@ -249,7 +249,7 @@ h2 {
   width: 50%;
 }
 #user-bio {
-  width: 328px;
+  width: 300px;
   margin-left: 0px;
   margin-top: 0px;
   border-radius: 0px;
@@ -263,7 +263,7 @@ h2 {
 } 
 #matches-title {
   background: #f7f48b;
-  color: rgb(36, 37, 39)
+  color: rgb(36, 37, 39);
 }
 .match-content {
   font-size: 18px;
@@ -331,11 +331,55 @@ h2 {
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+  #user-matches, #user-connections {
+    width: 295px;
+  }
+  #user-bio {
+    width: 280px;
+  }
+}
 @media screen and (max-width: 960px) {
+  .profile-card {
+    margin-top: 20px;
+  }
 }
 @media screen and (max-width: 768px) {
+  #introParagraph {
+    font-size: 12px;
+    }
+    #makeBig {
+    font-size: 18px;
+    }
 }
 @media screen and (max-width: 640px) {
+  .profile-card {
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 0px;
+  }
+  #logout, #settings {
+    margin-right: 0px;
+  }
+  #nav-logo {
+    padding-left: 0px;
+    height: 60px;
+  }
+  #user-bio, #user-matches, #user-connections {
+    height: auto;
+    width: 100%;
+    border: 0px;
+  }
+  h1 {
+    font-size: 24px;
+  }
 }
 @media screen and (max-width: 425px) {
+  #nav-logo {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 20px;
+  }
+
 }

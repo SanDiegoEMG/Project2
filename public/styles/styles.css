@@ -310,7 +310,7 @@ h2 {
   border-radius: 10px;
   text-align: center;
   margin-top: 60px;
-  margin-left: 40%;
+  margin-left: 40px;
   margin-right: 40px;
   background: white;
   padding-bottom: 20px;
@@ -323,7 +323,6 @@ h2 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: flex;
-  font-size: 17px;
   height: 70px;
   justify-content: center;
   line-height: 25px;

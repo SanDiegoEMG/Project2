@@ -7,7 +7,7 @@ $("[data-connect-submit]").on("click", function (e) {
     url: "/api/user/connect",
     data: {
       userName: uName
-    }
+    },
   })
   .then(function (data) {
     this.userName.hide()

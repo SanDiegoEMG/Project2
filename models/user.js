@@ -5,7 +5,13 @@ var bcrypt = require("bcrypt-nodejs");
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     //these entries come from modal on index.handlebars
-    userName: DataTypes.STRING,
+    userName: {
+      type: DataTypes.STRING,
+      unique: true,
+      validate: {
+        len: [3]
+      }
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -29,8 +35,16 @@ module.exports = function (sequelize, DataTypes) {
     userLevel: DataTypes.STRING,
     codingTime: DataTypes.STRING,
     projectIdea: DataTypes.STRING,
-    github: DataTypes.STRING,
-    linkedin: DataTypes.STRING,
+    github: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "github.com/join"
+    },
+    linkedin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "linkedin.com/start/join"
+    },
     profileStatement: DataTypes.TEXT,
   });
 

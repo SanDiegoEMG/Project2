@@ -14,8 +14,9 @@
 }
 #nav-logo {
   padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom:20px;
+  padding-top: 10px;
+  padding-bottom:10px;
+  height: 80px;
 }
 #logout, #settings {
   margin-right: 20px;
@@ -31,6 +32,7 @@
   padding-bottom: 20px;
   opacity: 0.97;
 }
+
 #landing-title {
   background: #89B24C;
   text-align: center;
@@ -46,14 +48,21 @@
 }
 
 .landing-description {
-  padding: 5pt 5pt 5pt 20pt;
+  padding: 5px 5px 5px 5px;
+}
+
+#introParagraph {
+font-size: 18px;
+}
+
+#makeBig {
+font-size: 24px;
 }
 
 h1 {
   padding-top: 20px;
   color: white;
 }
-
 a:link, a:hover, a:visited, a:active {
   text-decoration: none;
 }
@@ -69,17 +78,14 @@ a:link, a:hover, a:visited, a:active {
   background: #89B24C;
   border-radius: 10px;
 }
-
 .tiny-text {
   font-size: 7pt;
-  color: grey;
-  margin: 5pt 0 0 10pt;
+  color: rgb(36, 37, 39);
+  margin: 5pt 0 0 10px;
 }
-
 #modalCloseButton {
-  margin-bottom: 10pt;
+  margin-bottom: 10px;
 }
-
 #cancel-login, #cancel-sign-up {
   border-radius: 10px;
 }
@@ -96,7 +102,7 @@ a:link, a:hover, a:visited, a:active {
   z-index: 0;
   text-align: center;
 }
-.question-title, .profile-title {
+.question-title {
   text-align: center;
   align-items: center;
   border-top-left-radius: 5px;
@@ -123,16 +129,14 @@ h2 {
   color:rgb(36, 37, 39);
   padding-top: 20px;
 }
-.next-question, .connect-modal  {
+.next-question, .back-button, #create-profile  {
+  border-radius: 10px;
+  color: white;
+}
+.round {
   border-radius: 10px;
 }
-
-.back-button {
-  float: left;
-  background: transparent;
-}
-
-#build-title, #add-build, .app-selected {
+#level-title, #add-level, .app-selected {
   background: #FF9279;
 }
 #beg, #int, #advanced{
@@ -144,7 +148,7 @@ h2 {
 #questionnaire-item-time {
   display: none;
 }
-#time-title, #add-time, .time-selected {
+#time-title, #add-time, #back-from-time, .time-selected {
   background: #5080FF;
 }
 .time-div {
@@ -153,63 +157,50 @@ h2 {
   color:rgb(36, 37, 39);
   cursor: pointer;
 }
-
 #questionnaire-item-current-skills, #modal-noResponse {
   display: none;
 }
-
-#skills-title, #add-current-skills, .skill-selected, .profile-title {
+#skills-title, #add-current-skills, #back-from-skills, .skill-selected {
   background: #f7f48b;
   color: rgb(36, 37, 39);
 }
-
 .skill {
   border-radius: 10px;
-  border: 1px solid #f7f48b;;
+  border: 1px solid #f7f48b;
   color:rgb(36, 37, 39);
   margin-bottom: 20px;
   cursor: pointer;
 }
-
 #questionnaire-item-learn-skills {
   display: none;
 }
-
 #questionnaire-item-idea {
   display: none;
 }
-
-#idea-title, #add-idea, .idea-selected {
+#idea-title, #add-idea, #back-from-idea, .idea-selected {
   background: #FF9279;
 }
-
 .idea-div {
   border-radius: 10px;
   border: 1px solid #FF9279;
   color:rgb(36, 37, 39);
   cursor: pointer;
 }
-
 #questionnaire-item-online-profiles {
   display: none;
 }
-
-#online-profile-title, #add-online-profiles {
+#online-profile-title, #add-online-profiles, #back-from-online-profiles {
   background: #5080FF;
 }
-
 #questionnaire-item-about {
   display: none;
 }
-
-#about-title, #create-profile {
+#about-title, #create-profile, #back-from-about-me {
   background: #89B24C;
 }
-
-#create-profile {
+#create-profile, .connect-modal {
   border-radius: 10px;
 }
-
 #profile-page-container {
   background-image: url("../images/coding-alone-dark.jpg");
   background-position: center;
@@ -221,40 +212,76 @@ h2 {
   width: 100%;
   z-index: 0;
   text-align: center;
-  }
-
+}
 .profile-card {
   border-radius: 10px;
-  margin-top: 60px;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   background: white;
   padding-bottom: 20px;
-  min-height: 300px;
-  max-height: 600px;
+  min-height: 400px;
   opacity: 0.9;
   float: left;
 }
-
+.profile-title {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
+}
 .profile-content {
   text-align: left;
+}
+#avatar-area {
+  text-align: center;
 }
 .uk-icon-link {
   cursor: pointer;
 }
+.skill-logo {
+  height: 40px;
+}
+#user-avatar {
+  width: 50%;
+}
 #user-bio {
-  width: 40%;
-}
-#user-skills {
-  width: 28%;
-}
+  width: 300px;
+  margin-left: 0px;
+  margin-top: 0px;
+  border-radius: 0px;
+  padding-bottom: 80px;
+  height: 100vh;
+  opacity: 1;
+  font-size: 16px;
+} 
 #user-matches {
-  width: 26%;
+  width: 400px;
+  border: 10px solid #f7f48b;
 } 
+#matches-title {
+  background: #f7f48b;
+  color: rgb(36, 37, 39);
+}
+.match-content {
+  font-size: 18px;
+  font-weight: bolder;
+  color: #5080FF;
+}
+.match-avatar {
+  height: 40px;
+}
 #user-connections {
-  width: 98%;
-  margin-bottom: 60px;
+  width: 400px;
+  border: 10px solid #FF9279;
 } 
+#connections-title {
+  background: #FF9279;
+  color: rgb(36, 37, 39);
+}
 #connect-header, #connect {
   background: #5080FF;
 }
@@ -280,25 +307,11 @@ h2 {
   text-align: center;
   opacity: 0.75;
 }
-#joined {
-  background-color: rgb(140, 173, 245);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-  text-align: center;
-  opacity: 0.75;
-}
 #error {
   border-radius: 10px;
   text-align: center;
   margin-top: 60px;
-  margin-left: 40%;
+  margin-left: 40px;
   margin-right: 40px;
   background: white;
   padding-bottom: 20px;
@@ -311,9 +324,88 @@ h2 {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: flex;
-  font-size: 17px;
   height: 70px;
   justify-content: center;
   line-height: 25px;
   margin-bottom: 20px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: #C2CCB4;
+  padding-top: 20px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+  #user-matches, #user-connections {
+    width: 295px;
+  }
+  #user-bio {
+    width: 280px;
+  }
+  #idea-title h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .skill, .idea-div {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #introParagraph {
+    font-size: 12px;
+    }
+  #makeBig {
+    font-size: 18px;
+    }
+  .skill {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 10px;
+    }
+}
+@media screen and (max-width: 640px) {
+  .profile-card {
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 0px;
+  }
+  .skill {
+    font-size: 18px;
+  }
+  #idea-title h2 {
+    font-size: 18px;
+  }
+  #logout, #settings {
+    margin-right: 0px;
+  }
+  #nav-logo {
+    padding-left: 0px;
+    height: 60px;
+  }
+  #user-bio, #user-matches, #user-connections {
+    height: auto;
+    width: 100%;
+    border: 0px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 425px) {
+  #nav-logo {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 20px;
+  }
+  #online-profile-title h2 {
+    font-size: 24px;
+  }
 }

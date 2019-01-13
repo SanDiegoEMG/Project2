@@ -1,101 +1,168 @@
+<nav class="uk-navbar-container" style="background: #C2CCB4" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li><a href="/"><img id="nav-logo" data-src="./images/code_with_friends_logo.png" alt="site logo" uk-img></a></li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="#" id="settings">Settings</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="/questions">Edit Account</a></li>
+                        <li><a href="#" id="delete">Delete Account</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="/logout"><span uk-icon="icon: sign-out" id="logout">LOG OUT</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div id="profile-page-container">
 
+    {{!-- left most card on first row - Info About User --}}
     <div class="profile-card" id="user-bio">
-        <div class="profile-title">
-            <h3>Hello {{user.fullName}}!</h3>
-        </div>
         <div class="profile-content">
+            <div id="avatar-area">
+                <img src="./images/default-avatar.png" alt="profile picture" id="user-avatar">
+            </div>
+            <h3>Hi {{user.fullName}}</h3>
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
             <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
-            <p>{{user.profileStatement}}</p>
-        </div>
-    </div>
-
-    <div class="profile-card" id="user-skills">
-        <div class="profile-title">
-            <h3>Your Skills Profile</h3>
-        </div>
-        <div class="profile-content">
-            {{#if user.Skill.html}}
-                    <p>&nbsp;HTML&nbsp;|
+            <p><strong>Skills</strong><br>
+                {{#if user.Skill.html}}
+                <img src="./images/html.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.css}}
-                    &nbsp;CSS&nbsp;|
+                <img src="./images/css.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.javascript}}
-                    &nbsp;JAVASCRIPT&nbsp;|
+                <img src="./images/javascript.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.jquery}}
-                    &nbsp;JQUERY&nbsp;|
+                <img src="./images/jquery.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.node}}
-                    &nbsp;NODE&nbsp;|
+                <img src="./images/node.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.express}}
-                    &nbsp;EXPRESS&nbsp;|
+                <img src="./images/expressjs.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.react}}
-                    &nbsp;REACT&nbsp;|
+                <img src="./images/react.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mongodb}}
-                    &nbsp;MONGODB&nbsp;|
+                <img src="./images/mongodb.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mysql}}
-                    &nbsp;MYSQL&nbsp;|
+                <img src="./images/mysql.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.handlebars}}
-                    &nbsp;HANDLEBARS&nbsp;|</p>
+                <img src="./images/handlebars.png" class="skill-logo">
                 {{/if}}
+                <p><strong>Bio</strong><br>
+                    {{user.profileStatement}}</p>
         </div>
     </div>
 
+    {{!-- right most card on first row - displays recommended connections --}}
     <div class="profile-card" id="user-matches">
-        <div class="profile-title">
-            <h3>Recommended Matches</h3>
+        <div class="profile-title" id="matches-title">
+            <h3>Recommended Connections</h3>
         </div>
+
         <div class="profile-content">
             {{#each matches}}
             <ul>
-                <p class="uk-icon-link" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">{{this.userName}}
-                    &nbsp;</p>
-            </ul>
-            <div id="more-match-info{{this.id}}" uk-modal>
-                <div class="uk-modal-dialog">
-                    <div class="uk-modal-header" id="connect-header">
-                        <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
-                    </div>
-                    <div class="uk-modal-body">
-                        <p id="match-full-name">{{this.fullName}}</p>
-                        {{#if this.github}}
-                        <p><span uk-icon="github-alt"></span>&nbsp; : &nbsp;{{this.github}}</p>
-                        {{/if}}
-                        {{#if this.linkedin}}
-                        <p><span uk-icon="linkedin"></span>&nbsp; : &nbsp;{{this.linkedin}}</p>
-                        {{/if}}
-                        <p>{{this.profileStatement}}</p>
-                    </div>
-                    <div class="uk-modal-footer uk-text-right">
-                        <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>
-                        <button class="uk-button connect-modal" data-user="{{this.userName}}" id="connect" type="button">Connect</button>
+                <p class="uk-icon-link match-content" uk-icon="info" uk-toggle="target: #more-match-info{{this.id}}">
+                    <img class="match-avatar" src="./images/default-profile-pic.png">
+                    &nbsp;{{this.userName}}&nbsp;
+                </p>
+                <hr>
+
+                {{!-- modal that displays more details when a recommended connection username is clicked --}}
+                <div id="more-match-info{{this.id}}" uk-modal>
+                    <div class="uk-modal-dialog">
+                        <div class="uk-modal-header" id="connect-header">
+                            <h2 class="uk-modal-title" id="connect-title">{{this.userName}}</h2>
+                        </div>
+                        <div class="uk-modal-body">
+                            <p><strong>{{this.fullName}}</strong></p>
+                            {{#if this.github}}
+                            <a href="{{this.github}}"><p class="uk-text-truncate"><span uk-icon="github-alt"></span>&nbsp; :
+                                &nbsp;{{this.github}}</p></a>
+                            {{/if}}
+                            {{#if this.linkedin}}
+                            <a href="{{this.linkedin}}"><p class="uk-text-truncate"><span uk-icon="linkedin"></span>&nbsp; :
+                                &nbsp;{{this.linkedin}}</p></a>
+                            {{/if}}
+                            {{#if this.Skill.html}}
+                            <img src="./images/html.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.css}}
+                            <img src="./images/css.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.javascript}}
+                            <img src="./images/javascript.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.jquery}}
+                            <img src="./images/jquery.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.node}}
+                            <img src="./images/node.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.express}}
+                            <img src="./images/expressjs.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.react}}
+                            <img src="./images/react.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.mongodb}}
+                            <img src="./images/mongodb.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.mysql}}
+                            <img src="./images/mysql.png" class="skill-logo">
+                            {{/if}}
+                            {{#if this.Skill.handlebars}}
+                            <img src="./images/handlebars.png" class="skill-logo">
+                            {{/if}}
+                            <p><strong>Bio</strong><br>
+                                {{this.profileStatement}}</p>
+                        </div>
+
+                        {{!-- Modal footer with close & connect buttons --}}
+                        <div class="uk-modal-footer uk-text-right">
+                            <button class="uk-button uk-button-default uk-modal-close connect-modal" type="button">Close</button>
+                            <button class="uk-button connect-modal uk-modal-close" data-connect-submit data-user="{{this.userName}}"
+                                id="connect" type="button">Connect</button>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-
+            </ul>
             {{/each}}
         </div>
     </div>
 
+    {{!-- second row card - displays connections that the current user has made from recommendations --}}
     <div class="profile-card" id="user-connections">
-        <div class="profile-title">
+        <div class="profile-title" id="connections-title">
             <h3>Personal Connections</h3>
         </div>
         <div class="profile-content">
             <ul>
                 {{#each favorites}}
-                    <p>{{this.userName}}</p>
+                <p class="match-content"><img class="match-avatar" src="./images/default-profile-pic.png">
+                    &nbsp;{{this.userName}}&nbsp;
+                </p>
+                <hr>
                 {{/each}}
-                
+
             </ul>
         </div>
     </div>

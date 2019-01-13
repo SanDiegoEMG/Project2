@@ -30,24 +30,31 @@ module.exports = function(app) {
       include: [db.Skill]
     })
     .then(function(dbUser) {
-      db.User.findAll({
+       db.User.findAll({
         where: {
-          userLevel : req.user.userLevel,
+          userLevel : dbUser.userLevel,
           id: {
             $ne: req.user.id
           }
-        }
-        
+        },
+        include: [db.Skill]
       }).then(function (dbMatches) {
-        db.Favorite.findAll({
+      
+       db.Favorite.findAll({
           where: {
             UserId: req.user.id
           }
         }).then(function(userFavorites){
+          
+              
           //res.json({user: dbUser, matches: dbMatches, favorites: userFavorites });
-          res.render("profile", { user: dbUser, matches: dbMatches, favorites: userFavorites });
-        });
-      });
+          res.render("profile", { user: dbUser, matches: dbMatches, favorites: userFavorites})
+         
+          });
+        
+      
+      }); 
+      
     });
   });
 

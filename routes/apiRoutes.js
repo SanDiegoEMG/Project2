@@ -5,85 +5,80 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   // Get all data for one user using their unique id
-  app.get("/api/users/:id", isAuthenticated, function (req, res) {
-    db.User.findAll({
-      where: {
-        UserId: req.params.id
-      }
-    }).then(function (dbUser) {
-      res.json(dbUser);
-    });
-  });
-
-  // Create a new example
-  app.get("/api/users/:id", isAuthenticated, function (req, res) {
-    db.User.update({
-      UserId: req.user.id,
-    }).then(function (newUser) {
-      res.json(newUser);
-    });
-  });
+  // app.get("/api/user/:id", isAuthenticated, function (req, res) {
+  //   db.User.findAll({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function (dbUser) {
+  //     res.json(dbUser);
+  //   });
+  // });
 
   // Delete an example by id
   app.delete("/api/user/:id", isAuthenticated, function (req, res) {
     db.User.destroy({ where: { id: req.user.id } }).then(function (
-     
+
     ) {
       // res.redirect("/");
     });
   });
 
-  // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
-  // Otherwise the user will be sent an error
+  // Using the passport.authenticate middleware so if user has valid login credentials, send them to profile page otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-    // So we're sending the user back the route to the members page because the redirect will happen on the front end
-    // They won't get this or even be able to access this page if they aren't authed
     res.json(req.user);
-
   });
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to configuration of the Sequelize User Model. If the user is created successfully, proceed to log the user in, otherwise send back an error
   app.post("/api/signup", function (req, res) {
-    // console.log(req.body);
     db.User.create(req.body)
       .then(function () {
         res.redirect(307, "/api/login");
       })
       .catch(function (err) {
+        console.error(err);
+
         res.status(422).json(err.errors[0].message);
       });
   });
 
-  
-  
- 
 
-  app.post("/api/skill", isAuthenticated, function(req, res) {
-   
+
+  app.post("/api/skill", isAuthenticated, function (req, res) {
     // console.log(req.user);
     var skillBody = req.body;
     skillBody.UserId = req.user.id;
 
-    db.Skill.create(skillBody).then(function(dbskills) {
-      res.json(dbskills); 
-     
+    db.Skill.create(skillBody).then(function (dbskills) {
+      res.json(dbskills);
     })
   });
 
-  
 
-  app.put("/api/user", isAuthenticated, function(req, res){
-    
+  // back end handler to prevent duplication on skills table
+  app.delete("/api/skill", function (req, res) {
+    console.log("Let's see this happen");
+    db.Skill.findAll({
+      limit: 1,
+      where: {},
+      order: [["createdAt", "DESC"]]
+    }).then(function (data) {
+      console.log(JSON.stringify(data[0].id));
+      db.Skill.destroy({
+        where: {id: JSON.stringify(data[0].id)},
+      }).then(function (data) {
+        console.log('deleted');
+        res.json(data);
+      })
+    })
+  });
 
+
+  app.put("/api/user", isAuthenticated, function (req, res) {
     // update the user by id using req.user.id 
     db.User.update(req.body, {
       where: { id: req.user.id }
     }).then(function (data) {
-
       res.json(data);
     })
       // fill out the rest from the body of the request
@@ -92,6 +87,7 @@ module.exports = function (app) {
         res.status(400).send(err);
       });
   });
+<<<<<<< HEAD
     
       // console.log(req.body.userLevel)
   app.get("/api/user/compare", isAuthenticated, function(req, res){
@@ -111,16 +107,32 @@ module.exports = function (app) {
           res.json(dbUser);
           
         });
+=======
+
+  // console.log(req.body.userLevel)
+  app.get("/api/user/compare", isAuthenticated, function (req, res) {
+    db.User.findAll({
+      where: {
+        userLevel: req.user.userLevel,
+        id: {
+          $ne: req.user.id
+        }
+      }
+
+    }).then(function (dbUser) {
+      res.json(dbUser);
+    });
+>>>>>>> 8bf597a6d119f53cc8e35b2a3eaedc20c5f8b0a7
   });
 
-  
+
   app.get("/api/user", function (req, res) {
     db.User.findAll({}).then(function (dbUsers) {
       res.json(dbUsers);
     });
   });
 
-  
+
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
@@ -132,12 +144,10 @@ module.exports = function (app) {
   app.post("/api/user/connect", isAuthenticated, function (req, res) {
     var favBody = req.body;
     favBody.UserId = req.user.id;
-    // favBody.userId = req.user.id
     db.Favorite.create(favBody
     ).then(function (data) {
 
       res.json(data);
-      console.log(data);
     })
       .catch(function (err) {
         res.status(400).send(err);

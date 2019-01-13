@@ -189,7 +189,7 @@ h2 {
 #questionnaire-item-online-profiles {
   display: none;
 }
-#online-profile-title, #add-online-profiles, #back-from-online-profiles, #disconnect {
+#online-profile-title, #add-online-profiles, #back-from-online-profiles, .disconnect {
   background: #5080FF;
 }
 #questionnaire-item-about {
@@ -198,7 +198,7 @@ h2 {
 #about-title, #create-profile, #back-from-about-me {
   background: #89B24C;
 }
-#create-profile, .connect-modal, #disconnect {
+#create-profile, .connect-modal, .disconnect {
   border-radius: 10px;
 }
 #profile-page-container {

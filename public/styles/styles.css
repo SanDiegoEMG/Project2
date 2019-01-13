@@ -16,7 +16,7 @@
   padding-left: 40px;
   padding-top: 10px;
   padding-bottom:10px;
-  height: 80px;
+  height: 95px;
 }
 #logout, #settings {
   margin-right: 20px;
@@ -32,6 +32,7 @@
   padding-bottom: 20px;
   opacity: 0.97;
 }
+
 #landing-title {
   background: #89B24C;
   text-align: center;
@@ -45,9 +46,19 @@
   line-height: 25px;
   margin-bottom: 20px;
 }
+
 .landing-description {
   padding: 5pt 5pt 5pt 20pt;
 }
+
+#introParagraph {
+font-size: 1.2em;
+}
+
+#makeBig {
+font-size: 2.1em;
+}
+
 h1 {
   padding-top: 20px;
   color: white;
@@ -121,6 +132,9 @@ h2 {
 .next-question, .back-button, #create-profile  {
   border-radius: 10px;
   color: white;
+}
+.round {
+  border-radius: 10px;
 }
 #level-title, #add-level, .app-selected {
   background: #FF9279;

@@ -102,7 +102,7 @@ a:link, a:hover, a:visited, a:active {
   z-index: 0;
   text-align: center;
 }
-.question-title, .profile-title {
+.question-title {
   text-align: center;
   align-items: center;
   border-top-left-radius: 5px;
@@ -223,6 +223,15 @@ h2 {
   min-height: 400px;
   opacity: 0.9;
   float: left;
+}
+.profile-title {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  font-size: 17px;
+  height: 70px;
+  justify-content: center;
+  line-height: 25px;
 }
 .profile-content {
   text-align: left;

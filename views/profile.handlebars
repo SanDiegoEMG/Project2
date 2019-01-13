@@ -158,7 +158,7 @@
             <ul>
                 {{#each favorites}}
                 <p class="match-content"><img class="match-avatar" src="./images/default-profile-pic.png">
-                    &nbsp;{{this.userName}}&nbsp; <button class="uk-button uk-button-primary" id="disconnect">Remove</button>
+                    &nbsp;{{this.userName}}&nbsp; <button class="uk-button uk-button-primary" data-connect-delete data-user="{{this.userName}}" id="disconnect">Remove</button>
                 </p>
                 <hr>
                 {{/each}}

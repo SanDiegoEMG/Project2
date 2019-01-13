@@ -131,4 +131,17 @@ module.exports = function (app) {
         res.status(400).send(err);
       });
   });
+
+  app.post("/api/user/disconnect", isAuthenticated, function (req, res) {
+    var delFavBody = req.body;
+    delFavBody.UserId = req.user.id;
+    db.Favorite.destroy({where: {UserId: delFavBody.UserId}
+    }).then(function (data) {
+
+      res.json(data);
+    })
+      .catch(function (err) {
+        res.status(400).send(err);
+      });
+  });
 };

@@ -35,39 +35,39 @@
             <p><span uk-icon="user"></span>&nbsp; &nbsp;{{user.userName}}</p>
             <p><span uk-icon="github"></span>&nbsp; &nbsp;<a href="{{user.github}}">{{user.github}}</p></a>
             <p><span uk-icon="linkedin"></span>&nbsp; &nbsp;<a href="{{user.linkedin}}">{{user.linkedin}}</p></a>
-            <p><strong>Skills</strong></p>
+            <p><strong>Skills</strong><br>
             {{#if user.Skill.html}}
-            <p>&nbsp;HTML&nbsp;
+            <img src="./images/html.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.css}}
-                &nbsp;CSS&nbsp;
+                <img src="./images/css.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.javascript}}
-                &nbsp;JAVASCRIPT&nbsp;
+                <img src="./images/javascript.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.jquery}}
-                &nbsp;JQUERY&nbsp;
+                <img src="./images/jquery.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.node}}
-                &nbsp;NODE&nbsp;
+                <img src="./images/node.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.express}}
-                &nbsp;EXPRESS&nbsp;
+                <img src="./images/expressjs.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.react}}
-                &nbsp;REACT&nbsp;
+                <img src="./images/react.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mongodb}}
-                &nbsp;MONGODB&nbsp;
+                <img src="./images/mongobd.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.mysql}}
-                &nbsp;MYSQL&nbsp;
+                <img src="./images/mysql.png" class="skill-logo">
                 {{/if}}
                 {{#if user.Skill.handlebars}}
-                &nbsp;HANDLEBARS&nbsp;</p>
+                <img src="./images/handlebars.png" class="skill-logo">
             {{/if}}
-            <p><strong>Bio</strong></p>
-            <p>{{user.profileStatement}}</p>
+            <p><strong>Bio</strong><br>
+            {{user.profileStatement}}</p>
         </div>
     </div>
 

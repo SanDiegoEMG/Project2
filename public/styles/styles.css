@@ -220,6 +220,9 @@ h2 {
 .uk-icon-link {
   cursor: pointer;
 }
+.skill-logo {
+  height: 40px;
+}
 #user-avatar {
   width: 50%;
 }
@@ -230,10 +233,10 @@ h2 {
   width: 20%;
 }
 #user-matches {
-  width: 26%;
+  width: 36%;
 } 
 #user-connections {
-  width: 26%;
+  width: 36%;
 } 
 #connect-header, #connect {
   background: #5080FF;

@@ -10,7 +10,7 @@ $("[data-connect-submit]").on("click", function (e) {
     },
   })
   .then(function (data) {
-    this.userName.hide()
+    // this.userName.hide()
     window.location.reload()
   })
   .catch(function (err) {

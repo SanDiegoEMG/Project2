@@ -90,6 +90,7 @@ module.exports = function (app) {
 
   // console.log(req.body.userLevel)
   app.get("/api/user/compare", isAuthenticated, function (req, res) {
+    
     db.User.findAll({
       where: {
         userLevel: req.user.userLevel,
@@ -98,8 +99,19 @@ module.exports = function (app) {
         }
       }
 
-    }).then(function (dbUser) {
-      res.json(dbUser);
+    }).then(function (friendsThatMatch) {
+      db.User.destroy({
+        where: {
+          
+            id: {
+              $ne: req.favorite.userId
+            } 
+          
+        }
+      })
+      res.json(friendsThatMatch);
+      // make another db query for ids of favorites
+      // remove user objects from friendsThatMatch
     });
   });
 
